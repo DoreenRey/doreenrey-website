@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doreen Rey — Circle Singing · Grief & Song · Music Therapy</title>
+<meta name="description" content="Doreen Rey is a circle singing facilitator, singer-songwriter and music therapist based in Antwerp, Belgium. Book workshops, house concerts and grief rituals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --warm: #F5EDE3;
+  --cream: #FAF7F2;
+  --sand: #E8DDD0;
+  --terra: #C4704B;
+  --terra-dark: #A85A38;
+  --forest: #2D4A3E;
+  --forest-light: #3D6B5A;
+  --charcoal: #2C2C2C;
+  --text: #3A3530;
+  --text-light: #6B6560;
+  --gold: #C9A96E;
+  --gold-light: #E8D5A8;
+  --white: #FFFFFF;
+  --nav-bg: rgba(250, 247, 242, 0.92);
+  --nav-border: rgba(200, 190, 175, 0.3);
+  --card-bg: #FAF7F2;
+  --card-border: rgba(200,190,175,0.4);
+  --even-bg: #F5EDE3;
+  --input-bg: #FFFFFF;
+  --input-border: rgba(200,190,175,0.4);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Outfit', -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+  --warm: #1C1A17;
+  --cream: #141210;
+  --sand: #2A2520;
+  --terra: #D4835E;
+  --terra-dark: #C4704B;
+  --forest: #7DBFA8;
+  --forest-light: #5A9A84;
+  --charcoal: #E8E0D5;
+  --text: #D6CCBF;
+  --text-light: #9A918A;
+  --gold: #D4B878;
+  --gold-light: #3A3220;
+  --white: #141210;
+  --nav-bg: rgba(20, 18, 16, 0.94);
+  --nav-border: rgba(60, 55, 48, 0.4);
+  --card-bg: #1C1A17;
+  --card-border: rgba(80,72,62,0.4);
+  --even-bg: #1C1A17;
+  --input-bg: #242119;
+  --input-border: rgba(100,90,78,0.4);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --warm: #1C1A17;
+    --cream: #141210;
+    --sand: #2A2520;
+    --terra: #D4835E;
+    --terra-dark: #C4704B;
+    --forest: #7DBFA8;
+    --forest-light: #5A9A84;
+    --charcoal: #E8E0D5;
+    --text: #D6CCBF;
+    --text-light: #9A918A;
+    --gold: #D4B878;
+    --gold-light: #3A3220;
+    --white: #141210;
+    --nav-bg: rgba(20, 18, 16, 0.94);
+    --nav-border: rgba(60, 55, 48, 0.4);
+    --card-bg: #1C1A17;
+    --card-border: rgba(80,72,62,0.4);
+    --even-bg: #1C1A17;
+    --input-bg: #242119;
+    --input-border: rgba(100,90,78,0.4);
+  }
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+
+/* NOISE TEXTURE OVERLAY */
+body::before {
+  content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* SELECTION */
+::selection { background: var(--gold-light); color: var(--charcoal); }
+
+/* UTILITY */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--nav-border);
+  transition: all 0.4s ease;
+}
+nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.5rem; color: var(--forest); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-light); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--terra); }
+.lang-toggle {
+  background: var(--sand); border: none; padding: 0.4rem 0.8rem; border-radius: 100px;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 600; color: var(--text);
+  cursor: pointer; letter-spacing: 0.06em; transition: all 0.3s;
+}
+.lang-toggle:hover { background: var(--terra); color: var(--white); }
+.nav-cta {
+  background: transparent; color: var(--forest); text-decoration: none;
+  padding: 0.55rem 1.4rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600;
+  transition: all 0.3s; letter-spacing: 0.02em; border: 1.5px solid var(--forest);
+}
+.nav-cta:hover { background: var(--forest); color: var(--cream); transform: translateY(-1px); }
+
+/* MOBILE NAV */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--charcoal); margin: 5px 0; transition: all 0.3s; }
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; background: var(--cream);
+    flex-direction: column; padding: 2rem; gap: 1.5rem;
+    transform: translateY(-120%); transition: transform 0.4s ease;
+    border-bottom: 1px solid var(--sand);
+  }
+  .nav-links.open { transform: translateY(0); }
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 8rem 2rem 6rem; position: relative;
+  background: linear-gradient(180deg, var(--warm) 0%, var(--cream) 100%);
+}
+.hero-bg-photo {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/5cc7874d-93b8-4772-a864-1deb6a3b31c2/ilsewolf-5465.JPG') center center / cover no-repeat;
+  opacity: 0.25;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(196, 112, 75, 0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(45, 74, 62, 0.04) 0%, transparent 50%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-tag {
+  display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 1.5rem;
+  padding: 0.4rem 1.2rem; border: 1.5px solid var(--terra); border-radius: 100px;
+}
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05;
+  color: var(--forest); margin-bottom: 1.5rem; letter-spacing: -0.03em;
+}
+.hero h1 em { font-style: italic; color: var(--terra); }
+.hero-sub {
+  font-size: 1.15rem; color: var(--text-light); max-width: 550px; margin: 0 auto 2.5rem;
+  font-weight: 300; line-height: 1.8;
+}
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terra); color: var(--white); text-decoration: none;
+  padding: 0.85rem 2.2rem; border-radius: 100px; font-size: 0.95rem; font-weight: 500;
+  transition: all 0.3s; font-family: var(--sans); border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--terra-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(196, 112, 75, 0.25); }
+.btn-secondary {
+  background: transparent; color: var(--forest); text-decoration: none;
+  padding: 0.85rem 2.2rem; border-radius: 100px; font-size: 0.95rem; font-weight: 500;
+  border: 1.5px solid var(--forest); transition: all 0.3s; font-family: var(--sans); cursor: pointer;
+}
+.btn-secondary:hover { background: var(--forest); color: var(--white); }
+
+/* SCROLL INDICATOR */
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: var(--text-light); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+/* SECTIONS */
+section { padding: 7rem 0; }
+section:nth-child(even) { background: var(--even-bg); }
+.section-tag {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--terra); margin-bottom: 1rem; display: block;
+}
+.section-title {
+  font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); color: var(--forest);
+  margin-bottom: 1.5rem; line-height: 1.15; letter-spacing: -0.02em;
+}
+.section-intro { font-size: 1.05rem; color: var(--text-light); max-width: 650px; margin-bottom: 3rem; font-weight: 300; line-height: 1.8; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-image {
+  aspect-ratio: 3/4; background: var(--sand); border-radius: 1rem; overflow: hidden;
+  position: relative;
+}
+.about-image-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; color: var(--text-light); flex-direction: column; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--sand) 0%, var(--warm) 100%);
+}
+.about-image-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
+.about-credentials {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem;
+}
+.credential {
+  background: var(--sand); padding: 0.35rem 0.9rem; border-radius: 100px;
+  font-size: 0.78rem; color: var(--text-light); font-weight: 500;
+}
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.service-card {
+  background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 1rem;
+  padding: 2.5rem 2rem; transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); border-color: var(--terra); }
+.service-icon {
+  width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem; font-size: 1.5rem;
+}
+.service-card:nth-child(1) .service-icon { background: rgba(196, 112, 75, 0.12); color: var(--terra); }
+.service-card:nth-child(2) .service-icon { background: rgba(45, 74, 62, 0.1); color: var(--forest); }
+.service-card:nth-child(3) .service-icon { background: rgba(201, 169, 110, 0.15); color: var(--gold); }
+.service-card:nth-child(4) .service-icon { background: rgba(107, 101, 96, 0.1); color: var(--text-light); }
+.service-card h3 { font-family: var(--serif); font-size: 1.35rem; color: var(--forest); margin-bottom: 0.8rem; }
+.service-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; font-weight: 300; }
+.service-price { margin-top: 1.2rem; font-weight: 600; color: var(--terra); font-size: 0.88rem; }
+
+/* EVENTS */
+.event-list { display: flex; flex-direction: column; gap: 1rem; max-width: 750px; }
+.event-item {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 1.5rem; align-items: center;
+  padding: 1.5rem; background: var(--cream); border-radius: 0.75rem;
+  border: 1px solid var(--card-border); transition: all 0.3s;
+}
+.event-item:hover { border-color: var(--terra); transform: translateX(4px); }
+.event-date { text-align: center; }
+.event-date .day { font-family: var(--serif); font-size: 1.8rem; color: var(--forest); line-height: 1; }
+.event-date .month { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--terra); font-weight: 600; }
+.event-info h4 { font-family: var(--serif); font-size: 1.1rem; color: var(--charcoal); }
+.event-info p { font-size: 0.85rem; color: var(--text-light); }
+.event-link {
+  color: var(--terra); text-decoration: none; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.05em; white-space: nowrap; transition: color 0.3s;
+}
+.event-link:hover { color: var(--terra-dark); }
+
+/* EPK */
+.epk-section { background: #2D4A3E !important; color: #F5EDE3; }
+.epk-section .section-tag { color: var(--gold); }
+.epk-section .section-title { color: #FAF7F2; }
+.epk-section .section-intro { color: rgba(255,255,255,0.7); }
+.epk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.epk-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0.75rem; padding: 2rem; transition: all 0.3s;
+}
+.epk-card:hover { background: rgba(255,255,255,0.1); }
+.epk-card h4 { font-family: var(--serif); font-size: 1.15rem; color: #FAF7F2; margin-bottom: 0.8rem; }
+.epk-card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.epk-download {
+  display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem;
+  color: var(--gold); text-decoration: none; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.05em; transition: color 0.3s;
+}
+.epk-download:hover { color: var(--gold-light); }
+
+/* MUSIC */
+.music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.music-card {
+  background: var(--cream); border-radius: 0.75rem; overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+.music-card-embed { width: 100%; height: 152px; border: none; border-radius: 0; }
+.music-links { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.music-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; border-radius: 100px; text-decoration: none;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; transition: all 0.3s;
+  border: 1.5px solid var(--sand); color: var(--text);
+}
+.music-link:hover { border-color: var(--terra); color: var(--terra); }
+
+/* BOOKING */
+.booking-section { background: linear-gradient(135deg, var(--warm) 0%, var(--sand) 100%) !important; }
+.booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.booking-form { background: var(--card-bg); padding: 2.5rem; border-radius: 1rem; box-shadow: 0 8px 40px rgba(0,0,0,0.05); border: 1px solid var(--card-border); }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+  display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.85rem 1rem; border: 1.5px solid var(--sand); border-radius: 0.5rem;
+  font-family: var(--sans); font-size: 0.95rem; color: var(--text); background: var(--cream);
+  transition: border-color 0.3s; outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--terra); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.booking-types { display: flex; flex-direction: column; gap: 0.8rem; }
+.booking-type {
+  padding: 1.2rem 1.5rem; border: 1.5px solid var(--sand); border-radius: 0.75rem;
+  cursor: pointer; transition: all 0.3s; background: var(--card-bg);
+}
+.booking-type:hover { border-color: var(--terra); }
+.booking-type h4 { font-family: var(--serif); font-size: 1.05rem; color: var(--forest); }
+.booking-type p { font-size: 0.82rem; color: var(--text-light); margin-top: 0.2rem; }
+.booking-type .price { font-weight: 600; color: var(--terra); font-size: 0.85rem; margin-top: 0.4rem; }
+
+/* NEWSLETTER */
+.newsletter-section {
+  background: #2D4A3E !important; padding: 5rem 0; text-align: center;
+}
+.newsletter-section .section-title { color: #FAF7F2; }
+.newsletter-section p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+.newsletter-form {
+  display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center;
+}
+.newsletter-form input {
+  flex: 1; min-width: 200px; padding: 0.85rem 1.2rem; border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 100px; font-family: var(--sans); font-size: 0.95rem;
+  color: #FAF7F2; background: rgba(255,255,255,0.08); outline: none;
+}
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+.newsletter-form input:focus { border-color: var(--gold); }
+.newsletter-form button {
+  background: var(--terra); color: var(--white); border: none; padding: 0.85rem 2rem;
+  border-radius: 100px; font-family: var(--sans); font-size: 0.92rem; font-weight: 500;
+  cursor: pointer; transition: all 0.3s;
+}
+.newsletter-form button:hover { background: var(--terra-dark); }
+
+/* VIDEO */
+.video-container {
+  position: relative; width: 100%; max-width: 750px; margin: 0 auto 3rem;
+  border-radius: 1rem; overflow: hidden; aspect-ratio: 16/9;
+  background: var(--charcoal);
+}
+.video-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; color: var(--warm);
+  background: linear-gradient(rgba(44,44,44,0.55), rgba(45,74,62,0.65)),
+              url('https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/0032f80b-5d75-4d53-8d38-5e85b46a6183/WhatsApp+Image+2024-12-24+at+21.47.10.jpeg') center center / cover no-repeat;
+}
+.play-btn {
+  width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; cursor: pointer;
+}
+.play-btn:hover { background: var(--terra); border-color: var(--terra); transform: scale(1.08); }
+.play-btn svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+
+/* FOOTER */
+footer {
+  background: #2C2C2C; color: rgba(255,255,255,0.6); padding: 4rem 0 2rem;
+}
+[data-theme="dark"] footer { background: #0A0908; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand { font-family: var(--serif); font-size: 1.5rem; color: #FAF7F2; margin-bottom: 1rem; }
+.footer-desc { font-size: 0.88rem; line-height: 1.7; }
+footer h5 { color: #FAF7F2; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 0.5rem; }
+footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
+footer ul a:hover { color: var(--terra); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; flex-wrap: wrap; gap: 1rem;
+}
+.social-links { display: flex; gap: 1rem; }
+.social-links a {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;
+  transition: all 0.3s;
+}
+.social-links a:hover { border-color: var(--terra); color: var(--terra); }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-grid, .epk-grid, .booking-grid, .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { gap: 2rem; }
+  .event-item { grid-template-columns: 70px 1fr; }
+  .event-item > :last-child { grid-column: 1 / -1; }
+  section { padding: 4rem 0; }
+  .hero { padding: 7rem 1.5rem 4rem; min-height: 90vh; }
+}
+
+/* DARK MODE TOGGLE */
+.theme-toggle {
+  background: var(--sand); border: none; width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s; color: var(--text); font-size: 1rem;
+}
+.theme-toggle:hover { background: var(--terra); color: var(--cream); }
+.theme-toggle svg { width: 16px; height: 16px; }
+[data-theme="dark"] iframe[src*="soundcloud"] { filter: invert(1) hue-rotate(180deg); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) iframe[src*="soundcloud"] { filter: invert(1) hue-rotate(180deg); } }
+
+/* LANGUAGE SWITCHING — class-based, avoids display value conflicts */
+.lang-hide { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Doreen Rey</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" data-lang="nl">Over mij</a><a href="#about" data-lang="en">About</a></li>
+      <li><a href="#aanbod" data-lang="nl">Aanbod</a><a href="#aanbod" data-lang="en">Offerings</a></li>
+      <li><a href="#events" data-lang="nl">Evenementen</a><a href="#events" data-lang="en">Events</a></li>
+      <li><a href="#lessen" data-lang="nl">Lessen</a><a href="#lessen" data-lang="en">Classes</a></li>
+      <li><a href="#music" data-lang="nl">Muziek</a><a href="#music" data-lang="en">Music</a></li>
+      <li><a href="#epk">EPK</a></li>
+      <li><button class="lang-toggle" onclick="toggleLang()">EN</button></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Dark mode"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
+      <li><a href="#booking" class="nav-cta" data-lang="nl">Boek Doreen</a><a href="#booking" class="nav-cta" data-lang="en">Book Doreen</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-photo"></div>
+  <div class="hero-content fade-in">
+    <span class="hero-tag" data-lang="nl">Circle Singing · Grief & Song · Muziektherapie</span>
+    <span class="hero-tag" data-lang="en">Circle Singing · Grief & Song · Music Therapy</span>
+    <h1 data-lang="nl">Samen zingen.<br>Samen <em>voelen.</em></h1>
+    <h1 data-lang="en">Sing together.<br><em>Feel</em> together.</h1>
+    <p class="hero-sub" data-lang="nl">Ik breng mensen samen in de kracht van de stem. Via circle singing, rouwrituelen en muziektherapie creëer ik ruimte waar kwetsbaarheid en verbinding samenkomen.</p>
+    <p class="hero-sub" data-lang="en">I bring people together through the power of voice. Through circle singing, grief rituals and music therapy, I create space where vulnerability and connection meet.</p>
+    <div class="hero-buttons">
+      <a href="#booking" class="btn-primary" data-lang="nl">Boek een workshop</a>
+      <a href="#booking" class="btn-primary" data-lang="en">Book a workshop</a>
+      <a href="#aanbod" class="btn-secondary" data-lang="nl">Ontdek het aanbod</a>
+      <a href="#aanbod" class="btn-secondary" data-lang="en">Explore offerings</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span data-lang="nl">scroll</span><span data-lang="en">scroll</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section style="padding: 5rem 0; background: var(--cream);">
+  <div class="container">
+    <div class="video-container fade-in">
+      <div class="video-placeholder">
+        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></div>
+        <span style="font-size: 0.85rem; opacity: 0.7;" data-lang="nl">Sizzle reel — Binnenkort beschikbaar</span>
+        <span style="font-size: 0.85rem; opacity: 0.7;" data-lang="en">Sizzle reel — Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--warm);">
+  <div class="container">
+    <!-- NL -->
+    <div class="about-grid fade-in" data-lang="nl">
+      <div class="about-image">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/59dd442a-987d-4208-bfb4-a7d5ae281ba8/The+Way+Within+2023-11-07.jpeg" alt="Doreen Rey" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div>
+        <span class="section-tag">Over mij</span>
+        <h2 class="section-title">Dorien Reyners<br><em style="font-style: italic; color: var(--terra);">a.k.a. Doreen Rey</em></h2>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Ik ben zangeres, circle singing facilitator en muziektherapeute uit Antwerpen. Ik combineer vier passies: mijn eigen nummers met n'goni (Afrikaanse harp), circle singing workshops geïnspireerd door Bobby McFerrin, rouw- en verlieswerk, en muziektherapie.</p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Ik geloof dat de stem het krachtigste instrument is dat we hebben. Niet om perfect te klinken, maar om echt te zijn. In mijn workshops nodig ik mensen uit om hun stem te laten horen — zonder partituur, zonder oordeel, zonder verwachting. Wat er ontstaat is magie: harmonie die niemand gepland had.</p>
+        <div class="about-credentials">
+          <span class="credential">Master Muziektherapie</span>
+          <span class="credential">NVC / Verbindende Communicatie</span>
+          <span class="credential">Processwork (CFOR, UK)</span>
+          <span class="credential">Circle Singing Facilitator</span>
+          <span class="credential">Singer-Songwriter</span>
+        </div>
+      </div>
+    </div>
+    <!-- EN -->
+    <div class="about-grid fade-in" data-lang="en">
+      <div class="about-image">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/59dd442a-987d-4208-bfb4-a7d5ae281ba8/The+Way+Within+2023-11-07.jpeg" alt="Doreen Rey" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div>
+        <span class="section-tag">About me</span>
+        <h2 class="section-title">Dorien Reyners<br><em style="font-style: italic; color: var(--terra);">a.k.a. Doreen Rey</em></h2>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">I'm a singer, circle singing facilitator and music therapist based in Antwerp, Belgium. I combine four passions: my own songs with n'goni (West African harp), circle singing workshops inspired by Bobby McFerrin, grief and loss work, and music therapy.</p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">I believe the voice is the most powerful instrument we have. Not to sound perfect, but to be real. In my workshops, I invite people to let their voice be heard — without a score, without judgment, without expectation. What emerges is magic: harmony that nobody planned.</p>
+        <div class="about-credentials">
+          <span class="credential">Master Music Therapy</span>
+          <span class="credential">NVC / Nonviolent Communication</span>
+          <span class="credential">Processwork (CFOR, UK)</span>
+          <span class="credential">Circle Singing Facilitator</span>
+          <span class="credential">Singer-Songwriter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / AANBOD -->
+<section id="aanbod">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Aanbod</span>
+    <span class="section-tag" data-lang="en">Offerings</span>
+    <h2 class="section-title" data-lang="nl">Wat ik aanbied</h2>
+    <h2 class="section-title" data-lang="en">What I offer</h2>
+
+    <!-- NL -->
+    <div class="services-grid fade-in" data-lang="nl">
+      <div class="service-card">
+        <div class="service-icon">♪</div>
+        <h3>Circle Singing</h3>
+        <p>Samen zingen zonder partituur, geïnspireerd door Bobby McFerrin. Geen ervaring nodig. Ik geef de melodieën aan, jij brengt je stem. Wat ontstaat is uniek en onherhaalbaar.</p>
+        <p class="service-price">Open sessie: €15 · Privégroep: op aanvraag</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◯</div>
+        <h3>Grief & Song</h3>
+        <p>Rouw heeft een stem nodig. In deze sessies creëer ik een veilige ruimte waar verdriet, dankbaarheid en verbinding samenkomen door zang en ritueel. Ecologische rouw welkom.</p>
+        <p class="service-price">Op aanvraag</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⌂</div>
+        <h3>Huiskamerconcert</h3>
+        <p>Een intiem concert in je eigen woonkamer. Eigen nummers met n'goni, circle singing met je gasten, en ruimte voor gesprek. Voor 10 tot 40 mensen.</p>
+        <p class="service-price">Vanaf €200</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Muziektherapie</h3>
+        <p>Individuele en groepssessies muziektherapie. Werken met stem, klank en ritme als weg naar zelfexpressie, verwerking en verbinding. Op verwijzing of eigen initiatief.</p>
+        <p class="service-price">Op aanvraag</p>
+      </div>
+    </div>
+
+    <!-- EN -->
+    <div class="services-grid fade-in" data-lang="en">
+      <div class="service-card">
+        <div class="service-icon">♪</div>
+        <h3>Circle Singing</h3>
+        <p>Singing together without a score, inspired by Bobby McFerrin. No experience needed. I provide the melodies, you bring your voice. What emerges is unique and unrepeatable.</p>
+        <p class="service-price">Open session: €15 · Private group: on request</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◯</div>
+        <h3>Grief & Song</h3>
+        <p>Grief needs a voice. In these sessions I create a safe space where sorrow, gratitude and connection meet through song and ritual. Ecological grief welcome.</p>
+        <p class="service-price">On request</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⌂</div>
+        <h3>House Concert</h3>
+        <p>An intimate concert in your living room. Original songs with n'goni, circle singing with your guests, and space for conversation. For 10 to 40 people.</p>
+        <p class="service-price">From €200</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Music Therapy</h3>
+        <p>Individual and group music therapy sessions. Working with voice, sound and rhythm as a path to self-expression, processing and connection.</p>
+        <p class="service-price">On request</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="background: var(--warm);">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Evenementen</span>
+    <span class="section-tag" data-lang="en">Events</span>
+    <h2 class="section-title" data-lang="nl">Komende sessies</h2>
+    <h2 class="section-title" data-lang="en">Upcoming sessions</h2>
+    <p class="section-intro" data-lang="nl">Iedereen is welkom. Geen ervaring nodig. Kan je het niet betalen? Je bent evengoed welkom — stuur me een berichtje.</p>
+    <p class="section-intro" data-lang="en">Everyone is welcome. No experience needed. Can't afford it? You're still welcome — just send me a message.</p>
+
+    <div class="event-list fade-in">
+      <div class="event-item">
+        <div class="event-date"><div class="day">27</div><div class="month">Mar</div></div>
+        <div class="event-info">
+          <h4>Zingen voor Iedereen</h4>
+          <p>Buurthuis Unik, Antwerpen · 19:30 · €15</p>
+        </div>
+        <a href="#booking" class="event-link" data-lang="nl">Inschrijven →</a>
+        <a href="#booking" class="event-link" data-lang="en">Sign up →</a>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">3</div><div class="month">Apr</div></div>
+        <div class="event-info">
+          <h4>Circle Singing Open Sessie</h4>
+          <p>Oost West Centrum, Antwerpen · 20:00 · €15</p>
+        </div>
+        <a href="#booking" class="event-link" data-lang="nl">Inschrijven →</a>
+        <a href="#booking" class="event-link" data-lang="en">Sign up →</a>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">12</div><div class="month">Apr</div></div>
+        <div class="event-info">
+          <h4>Intro tot Rouw</h4>
+          <p data-lang="nl">met Yannick Destrycker · Madam Fortuna, Antwerpen · 14:00 · Vrije bijdrage</p>
+          <p data-lang="en">with Yannick Destrycker · Madam Fortuna, Antwerp · 14:00 · Pay what you can</p>
+        </div>
+        <a href="#booking" class="event-link" data-lang="nl">Inschrijven →</a>
+        <a href="#booking" class="event-link" data-lang="en">Sign up →</a>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">19</div><div class="month">Apr</div></div>
+        <div class="event-info">
+          <h4>Stormkring</h4>
+          <p data-lang="nl">Circle singing avondsessie · Locatie TBA · 19:00 · €15</p>
+          <p data-lang="en">Circle singing evening session · Location TBA · 19:00 · €15</p>
+        </div>
+        <a href="#booking" class="event-link" data-lang="nl">Inschrijven →</a>
+        <a href="#booking" class="event-link" data-lang="en">Sign up →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSEN / WORKSHOPS -->
+<section id="lessen">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Wekelijkse lessen</span>
+    <span class="section-tag" data-lang="en">Weekly classes</span>
+    <h2 class="section-title" data-lang="nl">Community Singing in Antwerpen</h2>
+    <h2 class="section-title" data-lang="en">Community Singing in Antwerp</h2>
+    <p class="section-intro" data-lang="nl">Elke week kom ik samen met een groep om te zingen. Geen partituur, geen ervaring nodig. Ik breng de melodieën, jij brengt je stem. Circle singing, vocale improvisatie en meerstemmige songs — geïnspireerd door Bobby McFerrin.</p>
+    <p class="section-intro" data-lang="en">Every week I gather a group to sing together. No score, no experience needed. I bring the melodies, you bring your voice. Circle singing, vocal improvisation and polyphonic songs — inspired by Bobby McFerrin.</p>
+
+    <div class="about-grid fade-in" style="gap: 3rem;">
+      <div>
+        <h3 style="font-family: var(--serif); font-size: 1.35rem; color: var(--forest); margin-bottom: 1rem;" data-lang="nl">Waar & wanneer</h3>
+        <h3 style="font-family: var(--serif); font-size: 1.35rem; color: var(--forest); margin-bottom: 1rem;" data-lang="en">Where & when</h3>
+        <div class="booking-type" style="margin-bottom: 0.8rem;">
+          <h4><a href="https://www.owc.be/lesgever/dorien-reynders" target="_blank" style="color: var(--forest); text-decoration: none;">Oost West Centrum</a></h4>
+          <p data-lang="nl">Antwerpen · Wekelijks</p>
+          <p data-lang="en">Antwerp · Weekly</p>
+          <p class="price">€15</p>
+        </div>
+        <div class="booking-type" style="margin-bottom: 0.8rem;">
+          <h4><a href="https://www.buurthuisunik.com/" target="_blank" style="color: var(--forest); text-decoration: none;">Buurthuis Unik</a></h4>
+          <p data-lang="nl">Antwerpen · Wekelijks</p>
+          <p data-lang="en">Antwerp · Weekly</p>
+          <p class="price">€15</p>
+        </div>
+        <div class="booking-type">
+          <h4 data-lang="nl">Bij jou thuis of organisatie</h4>
+          <h4 data-lang="en">At your home or organization</h4>
+          <p data-lang="nl">Op aanvraag, overal in België en daarbuiten</p>
+          <p data-lang="en">On request, anywhere in Belgium and beyond</p>
+          <p class="price" data-lang="nl">Op aanvraag</p>
+          <p class="price" data-lang="en">On request</p>
+        </div>
+        <p style="color: var(--text-light); font-size: 0.88rem; margin-top: 1.2rem; line-height: 1.7;" data-lang="nl">Kan je het niet betalen? Je bent evengoed welkom — stuur me een berichtje.</p>
+        <p style="color: var(--text-light); font-size: 0.88rem; margin-top: 1.2rem; line-height: 1.7;" data-lang="en">Can't afford it? You're still welcome — just send me a message.</p>
+      </div>
+      <div>
+        <h3 style="font-family: var(--serif); font-size: 1.35rem; color: var(--forest); margin-bottom: 1rem;" data-lang="nl">Beluister onze sessies</h3>
+        <h3 style="font-family: var(--serif); font-size: 1.35rem; color: var(--forest); margin-bottom: 1rem;" data-lang="en">Listen to our sessions</h3>
+        <div class="music-card" style="padding: 0; margin-bottom: 1rem; overflow: hidden; border-radius: 0.75rem;">
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dorienreyners&color=%232D4A3E&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" loading="lazy"></iframe>
+        </div>
+        <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 1rem;" data-lang="nl">Demo-opnames van meerstemmige community singing sessies op SoundCloud.</p>
+        <p style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 1rem;" data-lang="en">Demo recordings of polyphonic community singing sessions on SoundCloud.</p>
+        <div class="music-card" style="padding: 0; overflow: hidden; border-radius: 0.75rem;">
+          <a href="https://www.youtube.com/watch?v=c5am11UEdxo" target="_blank" style="display:block;position:relative;border-radius:0.75rem;overflow:hidden;height:200px;background:#1a1a1a;">
+            <img src="https://img.youtube.com/vi/c5am11UEdxo/hqdefault.jpg" alt="Doreen Rey - Community Singing" style="width:100%;height:100%;object-fit:cover;opacity:0.85;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(196,112,75,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="8,5 20,12 8,19"/></svg>
+            </div>
+            <span style="position:absolute;bottom:10px;left:12px;color:white;font-size:0.78rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);" data-lang="nl">▶ Bekijk op YouTube</span>
+            <span style="position:absolute;bottom:10px;left:12px;color:white;font-size:0.78rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);" data-lang="en">▶ Watch on YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Muziek</span>
+    <span class="section-tag" data-lang="en">Music</span>
+    <h2 class="section-title" data-lang="nl">Beluister mijn muziek</h2>
+    <h2 class="section-title" data-lang="en">Listen to my music</h2>
+
+    <div class="music-grid fade-in">
+      <div class="music-card">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dorienreyners&color=%23C4704B&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" loading="lazy"></iframe>
+      </div>
+      <div class="music-card" style="display: flex; align-items: center; justify-content: center; padding: 2rem; flex-direction: column; gap: 1rem;">
+        <p style="color: var(--text-light); text-align: center; font-size: 0.95rem;" data-lang="nl">4 singles op Spotify & YouTube. Demo's voor community singing op SoundCloud.</p>
+        <p style="color: var(--text-light); text-align: center; font-size: 0.95rem;" data-lang="en">4 singles on Spotify & YouTube. Community singing demos on SoundCloud.</p>
+        <div class="music-links">
+          <a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" class="music-link" target="_blank">Spotify</a>
+          <a href="https://soundcloud.com/dorienreyners" class="music-link" target="_blank">SoundCloud</a>
+          <a href="https://www.youtube.com/watch?v=271bRW2DDDk" class="music-link" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Singles -->
+    <h3 style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 1.5rem;" data-lang="nl">Singles</h3>
+    <h3 style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 1.5rem;" data-lang="en">Singles</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;" class="fade-in">
+      <div class="music-card" style="padding: 1.5rem;">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/6266c798-2c45-4f8d-b180-b2c1aab7d009/efaa16cc-7618-4b79-959e-bad7440d2d9d.jpeg" alt="Safe Enough" style="width:100%; border-radius: 0.5rem; margin-bottom: 1rem;">
+        <h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Safe Enough</h4>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2024</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">Spotify</a>
+          <a href="https://www.youtube.com/watch?v=271bRW2DDDk" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">YouTube</a>
+        </div>
+      </div>
+      <div class="music-card" style="padding: 1.5rem;">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/b149d0ac-177a-4715-86f0-c651eb2ba7e0/The+Way+Within+artwork.jpeg" alt="The Way Within" style="width:100%; border-radius: 0.5rem; margin-bottom: 1rem;">
+        <h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">The Way Within</h4>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="https://open.spotify.com/track/0sSb3uck2er0i6hVor529Z" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">Spotify</a>
+          <a href="https://www.youtube.com/watch?v=VVDPPhgVQY0" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">YouTube</a>
+        </div>
+      </div>
+      <div class="music-card" style="padding: 1.5rem;">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/f1ea382b-7268-4dd8-8a35-ee250cb5a181/bb2136de-82c2-4af2-b1d6-8a55f79e8d51.JPG" alt="Come Home" style="width:100%; border-radius: 0.5rem; margin-bottom: 1rem;">
+        <h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Come Home</h4>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="https://open.spotify.com/track/5wsFQDHi5ORFe3HwT13MGC" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">Spotify</a>
+          <a href="https://www.youtube.com/watch?v=qLP6BWMKwHQ" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">YouTube</a>
+        </div>
+      </div>
+      <div class="music-card" style="padding: 1.5rem;">
+        <img src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/1feb4ac5-bb8b-49ad-a746-ac199c0e7a2f/7d266b29-f6dc-4195-b5a8-8824ec0fd30a.jpeg" alt="Everything In Time" style="width:100%; border-radius: 0.5rem; margin-bottom: 1rem;">
+        <h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Everything In Time</h4>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="https://open.spotify.com/track/0XVE1wfJYaujet2Z34Wwvb" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">Spotify</a>
+          <a href="https://www.youtube.com/watch?v=xW30BGWlWZk" class="music-link" target="_blank" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community Singing Demos -->
+    <h3 style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 0.5rem;" data-lang="nl">Community Singing Demo's</h3>
+    <h3 style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 0.5rem;" data-lang="en">Community Singing Demos</h3>
+    <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300;" data-lang="nl">Meerstemmige opnames van mijn workshops — een experiment in community singing. Beluister ze op SoundCloud.</p>
+    <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300;" data-lang="en">Polyphonic recordings from my workshops — an experiment in community singing. Listen on SoundCloud.</p>
+    <div class="music-grid fade-in">
+      <div class="music-card" style="padding: 0;">
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dorienreyners&color=%232D4A3E&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true" loading="lazy"></iframe>
+      </div>
+      <div class="music-card" style="padding: 0; overflow: hidden; border-radius: 0.75rem;">
+        <a href="https://www.youtube.com/watch?v=c5am11UEdxo" target="_blank" style="display:block;position:relative;border-radius:0.75rem;overflow:hidden;height:300px;background:#1a1a1a;">
+          <img src="https://img.youtube.com/vi/c5am11UEdxo/hqdefault.jpg" alt="Doreen Rey - Community Singing" style="width:100%;height:100%;object-fit:cover;opacity:0.85;">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(196,112,75,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="8,5 20,12 8,19"/></svg>
+          </div>
+          <span style="position:absolute;bottom:14px;left:16px;color:white;font-size:0.85rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);" data-lang="nl">▶ Bekijk op YouTube</span>
+          <span style="position:absolute;bottom:14px;left:16px;color:white;font-size:0.85rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);" data-lang="en">▶ Watch on YouTube</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EPK -->
+<section id="epk" class="epk-section">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Voor programmeurs & pers</span>
+    <span class="section-tag" data-lang="en">For bookers & press</span>
+    <h2 class="section-title" data-lang="nl">Electronic Press Kit</h2>
+    <h2 class="section-title" data-lang="en">Electronic Press Kit</h2>
+    <p class="section-intro" data-lang="nl">Alles wat je nodig hebt om Doreen Rey te programmeren.</p>
+    <p class="section-intro" data-lang="en">Everything you need to book Doreen Rey.</p>
+
+    <!-- NL -->
+    <div class="epk-grid fade-in" data-lang="nl">
+      <div class="epk-card">
+        <h4>Bio</h4>
+        <p>Doreen Rey is een Belgische zangeres, circle singing facilitator en muziektherapeute. Ze combineert vocale improvisatie, rouwwerk en haar eigen nummers met n'goni tot een unieke ervaring die raakt aan het hart van menselijke verbinding.</p>
+      </div>
+      <div class="epk-card">
+        <h4>Wat je kunt boeken</h4>
+        <p>Circle singing workshop (30-200 deelnemers) · Huiskamerconcert (10-40 personen) · Grief & Song sessie · Festival set (solo of met cirkel) · Workshop op maat voor organisaties</p>
+      </div>
+      <div class="epk-card">
+        <h4>Tech Rider</h4>
+        <p>Voor groepen tot 50 personen brengt Doreen haar eigen geluid mee. Voor grotere venues: PA met 2 monitoren, 1 DI voor n'goni, 1 vocale microfoon. Ruimte in cirkelopstelling.</p>
+        <a href="#" class="epk-download" onclick="openRider('nl'); return false;">→ Bekijk tech rider</a>
+      </div>
+      <div class="epk-card">
+        <h4>Foto's & Video</h4>
+        <p>Hoge resolutie persfoto's beschikbaar voor download. Videomateriaal van circle singing sessies en live optredens op aanvraag.</p>
+        <a href="#" class="epk-download">↓ Download persfoto's</a>
+      </div>
+    </div>
+    <!-- EN -->
+    <div class="epk-grid fade-in" data-lang="en">
+      <div class="epk-card">
+        <h4>Bio</h4>
+        <p>Doreen Rey is a Belgian singer, circle singing facilitator and music therapist. She combines vocal improvisation, grief work and her own songs with n'goni into a unique experience that touches the heart of human connection.</p>
+      </div>
+      <div class="epk-card">
+        <h4>What you can book</h4>
+        <p>Circle singing workshop (30-200 participants) · House concert (10-40 people) · Grief & Song session · Festival set (solo or with circle) · Custom workshop for organizations</p>
+      </div>
+      <div class="epk-card">
+        <h4>Tech Rider</h4>
+        <p>For groups up to 50, Doreen brings her own sound. For larger venues: PA with 2 monitors, 1 DI for n'goni, 1 vocal microphone. Space in circular setup.</p>
+        <a href="#" class="epk-download" onclick="openRider('en'); return false;">→ View tech rider</a>
+      </div>
+      <div class="epk-card">
+        <h4>Photos & Video</h4>
+        <p>High-resolution press photos available for download. Video material of circle singing sessions and live performances on request.</p>
+        <a href="#" class="epk-download">↓ Download press photos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <span class="section-tag" data-lang="nl">Boeken</span>
+    <span class="section-tag" data-lang="en">Book</span>
+    <h2 class="section-title" data-lang="nl">Boek Doreen</h2>
+    <h2 class="section-title" data-lang="en">Book Doreen</h2>
+
+    <!-- NL -->
+    <div class="booking-grid fade-in" data-lang="nl">
+      <div>
+        <p class="section-intro">Wil je een workshop, concert of sessie boeken? Vul het formulier in en ik neem zo snel mogelijk contact op. Of mail me direct op <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5c7cacacecccbc2e5c1cad7c0c0cbd7c0dc8bc6cac8">[email&#160;protected]</a></strong>.</p>
+        <div class="booking-types">
+          <div class="booking-type">
+            <h4>Circle Singing Workshop</h4>
+            <p>Voor festivals, organisaties, teambuildings, scholen</p>
+            <p class="price">€500 – €2.000</p>
+          </div>
+          <div class="booking-type">
+            <h4>Huiskamerconcert</h4>
+            <p>Intiem concert bij jou thuis, 10-40 personen</p>
+            <p class="price">Vanaf €200</p>
+          </div>
+          <div class="booking-type">
+            <h4>Grief & Song Sessie</h4>
+            <p>Rouwritueel met zang voor groepen of organisaties</p>
+            <p class="price">Op aanvraag</p>
+          </div>
+          <div class="booking-type">
+            <h4>Online Workshop</h4>
+            <p>Circle singing via Zoom, wereldwijd</p>
+            <p class="price">€15 – €30 p.p.</p>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <form id="bookingFormNL" onsubmit="handleBooking(event, 'nl')">
+          <div class="form-group">
+            <label>Naam</label>
+            <input type="text" name="name" required placeholder="Je naam">
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="email" required placeholder="je@email.com">
+          </div>
+          <div class="form-group">
+            <label>Organisatie (optioneel)</label>
+            <input type="text" name="org" placeholder="Naam organisatie">
+          </div>
+          <div class="form-group">
+            <label>Wat wil je boeken?</label>
+            <select name="type" required>
+              <option value="">Kies...</option>
+              <option>Circle Singing Workshop</option>
+              <option>Huiskamerconcert</option>
+              <option>Grief & Song Sessie</option>
+              <option>Online Workshop</option>
+              <option>Iets anders</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gewenste datum(s)</label>
+            <input type="text" name="date" placeholder="Bv. april 2026, flexibel">
+          </div>
+          <div class="form-group">
+            <label>Bericht</label>
+            <textarea name="message" placeholder="Vertel me over je idee, groepsgrootte, locatie..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Verstuur aanvraag</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- EN -->
+    <div class="booking-grid fade-in" data-lang="en">
+      <div>
+        <p class="section-intro">Want to book a workshop, concert or session? Fill in the form and I'll get back to you as soon as possible. Or email me directly at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="482a27272321262f082c273a2d2d263a2d31662b2725">[email&#160;protected]</a></strong>.</p>
+        <div class="booking-types">
+          <div class="booking-type">
+            <h4>Circle Singing Workshop</h4>
+            <p>For festivals, organizations, team buildings, schools</p>
+            <p class="price">€500 – €2,000</p>
+          </div>
+          <div class="booking-type">
+            <h4>House Concert</h4>
+            <p>Intimate concert at your home, 10-40 people</p>
+            <p class="price">From €200</p>
+          </div>
+          <div class="booking-type">
+            <h4>Grief & Song Session</h4>
+            <p>Grief ritual with song for groups or organizations</p>
+            <p class="price">On request</p>
+          </div>
+          <div class="booking-type">
+            <h4>Online Workshop</h4>
+            <p>Circle singing via Zoom, worldwide</p>
+            <p class="price">€15 – €30 p.p.</p>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <form id="bookingFormEN" onsubmit="handleBooking(event, 'en')">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="you@email.com">
+          </div>
+          <div class="form-group">
+            <label>Organization (optional)</label>
+            <input type="text" name="org" placeholder="Organization name">
+          </div>
+          <div class="form-group">
+            <label>What would you like to book?</label>
+            <select name="type" required>
+              <option value="">Choose...</option>
+              <option>Circle Singing Workshop</option>
+              <option>House Concert</option>
+              <option>Grief & Song Session</option>
+              <option>Online Workshop</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred date(s)</label>
+            <input type="text" name="date" placeholder="E.g. April 2026, flexible">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell me about your idea, group size, location..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container fade-in">
+    <h2 class="section-title" data-lang="nl">Blijf op de hoogte</h2>
+    <h2 class="section-title" data-lang="en">Stay in the loop</h2>
+    <p data-lang="nl">Ontvang maandelijks nieuws over sessies, nieuwe muziek en circle singing events. Geen spam, beloofd.</p>
+    <p data-lang="en">Get monthly updates about sessions, new music and circle singing events. No spam, promise.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" required data-lang="nl" placeholder="Je e-mailadres">
+      <input type="email" required data-lang="en" placeholder="Your email address">
+      <button type="submit" data-lang="nl">Inschrijven</button>
+      <button type="submit" data-lang="en">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <!-- NL -->
+    <div class="footer-grid" data-lang="nl">
+      <div>
+        <div class="footer-brand">Doreen Rey</div>
+        <p class="footer-desc">Zangeres, circle singing facilitator & muziektherapeute. Gevestigd in Antwerpen, beschikbaar wereldwijd.</p>
+      </div>
+      <div>
+        <h5>Navigatie</h5>
+        <ul>
+          <li><a href="#about">Over mij</a></li>
+          <li><a href="#aanbod">Aanbod</a></li>
+          <li><a href="#events">Evenementen</a></li>
+          <li><a href="#music">Muziek</a></li>
+          <li><a href="#epk">EPK</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#2a4845454143444d6a4e45584f4f44584f5304494547"><span class="__cf_email__" data-cfemail="1a7875757173747d5a7e75687f7f74687f6334797577">[email&#160;protected]</span></a></li>
+          <li><a href="#booking">Boek een workshop</a></li>
+          <li><a href="#">Antwerpen, België</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Volg mij</h5>
+        <ul>
+          <li><a href="https://instagram.com/doreenreymusic" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/watch?v=271bRW2DDDk" target="_blank">YouTube</a></li>
+          <li><a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" target="_blank">Spotify</a></li>
+          <li><a href="https://soundcloud.com/dorienreyners" target="_blank">SoundCloud</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- EN -->
+    <div class="footer-grid" data-lang="en">
+      <div>
+        <div class="footer-brand">Doreen Rey</div>
+        <p class="footer-desc">Singer, circle singing facilitator & music therapist. Based in Antwerp, available worldwide.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#aanbod">Offerings</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#epk">EPK</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#fc9e93939795929bbc98938e9999928e9985d29f9391"><span class="__cf_email__" data-cfemail="781a17171311161f381c170a1d1d160a1d01561b1715">[email&#160;protected]</span></a></li>
+          <li><a href="#booking">Book a workshop</a></li>
+          <li><a href="#">Antwerp, Belgium</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow me</h5>
+        <ul>
+          <li><a href="https://instagram.com/doreenreymusic" target="_blank">Instagram</a></li>
+          <li><a href="https://www.youtube.com/watch?v=271bRW2DDDk" target="_blank">YouTube</a></li>
+          <li><a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" target="_blank">Spotify</a></li>
+          <li><a href="https://soundcloud.com/dorienreyners" target="_blank">SoundCloud</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Doreen Rey. Made with love in Antwerp.</span>
+      <div class="social-links">
+        <a href="https://instagram.com/doreenreymusic" target="_blank" title="Instagram">IG</a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube">YT</a>
+        <a href="https://open.spotify.com/" target="_blank" title="Spotify">SP</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// LANGUAGE TOGGLE — class-based, no display conflicts
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelector('.lang-toggle').textContent = lang === 'nl' ? 'EN' : 'NL';
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('lang-hide', el.dataset.lang !== lang);
+  });
+}
+function toggleLang() {
+  setLang(document.documentElement.lang === 'nl' ? 'en' : 'nl');
+}
+// Initialize: hide EN elements on load
+document.addEventListener('DOMContentLoaded', () => setLang('nl'));
+
+// DARK MODE
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const isDark = current === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  updateThemeIcon(!isDark);
+}
+function updateThemeIcon(isDark) {
+  document.getElementById('theme-icon').innerHTML = isDark
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+}
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    updateThemeIcon(saved === 'dark');
+  } else if (prefersDark) {
+    updateThemeIcon(true);
+  }
+})();
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// SMOOTH SCROLL FOR NAV LINKS
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links').classList.remove('open');
+    }
+  });
+});
+
+// FADE-IN ON SCROLL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// FORM HANDLERS
+function handleBooking(e, lang) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  // In production: send to n8n webhook or email API
+  const msg = lang === 'nl'
+    ? 'Bedankt! Je aanvraag is verstuurd. Ik neem zo snel mogelijk contact op.'
+    : 'Thank you! Your request has been sent. I\'ll get back to you soon.';
+  alert(msg);
+  form.reset();
+}
+
+function handleNewsletter(e) {
+  e.preventDefault();
+  const lang = document.documentElement.lang;
+  const msg = lang === 'nl'
+    ? 'Bedankt voor je inschrijving! Check je inbox voor een bevestiging.'
+    : 'Thanks for subscribing! Check your inbox for confirmation.';
+  alert(msg);
+  e.target.reset();
+}
+
+function openRider(lang) {
+  const isNL = lang === 'nl';
+  const IMG1 = 'https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/5cc7874d-93b8-4772-a864-1deb6a3b31c2/ilsewolf-5465.JPG';
+  const IMG2 = 'https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/59dd442a-987d-4208-bfb4-a7d5ae281ba8/The+Way+Within+2023-11-07.jpeg';
+  const IMG3 = 'https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/0032f80b-5d75-4d53-8d38-5e85b46a6183/WhatsApp+Image+2024-12-24+at+21.47.10.jpeg';
+  const t = isNL ? {
+    title:'Technical & Hospitality Rider',tag:'Circle Singing \u00b7 Singer-Songwriter \u00b7 Grief & Song \u00b7 Muziektherapie',ver:'Versie maart 2026',
+    allergy_title:'\u26a0 LEVENSBEDREIGENDE ALLERGIE',allergy_text:'Doreen heeft een ernstige (anafylactische) allergie voor <strong>PINDA\'S</strong>. Er mogen GEEN pinda\'s, pindakaas, pinda-olie, of producten die pinda\'s bevatten aanwezig zijn in backstage, catering of directe omgeving. <strong>Dit is een medische noodzaak.</strong>',
+    h_artist:'Artiest',lbl:['Artiestennaam:','Volledige naam:','Gevestigd:','Setlengte:','Setup:','Afbraak:','Type:'],
+    val:['Doreen Rey','Dorien Reyners','Antwerpen, Belgi\u00eb','45\u201390 min (in overleg)','30 min (eigen) / 45 min (PA)','15 minuten','Circle singing, soloconcert, huiskamerconcert, grief & song, festival'],
+    h_tech:'Technische vereisten',
+    h_optA:'Optie A: Klein formaat (tot 50 pers.) \u2014 Eigen geluid',optA_intro:'Van de locatie is enkel nodig:',
+    optA:['Stroom: 1 stopcontact (230V) binnen 5m','Cirkelopstelling: min. 6\u00d76m (20-30) of 8\u00d78m (30-50)','Stoelen in kring (geen tafels/rijen) of kussens','Rustige ruimte zonder doorgaand verkeer'],
+    self_sound:'Voor kleine groepen is Doreen zelfvoorzienend qua geluid en opname.',
+    h_optB:'Optie B: Groot formaat (50+) \u2014 PA van locatie',th_item:'Onderdeel',th_spec:'Specificatie',
+    pa:['PA systeem','Geschikt voor zaalgrootte, stereo L/R'],mon:['Monitoren','2 wedges: 1 vocaal, 1 instrument'],mic:['Vocale microfoon','1\u00d7 SM58 of vergelijkbaar'],
+    di:['DI box','1\u00d7 actieve DI voor n\'goni (jack)'],sc:['Geluidscheck','Min. 30 min voor aanvang'],eng:['Geluidstechnicus','1 ervaren technicus volledig optreden'],
+    optB_note:'Optioneel: 2-4 area mics op deelnemers voor circle singing workshops.',
+    h_stage:'Podiumopstelling & Ruimte',
+    cs_t:'Circle Singing',cs:'Doreen in het midden van de kring. <strong>Geen podium nodig.</strong> Alle deelnemers in een kring.',cs_l:'<strong>Licht:</strong> Gelijkmatig warm, mensen moeten elkaar zien.',cs_c:'<strong>Klimaat:</strong> 18-22\u00b0C, ventilatie bij 50+.',
+    so_t:'Soloconcert / Huiskamerconcert',so:'Stoel zonder armleuningen, n\'goni op schoot, vocale mic op boomstandaard. Intiem.',so_l:'<strong>Licht:</strong> Warm spotlight, zacht licht publiek.',so_c:'<strong>Klimaat:</strong> 18-22\u00b0C, ruimte niet te groot.',
+    h_prac:'Praktisch',pr:['<strong>Parking:</strong> 1 gratis plek dicht bij ingang','<strong>Laad/los:</strong> Auto tot 10m van performance','<strong>WiFi:</strong> Toegang tot netwerk','<strong>Stroom:</strong> Min. 1 stopcontact kleedkamer'],
+    h_hosp:'Hospitality',allergy2_title:'\u26a0 ALLERGIE HERHALING',allergy2_text:'GEEN pinda\'s. Anafylactisch risico. Bij twijfel: booking@doreenrey.com.',
+    diet:'<strong>Dieet:</strong> VEGAN (geen vlees, vis, zuivel, eieren, honing).',allergy_line:'<strong>Allergie:</strong> DODELIJKE PINDA-ALLERGIE.',
+    bs_t:'Backstage',bs:['Warme vegan maaltijd (pindavrij), 1u voor aanvang','Vers fruit, noten (GEEN pinda\'s), hummus','Donkere chocolade (vegan, pindavrij)','Kruidenthee, groene thee + waterkoker','1,5L plat water, haverdrank'],
+    dur_t:'Tijdens',dur:['1 fles water op podium','1 kleine handdoek'],aft_t:'Na afloop',aft:['Warme maaltijd of \u20ac25 vergoeding'],dr_t:'Kleedkamer',dr:['Afsluitbaar, verwarmd, spiegel, stopcontact','Beschikbaar 1u voor en 30 min na'],
+    h_travel:'Transport & Overnachting',tr_h:['Regio','Transport','Overnachting'],
+    tr:[['Belgi\u00eb','\u20ac0,45/km heen+terug','Niet nodig'],['Buurlanden','Trein 2e kl. of km-vergoeding','Bij >200km'],['Internationaal','Vlucht/trein door organisator','Min. 3\u2605, eigen kamer']],
+    h_fees:'Financi\u00eble voorwaarden',fe_h:['Type','Richtprijs','Opmerking'],
+    fe:[['Circle singing workshop','\u20ac500\u2013\u20ac2.000','Duur + groepsgrootte'],['Huiskamerconcert','Vanaf \u20ac200','10-40 personen'],['Soloconcert','\u20ac500\u2013\u20ac2.000','45-90 min'],['Grief & Song','Op aanvraag','Maatwerk'],['Online (Zoom)','\u20ac15\u2013\u20ac30 p.p.','Wereldwijd']],
+    fe_note:'Excl. BTW, reiskosten, overnachting. Facturatie via VZW of SBK.',
+    h_rec:'Opname & Beeldrechten',rec:'<strong>Doreen neemt standaard alle optredens op</strong> met professionele audio- en video-apparatuur. Materiaal voor sociale media, website, EPK en subsidiedossiers. <strong>Artiest behoudt alle rechten.</strong>',
+    h_consent:'Toestemming deelnemers',con1:'Door deel te nemen geven deelnemers toestemming voor foto/video.',con2:'<strong>Organisator informeert deelnemers vooraf</strong> via:',
+    con_m:['Eventpagina/inschrijfformulier','Bord bij ingang','Mondelinge aankondiging'],con_opt:'Niet-gefilmd: melden bij artiest voor aanvang.',
+    h_org:'Beeldmateriaal organisator',org:'Organisator mag eigen beeldmateriaal maken. Kopie naar booking@doreenrey.com. <strong>Livestream alleen met schriftelijke toestemming.</strong>',
+    h_cancel:'Annulering',ca_h:['Termijn','Door organisator','Door artiest'],
+    ca:[['>30 dagen','Geen vergoeding','Geen vergoeding'],['14\u201330 dagen','50% cachet','Geen vergoeding'],['<14 dagen','100% cachet','Geen, tenzij kosten'],['Overmacht*','Geen vergoeding','']],
+    ca_note:'*Overmacht: ziekte (attest), natuurrampen, pandemie, overheidsmaatregelen.',
+    h_contact:'Contact',footer:'Dit document maakt deel uit van de overeenkomst. Wijzigingen via booking@doreenrey.com.',print_btn:'\ud83d\udda8 Afdrukken / PDF'
+  } : {
+    title:'Technical & Hospitality Rider',tag:'Circle Singing \u00b7 Singer-Songwriter \u00b7 Grief & Song \u00b7 Music Therapy',ver:'Version March 2026',
+    allergy_title:'\u26a0 LIFE-THREATENING ALLERGY',allergy_text:'Doreen has a severe (anaphylactic) allergy to <strong>PEANUTS</strong>. NO peanuts, peanut butter, peanut oil, or products containing peanuts in backstage, catering or vicinity. <strong>Medical necessity.</strong>',
+    h_artist:'Artist',lbl:['Artist name:','Full name:','Based in:','Set length:','Setup:','Breakdown:','Types:'],
+    val:['Doreen Rey','Dorien Reyners','Antwerp, Belgium','45\u201390 min (negotiable)','30 min (own) / 45 min (PA)','15 minutes','Circle singing, solo concert, house concert, grief & song, festival'],
+    h_tech:'Technical Requirements',
+    h_optA:'Option A: Small format (up to 50) \u2014 Own sound',optA_intro:'The venue only needs to provide:',
+    optA:['Power: 1 outlet (230V) within 5m','Circular setup: min. 6\u00d76m (20-30) or 8\u00d78m (30-50)','Chairs in circle (no tables/rows) or cushions','Quiet space, no through traffic'],
+    self_sound:'For small groups, Doreen is self-sufficient for sound and recording.',
+    h_optB:'Option B: Large format (50+) \u2014 Venue PA',th_item:'Item',th_spec:'Specification',
+    pa:['PA system','Suitable for room, stereo L/R'],mon:['Monitors','2 wedges: 1 vocal, 1 instrument'],mic:['Vocal mic','1\u00d7 SM58 or equivalent'],
+    di:['DI box','1\u00d7 active DI for n\'goni (jack)'],sc:['Soundcheck','Min. 30 min before doors'],eng:['Sound engineer','1 experienced, full performance'],
+    optB_note:'Optional: 2-4 area mics on participants for circle singing.',
+    h_stage:'Stage Setup & Space',
+    cs_t:'Circle Singing',cs:'Doreen in the center. <strong>No stage needed.</strong> All participants in a circle.',cs_l:'<strong>Lighting:</strong> Even warm light, people must see each other.',cs_c:'<strong>Climate:</strong> 18-22\u00b0C, ventilation for 50+.',
+    so_t:'Solo / House Concert',so:'Chair (no armrests), n\'goni on lap, vocal mic on boom. Intimate setup.',so_l:'<strong>Lighting:</strong> Warm spot on artist, soft on audience.',so_c:'<strong>Climate:</strong> 18-22\u00b0C, room not too large.',
+    h_prac:'Practical',pr:['<strong>Parking:</strong> 1 free spot near entrance','<strong>Load-in:</strong> Vehicle access within 10m','<strong>WiFi:</strong> Network access','<strong>Power:</strong> Min. 1 outlet in dressing room'],
+    h_hosp:'Hospitality',allergy2_title:'\u26a0 ALLERGY REMINDER',allergy2_text:'NO peanuts. Anaphylactic risk. When in doubt: booking@doreenrey.com.',
+    diet:'<strong>Diet:</strong> VEGAN (no meat, fish, dairy, eggs, honey).',allergy_line:'<strong>Allergy:</strong> FATAL PEANUT ALLERGY.',
+    bs_t:'Backstage',bs:['Warm vegan meal (peanut-free), 1h before','Fresh fruit, nuts (NO peanuts), hummus','Dark chocolate (vegan, peanut-free)','Herbal & green tea + kettle','1.5L still water, oat milk'],
+    dur_t:'During',dur:['1 bottle water on stage','1 small towel'],aft_t:'After',aft:['Warm meal or \u20ac25 allowance'],dr_t:'Dressing room',dr:['Lockable, heated, mirror, power','Available 1h before, 30 min after'],
+    h_travel:'Travel & Accommodation',tr_h:['Region','Transport','Accommodation'],
+    tr:[['Belgium','\u20ac0.45/km return','Not needed'],['Neighbours','Train 2nd class or mileage','If >200km one way'],['International','Flight/train by organizer','Min. 3\u2605, private room']],
+    h_fees:'Fees',fe_h:['Type','Fee range','Notes'],
+    fe:[['Circle singing workshop','\u20ac500\u2013\u20ac2,000','Duration + group size'],['House concert','From \u20ac200','10-40 people'],['Solo concert','\u20ac500\u2013\u20ac2,000','45-90 min'],['Grief & Song','On request','Custom'],['Online (Zoom)','\u20ac15\u2013\u20ac30 p.p.','Worldwide']],
+    fe_note:'Excl. VAT, travel, accommodation. Invoicing through VZW or SBK.',
+    h_rec:'Recording & Image Rights',rec:'<strong>Doreen records all performances by default</strong> with professional audio/video equipment. Material for social media, website, EPK and grants. <strong>Artist retains all rights.</strong>',
+    h_consent:'Participant consent',con1:'By participating, attendees consent to photo/video.',con2:'<strong>Organizer informs participants in advance</strong> via:',
+    con_m:['Event page / registration form','Sign at entrance','Verbal announcement'],con_opt:'Opt-out: notify artist before start.',
+    h_org:'Organizer footage',org:'Organizer may create own footage. Copy to booking@doreenrey.com. <strong>Livestream by written consent only.</strong>',
+    h_cancel:'Cancellation',ca_h:['Notice','By organizer','By artist'],
+    ca:[['>30 days','No fee owed','No fee owed'],['14\u201330 days','50% of fee','No fee owed'],['<14 days','100% of fee','No fee, except costs'],['Force majeure*','No fee either party','']],
+    ca_note:'*Force majeure: illness (certificate), natural disasters, pandemic, government measures.',
+    h_contact:'Contact',footer:'This document is part of the agreement. Modifications via booking@doreenrey.com.',print_btn:'\ud83d\udda8 Print / Save as PDF'
+  };
+  const li = a => a.map(x=>'<li>'+x+'</li>').join('');
+  const tr = a => '<tr><td><strong>'+a[0]+'</strong></td>'+a.slice(1).map(c=>'<td>'+c+'</td>').join('')+'</tr>';
+  const lv = t.lbl.map((l,i)=>'<p><strong>'+l+'</strong> '+t.val[i]+'</p>').join('');
+  const html = `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Doreen Rey \u2014 ${t.title}</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',Arial,sans-serif;color:#2C2C2C;font-size:10pt;line-height:1.6;background:#fff}
+@media print{@page{size:A4;margin:0}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{page-break-after:always;min-height:auto}.page:last-child{page-break-after:avoid}.no-print{display:none!important}}
+.page{max-width:210mm;margin:0 auto;padding:0}.cover{background:#2D4A3E;color:#F5EDE3;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 50px;min-height:100vh}
+.cover-accent{width:60px;height:3px;background:#C4704B;margin:0 auto 30px}.cover h1{font-family:'DM Serif Display',Georgia,serif;font-size:42pt;letter-spacing:-0.02em;margin-bottom:8px;color:#fff}
+.cover .sub{font-size:14pt;font-weight:300;color:#C4704B;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:40px}.cover .tag{font-size:11pt;font-weight:300;color:rgba(255,255,255,0.6);margin-bottom:50px}
+.cover .cb{border-top:1px solid rgba(255,255,255,0.15);padding-top:30px;font-size:9.5pt;color:rgba(255,255,255,0.5);line-height:2}.cover .cb strong{color:rgba(255,255,255,0.8)}
+.content{padding:40px 50px}.ph{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #2D4A3E;padding-bottom:10px;margin-bottom:30px}
+.ph .logo{font-family:'DM Serif Display',Georgia,serif;font-size:14pt;color:#2D4A3E}.ph .pt{font-size:8pt;text-transform:uppercase;letter-spacing:0.15em;color:#999}
+h2{font-family:'DM Serif Display',Georgia,serif;font-size:16pt;color:#2D4A3E;margin:25px 0 12px}h3{font-size:10pt;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#C4704B;margin:18px 0 8px}
+p{margin-bottom:8px;font-weight:300}strong{font-weight:600}ul{list-style:none;padding:0;margin-bottom:12px}ul li{padding-left:16px;position:relative;margin-bottom:4px;font-weight:300}
+ul li::before{content:'\u2013';position:absolute;left:0;color:#C4704B;font-weight:600}
+.alert{background:#FFF3F3;border-left:4px solid #B71C1C;padding:14px 18px;margin:15px 0;border-radius:0 6px 6px 0}.alert strong{color:#B71C1C}.alert p{margin:0;font-size:9.5pt;color:#5D1A1A}
+.info{background:#F0F4F0;border-left:4px solid #2D4A3E;padding:14px 18px;margin:15px 0;border-radius:0 6px 6px 0}.info p{margin:0;font-size:9.5pt;color:#2D4A3E}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:9.5pt}th{background:#2D4A3E;color:white;text-align:left;padding:8px 12px;font-weight:600;font-size:8.5pt;text-transform:uppercase;letter-spacing:0.08em}
+td{padding:8px 12px;border-bottom:1px solid #E8E0D8;font-weight:300}tr:nth-child(even) td{background:#FAF7F2}
+.tc{display:flex;gap:30px}.tc>div{flex:1}.pb{position:fixed;bottom:24px;right:24px;background:#C4704B;color:white;border:none;padding:12px 28px;border-radius:100px;font-family:'Outfit';font-size:11pt;font-weight:500;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:99}
+.pb:hover{background:#A85A38}@media(max-width:700px){.tc{flex-direction:column;gap:15px}.content{padding:24px 20px}.cover{padding:40px 24px}}</style></head><body>
+<button class="pb no-print" onclick="window.print()">${t.print_btn}</button>
+<div class="page cover"><div class="cover-accent"></div><h1>Doreen Rey</h1><div class="sub">${t.title}</div><div class="tag">${t.tag}</div>
+<img src="${IMG1}" alt="Doreen Rey" style="width:240px;height:240px;object-fit:cover;border-radius:50%;margin-bottom:40px;border:4px solid rgba(196,112,75,0.4);">
+<div class="cb"><strong>booking@doreenrey.com</strong><br>doreenrey.com \u00b7 @doreenreymusic<br>+32 496 83 98 58</div><p style="margin-top:20px;font-size:8pt;color:rgba(255,255,255,0.3)">${t.ver}</p></div>
+
+<div class="page"><div class="content"><div class="ph"><span class="logo">Doreen Rey</span><span class="pt">${t.title}</span></div>
+<div style="display:flex;gap:10px;margin-bottom:20px;border-radius:8px;overflow:hidden"><img src="${IMG2}" alt="Doreen Rey" style="flex:1;height:120px;object-fit:cover;border-radius:6px"><img src="${IMG3}" alt="Circle singing" style="flex:1;height:120px;object-fit:cover;border-radius:6px"></div>
+<div class="alert"><strong>${t.allergy_title}</strong><p>${t.allergy_text}</p></div>
+<h2>${t.h_artist}</h2><div class="tc"><div>${lv.split('</p>').slice(0,4).join('</p>')}</p></div><div>${lv.split('</p>').slice(4).join('</p>')}</div></div>
+<h2>${t.h_tech}</h2><h3>${t.h_optA}</h3><p>${t.optA_intro}</p><ul>${li(t.optA)}</ul><div class="info"><p>${t.self_sound}</p></div>
+<h3>${t.h_optB}</h3><table><tr><th>${t.th_item}</th><th>${t.th_spec}</th></tr>${[t.pa,t.mon,t.mic,t.di,t.sc,t.eng].map(tr).join('')}</table>
+<p style="font-size:9pt;color:#666">${t.optB_note}</p></div></div>
+
+<div class="page"><div class="content"><div class="ph"><span class="logo">Doreen Rey</span><span class="pt">${t.title}</span></div>
+<h2>${t.h_stage}</h2><div class="tc"><div style="background:#F0F4F0;padding:16px;border-radius:8px"><h3 style="margin-top:0">${t.cs_t}</h3><p>${t.cs}</p><p style="font-size:9pt;margin-top:8px">${t.cs_l}</p><p style="font-size:9pt">${t.cs_c}</p></div>
+<div style="background:#FAF3EC;padding:16px;border-radius:8px"><h3 style="margin-top:0">${t.so_t}</h3><p>${t.so}</p><p style="font-size:9pt;margin-top:8px">${t.so_l}</p><p style="font-size:9pt">${t.so_c}</p></div></div>
+<h2>${t.h_prac}</h2><div class="tc"><div>${t.pr.slice(0,2).map(p=>'<p>'+p+'</p>').join('')}</div><div>${t.pr.slice(2).map(p=>'<p>'+p+'</p>').join('')}</div></div>
+<h2>${t.h_hosp}</h2><div class="alert"><strong>${t.allergy2_title}</strong><p>${t.allergy2_text}</p></div><p>${t.diet}</p><p>${t.allergy_line}</p>
+<div class="tc" style="margin-top:15px"><div><h3>${t.bs_t}</h3><ul>${li(t.bs)}</ul></div><div><h3>${t.dur_t}</h3><ul>${li(t.dur)}</ul><h3>${t.aft_t}</h3><ul>${li(t.aft)}</ul><h3>${t.dr_t}</h3><ul>${li(t.dr)}</ul></div></div></div></div>
+
+<div class="page"><div class="content"><div class="ph"><span class="logo">Doreen Rey</span><span class="pt">${t.title}</span></div>
+<h2>${t.h_travel}</h2><table><tr>${t.tr_h.map(h=>'<th>'+h+'</th>').join('')}</tr>${t.tr.map(tr).join('')}</table>
+<h2>${t.h_fees}</h2><table><tr>${t.fe_h.map(h=>'<th>'+h+'</th>').join('')}</tr>${t.fe.map(tr).join('')}</table><p style="font-size:9pt;color:#666">${t.fe_note}</p>
+<h2>${t.h_rec}</h2><div class="info"><p>${t.rec}</p></div><h3>${t.h_consent}</h3><p>${t.con1}</p><p>${t.con2}</p><ul>${li(t.con_m)}</ul><p style="font-size:9pt;color:#666">${t.con_opt}</p>
+<h3>${t.h_org}</h3><p>${t.org}</p>
+<h2>${t.h_cancel}</h2><table><tr>${t.ca_h.map(h=>'<th>'+h+'</th>').join('')}</tr>${t.ca.map(r=>r[2]?tr(r):'<tr><td><strong>'+r[0]+'</strong></td><td colspan="2" style="text-align:center">'+r[1]+'</td></tr>').join('')}</table>
+<p style="font-size:8pt;color:#999">${t.ca_note}</p>
+<div style="margin-top:25px;border-top:2px solid #2D4A3E;padding-top:20px"><h2 style="margin-top:0">${t.h_contact}</h2>
+<div class="tc"><div><p><strong>Booking:</strong> booking@doreenrey.com</p><p><strong>${isNL?'Telefoon':'Phone'}:</strong> +32 496 83 98 58</p><p><strong>Website:</strong> doreenrey.com</p></div>
+<div><p><strong>Instagram:</strong> @doreenreymusic</p><p><strong>Spotify:</strong> Doreen Rey</p><p><strong>SoundCloud:</strong> soundcloud.com/dorienreyners</p></div></div></div>
+<p style="text-align:center;margin-top:25px;font-size:8.5pt;color:#999;font-style:italic">${t.footer}</p></div></div></body></html>`;
+  const w = window.open('', '_blank');
+  w.document.write(html);
+  w.document.close();
+}
+</script>
+
+</body>
+</html>
