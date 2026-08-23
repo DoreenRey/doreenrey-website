@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doreen Rey — Song · Community · Kinship</title>
+<meta content="Doreen Rey is a singer and circle singing facilitator based in Antwerp, Belgium. Music, community, grief, vulnerability and kinship." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Outfit:wght@300;400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --warm: #eeece4;
+  --cream: #f8f7f2;
+  --sand: #deddd3;
+  --terra: #9a5f49;
+  --terra-dark: #784638;
+  --forest: #4e5b4d;
+  --forest-light: #687364;
+  --charcoal: #171715;
+  --text: #272723;
+  --text-light: #68675f;
+  --gold: #8d8060;
+  --gold-light: #d8d3c4;
+  --white: #ffffff;
+  --nav-bg: rgba(248,247,242,.94);
+  --nav-border: rgba(23,23,21,.14);
+  --card-bg: #f8f7f2;
+  --card-border: rgba(23,23,21,.14);
+  --even-bg: #eeece4;
+  --input-bg: #fff;
+  --input-border: rgba(23,23,21,.18);
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Manrope', Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --warm: #1C1A17;
+  --cream: #141210;
+  --sand: #2A2520;
+  --terra: #D4835E;
+  --terra-dark: #C4704B;
+  --forest: #7DBFA8;
+  --forest-light: #5A9A84;
+  --charcoal: #E8E0D5;
+  --text: #D6CCBF;
+  --text-light: #9A918A;
+  --gold: #D4B878;
+  --gold-light: #3A3220;
+  --white: #141210;
+  --nav-bg: rgba(20, 18, 16, 0.94);
+  --nav-border: rgba(60, 55, 48, 0.4);
+  --card-bg: #1C1A17;
+  --card-border: rgba(80,72,62,0.4);
+  --even-bg: #1C1A17;
+  --input-bg: #242119;
+  --input-border: rgba(100,90,78,0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --warm: #1C1A17;
+    --cream: #141210;
+    --sand: #2A2520;
+    --terra: #D4835E;
+    --terra-dark: #C4704B;
+    --forest: #7DBFA8;
+    --forest-light: #5A9A84;
+    --charcoal: #E8E0D5;
+    --text: #D6CCBF;
+    --text-light: #9A918A;
+    --gold: #D4B878;
+    --gold-light: #3A3220;
+    --white: #141210;
+    --nav-bg: rgba(20, 18, 16, 0.94);
+    --nav-border: rgba(60, 55, 48, 0.4);
+    --card-bg: #1C1A17;
+    --card-border: rgba(80,72,62,0.4);
+    --even-bg: #1C1A17;
+    --input-bg: #242119;
+    --input-border: rgba(100,90,78,0.4);
+  }
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); color: var(--text); background: var(--cream); line-height: 1.75; overflow-x: hidden; letter-spacing: .005em; }
+
+/* SELECTION */
+::selection { background: var(--charcoal); color: var(--cream); }
+
+/* UTILITY */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+  transition: all 0.4s ease;
+}
+nav.scrolled { box-shadow: none; }
+.nav-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between; height: 82px;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 2.15rem; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--terra); }
+.lang-toggle {
+  background: transparent; border: none; padding: 0.4rem 0.3rem;
+  font-family: var(--sans); font-size: .68rem; font-weight: 600;
+  color: var(--text); cursor: pointer; letter-spacing: .12em;
+  transition: all 0.3s;
+}
+.lang-toggle:hover { color: var(--forest); }
+.nav-cta {
+  background: transparent; color: var(--forest); text-decoration: none;
+  padding: 0.55rem 1.4rem; font-size: .85rem; font-weight: 600;
+  transition: all 0.3s; letter-spacing: .02em; border: 1.5px solid var(--forest);
+}
+.nav-cta:hover { background: var(--warm); color: var(--text); transform: translateY(-1px); }
+
+/* MOBILE NAV */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--charcoal); margin: 5px 0; transition: all 0.3s; }
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links {
+    position: fixed; top: 74px; left: 0; right: 0; background: var(--cream);
+    flex-direction: column; padding: 2rem; gap: 1.5rem;
+    transform: translateY(-120%); transition: transform 0.4s ease;
+    border-bottom: 1px solid var(--sand);
+  }
+  .nav-links.open { transform: translateY(0); }
+}
+
+/* HERO */
+.hero {
+  min-height: 86vh; display: flex; align-items: center; justify-content: flex-start;
+  text-align: left; padding: 9rem 2.5rem 6rem; position: relative;
+  background: var(--cream); overflow: hidden;
+}
+.hero-bg-photo {
+  position: absolute; top: 0; left: 48%; right: 0; bottom: 0;
+  background: url('https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/5cc7874d-93b8-4772-a864-1deb6a3b31c2/ilsewolf-5465.JPG') center center / cover no-repeat;
+  opacity: .34; filter: grayscale(18%);
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(248,247,242,.98) 0%, rgba(248,247,242,.88) 42%, rgba(248,247,242,.08) 78%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 720px; }
+.hero-tag {
+  display: block; font-size: .62rem; font-weight: 400; letter-spacing: .20em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 1.8rem;
+}
+.hero-quote {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.75;
+  color: #292929;
+  max-width: 760px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+.hero-quote-author {
+  display: inline-block; margin-top: 0.9rem; font-size: 0.9em; font-weight: 600; letter-spacing: 0.02em;
+}
+.hero-sub {
+  font-size: .98rem; color: var(--text-light); max-width: 520px; margin: 0;
+  font-weight: 400; line-height: 1.9;
+}
+.scroll-hint { display:none; }
+
+/* UPDATED TITLE TYPOGRAPHY */
+.hero h1 {
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--charcoal);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.hero h1 em {
+  color: var(--forest);
+  font-style: normal;
+}
+
+/* SECTIONS */
+section { padding: 7.5rem 0; }
+section:nth-child(even) { background: var(--cream); }
+.section-tag {
+  font-size: .60rem; font-weight: 500; letter-spacing: .20em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 1.15rem; display: block;
+}
+.section-title {
+  font-family: var(--sans);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+.section-intro { font-size: 1rem; color: var(--text-light); max-width: 650px; margin-bottom: 3rem; font-weight: 400; line-height: 1.9; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: minmax(280px,.85fr) minmax(0,1.15fr); gap: 7rem; align-items: center; }
+.about-image {
+  aspect-ratio: 4/5; background: var(--sand); overflow: hidden;
+  position: relative;
+}
+.about-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.75) contrast(1.03); }
+.about-credentials {
+  display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 2rem;
+}
+.credential {
+  background: transparent; padding: .35rem .8rem;
+  font-size: .68rem; color: var(--text); font-weight: 500;
+  border: 1px solid rgba(23,23,21,.18); border-radius: 0; letter-spacing: .04em;
+}
+
+/* MUSIC */
+#music { background: var(--warm); }
+.music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.music-card {
+  background: transparent; border-radius: 0; overflow: hidden;
+  border: 1px solid rgba(23,23,21,.16);
+}
+.music-card-embed { width: 100%; height: 152px; border: none; border-radius: 0; }
+.music-links { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.music-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; border-radius: 0; text-decoration: none;
+  font-size: .68rem; font-weight: 600; letter-spacing: .10em; text-transform: uppercase;
+  transition: all 0.3s; border: 1px solid rgba(23,23,21,.28); color: var(--text);
+}
+.music-link:hover { border-color: var(--charcoal); background: var(--charcoal); color: var(--cream); }
+
+/* VIDEO */
+.video-container {
+  position: relative; width: 100%; max-width: 100%; margin: 0 auto 3rem;
+  border-radius: 0; overflow: hidden; aspect-ratio: 16/7;
+  background: var(--charcoal);
+}
+.video-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; color: var(--warm);
+  background: linear-gradient(90deg, rgba(23,23,21,.60), rgba(23,23,21,.12)),
+              url('https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/0032f80b-5d75-4d53-8d38-5e85b46a6183/WhatsApp+Image+2024-12-24+at+21.47.10.jpeg') center center / cover no-repeat;
+}
+.play-btn {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(248,247,242,.10);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,.65); transition: all 0.3s; cursor: pointer;
+}
+.play-btn:hover { background: var(--terra); border-color: var(--terra); transform: scale(1.08); }
+.play-btn svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+
+/* FOOTER */
+footer {
+  background: var(--charcoal); color: rgba(248,247,242,.62);
+  padding: 5rem 0 2rem;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand {
+  font-family: var(--sans); font-size: .9rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem;
+}
+.footer-desc { font-size: 0.88rem; line-height: 1.7; }
+footer h5 {
+  color: var(--white); font-size: .62rem; letter-spacing: .18em;
+  text-transform: uppercase; margin-bottom: 1rem; font-weight: 600;
+}
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 0.5rem; }
+footer ul a {
+  color: rgba(255,255,255,.5); text-decoration: none;
+  font-size: .82rem; transition: color 0.3s;
+}
+footer ul a:hover { color: var(--terra); }
+.footer-bottom {
+  border-top: 1px solid rgba(248,247,242,.16); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; flex-wrap: wrap; gap: 1rem;
+}
+.social-links { display: flex; gap: 1rem; }
+.social-links a {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.5); text-decoration: none; font-size: 0.8rem;
+  transition: all 0.3s;
+}
+.social-links a:hover { border-color: var(--terra); color: var(--terra); }
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container { padding: 0 1.4rem; }
+  .nav-inner { padding: 0 1.4rem; height: 74px; }
+  .nav-links {
+    top: 74px; background: var(--cream);
+    border-bottom: 1px solid var(--nav-border);
+  }
+  .hero {
+    min-height: 88vh; padding: 8.5rem 1.4rem 4rem;
+  }
+  .hero-bg-photo { left: 0; opacity: .18; }
+  .hero::after { background: rgba(248,247,242,.76); }
+  .hero-content { margin-left: 0; }
+  .hero h1 { font-size: clamp(3.3rem, 15vw, 5rem); }
+  section { padding: 5rem 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .video-container { aspect-ratio: 4/3; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* DARK MODE TOGGLE */
+.theme-toggle {
+  background: var(--sand); border: none; width: 34px; height: 34px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s; color: var(--text); font-size: 1rem;
+}
+.theme-toggle:hover { background: var(--terra); color: var(--cream); }
+.theme-toggle svg { width: 16px; height: 16px; }
+[data-theme="dark"] iframe[src*="soundcloud"] { filter: invert(1) hue-rotate(180deg); }
+
+/* LANGUAGE SWITCHING */
+.lang-hide { display: none !important; }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nav">
+<div class="nav-inner">
+<a class="nav-logo" href="#">Doreen Rey</a>
+<button aria-label="Menu" class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links">
+<li><a data-lang="nl" href="#about">Over mij</a><a data-lang="en" href="#about">About</a></li>
+<li><a data-lang="nl" href="#music">Muziek</a><a data-lang="en" href="#music">Music</a></li>
+<li><button class="lang-toggle" onclick="toggleLang()">EN</button></li>
+<li><button aria-label="Toggle dark mode" class="theme-toggle" onclick="toggleTheme()" title="Dark mode">
+<svg fill="none" id="theme-icon" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg-photo"></div>
+<div class="hero-content fade-in">
+<h1 data-lang="nl">Doreen Rey</h1>
+<h1 data-lang="en">Doreen Rey</h1>
+<span class="hero-tag" data-lang="nl">Muzikant · Circle Singing · Grief & Song</span>
+<span class="hero-tag" data-lang="en">Musician · Circle Singing · Grief & Song</span>
+<p class="hero-quote" data-lang="nl">&ldquo;The voice gets to the soul of a person more than any other instrument. Because it's the voice. It sings, it talks, it cries, it laughs, it squeals, it barks, it shouts, it whispers. There is no other instrument that can do that. We're born with it.&rdquo;<br/><span class="hero-quote-author">— Bobby McFerrin</span></p>
+<p class="hero-quote" data-lang="en">&ldquo;The voice gets to the soul of a person more than any other instrument. Because it's the voice. It sings, it talks, it cries, it laughs, it squeals, it barks, it shouts, it whispers. There is no other instrument that can do that. We're born with it.&rdquo;<br/><span class="hero-quote-author">— Bobby McFerrin</span></p>
+</div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section style="padding: 5rem 0; background: var(--cream);">
+<div class="container">
+<div class="video-container fade-in">
+<div class="video-placeholder">
+<div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"></polygon></svg></div>
+<span data-lang="nl" style="font-size: 0.85rem; opacity: 0.7;">Sizzle reel — Binnenkort beschikbaar</span>
+<span data-lang="en" style="font-size: 0.85rem; opacity: 0.7;">Sizzle reel — Coming soon</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--warm);">
+<div class="container">
+<div class="about-grid fade-in" data-lang="nl">
+<div class="about-image">
+<img alt="Doreen Rey" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/59dd442a-987d-4208-bfb4-a7d5ae281ba8/The+Way+Within+2023-11-07.jpeg"/>
+</div>
+<div>
+<span class="section-tag">Over mij</span>
+<h2 class="section-title">Doreen Rey</h2>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Ik geloof dat kwetsbaarheid de kracht heeft om de dynamieken in de wereld te beïnvloeden. Er is veel werk aan de winkel, collectief trauma is een feit. Als onze schaduwkanten en die van de samenleving steeds minder taboe worden en we collectief leren om de minder prettige gevoelens (boosheid, verdriet, pijn, angst) te voelen, dan zullen we ook steeds meer in contact komen met onze bron van onvoorwaardelijke liefde. Individueel, collectief, maatschappelijk.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Doorheen de processen om eigen trauma te helen -een non-stop proces- is muziek mijn medicijn. Ik zing over de groeipijnen op mijn ontdekkingstocht en de inzichten die daaruit voortkomen. Eigen trauma, collectief trauma en de pijn van de Aarde. Een andere overtuiging is dat muziek en samen zingen echte verbinding creëert. Dit is zo welkom in deze chaotische tijden van ontrafeling en <a href="https://andnowwhat.be/about/glossary/" target="_blank">collapse</a>.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Ik engageer me om steeds meer inzicht en bewustzijn op te bouwen over mijn eigen privileges, rang en macht, kolonisatie, genocides, intergenerationeel trauma, onderdrukking (menselijke en niet-menselijke wezens), overshoot en collapse, racisme,… Als mijn groeiend bewustzijn in vruchtbare grond verankert, kan ik het meer en meer uitdragen tijdens mijn workshops en concerten.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Langzaamaan zaden zaaien en componeren/composteren van de diepe verandering die ik in de wereld wil zien: het creëren van community, mensen samenbrengen om te zingen, rouwcirkels organiseren,… We moeten dit niet alleen doen!</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">In kinship!</p>
+</div>
+</div>
+
+<div class="about-grid fade-in" data-lang="en">
+<div class="about-image">
+<img alt="Doreen Rey" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/59dd442a-987d-4208-bfb4-a7d5ae281ba8/The+Way+Within+2023-11-07.jpeg"/>
+</div>
+<div>
+<span class="section-tag">About me</span>
+<h2 class="section-title">Doreen Rey</h2>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">I believe vulnerability has the power to influence the dynamics of the world. There is much work to be made; collective trauma is a fact. If our shadow sides, and those of society, become less and less taboo, and if we collectively learn to feel the less pleasant emotions (anger, grief, pain, fear), we will also increasingly come into contact with our source of unconditional love. Individually, collectively, socially.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Through the processes of healing my own trauma — a non-stop process — music is my medicine. I sing about the growing pains of my journey of discovery and the insights that emerge from them. Personal trauma, collective trauma and the pain of the Earth. Another belief of mine is that music and singing together create real connection. This is so welcome in these chaotic times of unraveling and <a href="https://andnowwhat.be/about/glossary/" target="_blank">collapse</a>.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">I am committed to continuously building insight and awareness around my own privileges, rank and power, colonization, genocides, intergenerational trauma, oppression (of human and non-human beings), overshoot and collapse, racism,… If my growing awareness is rooted in fertile ground, I can increasingly carry it into my workshops and concerts.</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">Little by little, sowing seeds and composing/composting the deep change I want to see in the world: creating community, bringing people together to sing, organizing grief circles,… We do not have to do this alone!</p>
+<p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem;">In kinship!</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+<div class="container">
+<span class="section-tag" data-lang="nl">Muziek</span>
+<span class="section-tag" data-lang="en">Music</span>
+<h2 class="section-title" data-lang="nl">Beluister mijn muziek</h2>
+<h2 class="section-title" data-lang="en">Listen to my music</h2>
+
+<div class="music-grid fade-in">
+<div class="music-card">
+<iframe allow="autoplay" frameborder="no" height="166" loading="lazy" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dorienreyners&amp;color=%23C4704B&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false" width="100%"></iframe>
+</div>
+<div class="music-card" style="display: flex; align-items: center; justify-content: center; padding: 2rem; flex-direction: column; gap: 1rem;">
+<p data-lang="nl" style="color: var(--text-light); text-align: center; font-size: 0.95rem;">4 singles op Spotify & YouTube. Demo's voor community singing op SoundCloud.</p>
+<p data-lang="en" style="color: var(--text-light); text-align: center; font-size: 0.95rem;">4 singles on Spotify & YouTube. Community singing demos on SoundCloud.</p>
+<div class="music-links">
+<a class="music-link" href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" target="_blank">Spotify</a>
+<a class="music-link" href="https://soundcloud.com/dorienreyners" target="_blank">SoundCloud</a>
+<a class="music-link" href="https://www.youtube.com/watch?v=271bRW2DDDk" target="_blank">YouTube</a>
+</div>
+</div>
+</div>
+
+<!-- Singles -->
+<h3 data-lang="nl" style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 1.5rem;">Singles</h3>
+<h3 data-lang="en" style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 1.5rem;">Singles</h3>
+<div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;">
+<div class="music-card" style="padding: 1.5rem;">
+<img alt="Safe Enough" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/6266c798-2c45-4f8d-b180-b2c1aab7d009/efaa16cc-7618-4b79-959e-bad7440d2d9d.jpeg" style="width:100%; margin-bottom: 1rem;"/>
+<h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Safe Enough</h4>
+<p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2024</p>
+<div style="display: flex; gap: 0.5rem;">
+<a class="music-link" href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">Spotify</a>
+<a class="music-link" href="https://www.youtube.com/watch?v=271bRW2DDDk" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">YouTube</a>
+</div>
+</div>
+<div class="music-card" style="padding: 1.5rem;">
+<img alt="The Way Within" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/b149d0ac-177a-4715-86f0-c651eb2ba7e0/The+Way+Within+artwork.jpeg" style="width:100%; margin-bottom: 1rem;"/>
+<h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">The Way Within</h4>
+<p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+<div style="display: flex; gap: 0.5rem;">
+<a class="music-link" href="https://open.spotify.com/track/0sSb3uck2er0i6hVor529Z" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">Spotify</a>
+<a class="music-link" href="https://www.youtube.com/watch?v=VVDPPhgVQY0" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">YouTube</a>
+</div>
+</div>
+<div class="music-card" style="padding: 1.5rem;">
+<img alt="Come Home" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/f1ea382b-7268-4dd8-8a35-ee250cb5a181/bb2136de-8c2-4af2-b1d6-8a55f79e8d51.JPG" style="width:100%; margin-bottom: 1rem;"/>
+<h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Come Home</h4>
+<p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+<div style="display: flex; gap: 0.5rem;">
+<a class="music-link" href="https://open.spotify.com/track/5wsFQDHi5ORFe3HwT13MGC" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">Spotify</a>
+<a class="music-link" href="https://www.youtube.com/watch?v=qLP6BWMKwHQ" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">YouTube</a>
+</div>
+</div>
+<div class="music-card" style="padding: 1.5rem;">
+<img alt="Everything In Time" src="https://images.squarespace-cdn.com/content/v1/64b6625e64fdbd62b757349c/1feb4ac5-bb8b-49ad-a746-ac199c0e7a2f/7d266b29-f6dc-4195-b5a8-8824ec0fd30a.jpeg" style="width:100%; margin-bottom: 1rem;"/>
+<h4 style="font-family: var(--serif); font-size: 1.05rem; color: var(--forest);">Everything In Time</h4>
+<p style="font-size: 0.8rem; color: var(--text-light); margin: 0.3rem 0 0.8rem;">Single — 2023</p>
+<div style="display: flex; gap: 0.5rem;">
+<a class="music-link" href="https://open.spotify.com/track/0XVE1wfJYaujet2Z34Wwvb" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">Spotify</a>
+<a class="music-link" href="https://www.youtube.com/watch?v=xW30BGWlWZk" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;" target="_blank">YouTube</a>
+</div>
+</div>
+</div>
+
+<!-- Community Singing Demos -->
+<h3 data-lang="nl" style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 0.5rem;">Community Singing Demo's</h3>
+<h3 data-lang="en" style="font-family: var(--serif); font-size: 1.3rem; color: var(--forest); margin: 3rem 0 0.5rem;">Community Singing Demos</h3>
+<p data-lang="nl" style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300;">Meerstemmige opnames van mijn workshops — een experiment in community singing. Beluister ze op SoundCloud.</p>
+<p data-lang="en" style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300;">Polyphonic recordings from my workshops — an experiment in community singing. Listen on SoundCloud.</p>
+<div class="music-grid fade-in">
+<div class="music-card" style="padding: 0;">
+<iframe allow="autoplay" frameborder="no" height="300" loading="lazy" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dorienreyners&amp;color=%232D4A3E&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=true" width="100%"></iframe>
+</div>
+<div class="music-card" style="padding: 0; overflow: hidden; border-radius: 0.75rem;">
+<a href="https://www.youtube.com/watch?v=c5am11UEdxo" style="display:block;position:relative;border-radius:0.75rem;overflow:hidden;height:300px;background:#1a1a1a;" target="_blank">
+<img alt="Doreen Rey - Community Singing" src="https://img.youtube.com/vi/c5am11UEdxo/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.85;"/>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(196,112,75,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+<svg fill="white" height="24" viewBox="0 0 24 24" width="24"><polygon points="8,5 20,12 8,19"></polygon></svg>
+</div>
+<span data-lang="nl" style="position:absolute;bottom:14px;left:16px;color:white;font-size:0.85rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);">▶ Bekijk op YouTube</span>
+<span data-lang="en" style="position:absolute;bottom:14px;left:16px;color:white;font-size:0.85rem;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.6);">▶ Watch on YouTube</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<!-- NL -->
+<div class="footer-grid" data-lang="nl">
+<div>
+<div class="footer-brand">Doreen Rey</div>
+<p class="footer-desc">Zangeres, circle singing facilitator & muzikante. Gevestigd in Antwerpen, beschikbaar wereldwijd.</p>
+</div>
+<div>
+<h5>Navigatie</h5>
+<ul>
+<li><a href="#about">Over mij</a></li>
+<li><a href="#music">Muziek</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact</h5>
+<ul>
+<li><a href="mailto:info@doreenrey.be">info@doreenrey.be</a></li>
+<li><a href="#">Antwerpen, België</a></li>
+</ul>
+</div>
+<div>
+<h5>Volg mij</h5>
+<ul>
+<li><a href="https://instagram.com/doreenreymusic" target="_blank">Instagram</a></li>
+<li><a href="https://www.youtube.com/watch?v=271bRW2DDDk" target="_blank">YouTube</a></li>
+<li><a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" target="_blank">Spotify</a></li>
+<li><a href="https://soundcloud.com/dorienreyners" target="_blank">SoundCloud</a></li>
+</ul>
+</div>
+</div>
+
+<!-- EN -->
+<div class="footer-grid" data-lang="en">
+<div>
+<div class="footer-brand">Doreen Rey</div>
+<p class="footer-desc">Singer, circle singing facilitator & musician. Based in Antwerp, available worldwide.</p>
+</div>
+<div>
+<h5>Navigate</h5>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#music">Music</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact</h5>
+<ul>
+<li><a href="mailto:info@doreenrey.be">info@doreenrey.be</a></li>
+<li><a href="#">Antwerp, Belgium</a></li>
+</ul>
+</div>
+<div>
+<h5>Follow me</h5>
+<ul>
+<li><a href="https://instagram.com/doreenreymusic" target="_blank">Instagram</a></li>
+<li><a href="https://www.youtube.com/watch?v=271bRW2DDDk" target="_blank">YouTube</a></li>
+<li><a href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I" target="_blank">Spotify</a></li>
+<li><a href="https://soundcloud.com/dorienreyners" target="_blank">SoundCloud</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 Doreen Rey. Made with love in Antwerp.</span>
+<div class="social-links">
+<a href="https://instagram.com/doreenreymusic" target="_blank" title="Instagram">IG</a>
+<a href="https://youtube.com/" target="_blank" title="YouTube">YT</a>
+<a href="https://open.spotify.com/" target="_blank" title="Spotify">SP</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// LANGUAGE TOGGLE
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelector('.lang-toggle').textContent = lang === 'nl' ? 'EN' : 'NL';
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('lang-hide', el.dataset.lang !== lang);
+  });
+}
+function toggleLang() {
+  setLang(document.documentElement.lang === 'nl' ? 'en' : 'nl');
+}
+document.addEventListener('DOMContentLoaded', () => setLang('nl'));
+
+// DARK MODE
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const isDark = current === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  updateThemeIcon(!isDark);
+}
+function updateThemeIcon(isDark) {
+  document.getElementById('theme-icon').innerHTML = isDark
+    ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+}
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    updateThemeIcon(saved === 'dark');
+  } else if (prefersDark) {
+    updateThemeIcon(true);
+  }
+})();
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// SMOOTH SCROLL FOR NAV LINKS
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links').classList.remove('open');
+    }
+  });
+});
+
+// FADE-IN ON SCROLL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
