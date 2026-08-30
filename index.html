@@ -445,62 +445,71 @@ footer ul a:hover { color: var(--terra); }
   <h2 class="section-title" data-lang="nl">Aankomende Evenementen</h2>
   <h2 class="section-title" data-lang="en">Upcoming Events</h2>
 
-  <div class="music-grid fade-in">
-    <div class="music-card" style="padding: 0; overflow: hidden;">
-      <img alt="Sing 4 Connection — Dance 4 Joy" src="https://github.com/DoreenRey/doreenrey-website/blob/main/2026%2008%2022%20Sing4Connection%20alle%20data.png?raw=true" style="width:100%; display:block;"/>
+  <div class="fade-in" style="display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
+    
+    <!-- LEFT: Poster Image (Smaller) -->
+    <div style="overflow: hidden;">
+      <img alt="Sing 4 Connection — Dance 4 Joy" src="https://github.com/DoreenRey/doreenrey-website/blob/main/2026%2008%2022%20Sing4Connection%20alle%20data.png?raw=true" style="width:100%; display:block; box-shadow: 0 4px 12px rgba(23,23,21,.15);"/>
+    </div>
+
+    <!-- RIGHT: Event Details -->
+    <div>
       
-      <div style="padding: 2rem;">
-        
-        <h3 style="font-family: var(--sans); font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 700; color: var(--charcoal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem;">
-          <span data-lang="nl">Sing4Connection @ Edegem</span>
-          <span data-lang="en">Sing4Connection @ Edegem</span>
-        </h3>
+      <!-- Title -->
+      <h3 style="font-family: var(--sans); font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 700; color: var(--charcoal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem;">
+        <span data-lang="nl">Sing4Connection @ Edegem</span>
+        <span data-lang="en">Sing4Connection @ Edegem</span>
+      </h3>
 
-        <div style="display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
-          <div style="background: var(--terra-dark); color: var(--white); padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; border-radius: 0;">
-            📅 5 Sept • 24 Okt • 14 Nov<br/><strong style="font-size: 1.1rem;">2026</strong>
-          </div>
-          <div style="background: var(--forest); color: var(--white); padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; border-radius: 0;">
-            🕒 19u30 - 20u45
-          </div>
+      <!-- Dates Badge -->
+      <div style="display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+        <div style="background: var(--terra-dark); color: var(--white); padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; border-radius: 0;">
+          📅 5 Sept • 24 Okt • 14 Nov<br/><strong style="font-size: 1.1rem;">2026</strong>
         </div>
-
-        <div data-lang="nl">
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-            Doreen Rey biedt een warm, laagdrempelig concert aan, waarin haar solovocalen de brug slaan tussen kunst en gemeenschap. Het concert is een dialoog: Doreen zingt de hoofdlijnen, en het publiek wordt uitgenodigd om de herhalende refreinen mee te zingen. De composities zijn bewust eenvoudig, zodat iedereen – ongeacht ervaring – direct kan meezingen.
-          </p>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-            Muziek is hier geen product, maar een proces van verbinding. De stem van Doreen Rey fungeert als een veilig anker, een uitnodiging om kwetsbaar te zijn zonder prestatiedruk.
-          </p>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 0.5rem;">
-            <strong>Nadien is er een dansfeest: Dance for Joy!</strong> In samenwerking met <a href="https://www.dezachteomwenteling.be/" target="_blank" style="color: var(--terra); text-decoration: none; font-weight: 600;">De Zachte Omwenteling</a>.
-          </p>
+        <div style="background: var(--forest); color: var(--white); padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; border-radius: 0;">
+          🕒 19u30 - 20u45
         </div>
-
-        <div data-lang="en" class="lang-hide">
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-            Doreen Rey offers a warm, accessible concert where solo vocals bridge art and community. It's a dialogue: Doreen sings the main lines, inviting the audience to join the repeating refrains. Compositions are intentionally simple, allowing everyone – regardless of experience – to sing along immediately.
-          </p>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-            Music here is not a product, but a process of connection. Doreen's voice serves as a safe anchor, inviting vulnerability without performance pressure.
-          </p>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 0.5rem;">
-            <strong>Afterwards: Dance for Joy!</strong> In collaboration with <a href="https://www.dezachteomwenteling.be/" target="_blank" style="color: var(--terra); text-decoration: none; font-weight: 600;">De Zachte Omwenteling</a>.
-          </p>
-        </div>
-
-        <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 1rem; margin-top: 1.5rem;">
-          <p style="font-size: 0.88rem; color: var(--text); font-weight: 600; margin-bottom: 0.5rem;">📍 Danscafé 't Centrum</p>
-          <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Strijdersstraat 35, 2650 Edegem</p>
-          <p style="font-size: 0.88rem; color: var(--terra); font-weight: 600; margin-top: 0.5rem;">💶 Vrije Bijdrage</p>
-        </div>
-
-        <a class="music-link" href="https://www.dezachteomwenteling.be/" target="_blank" style="margin-top: 1.5rem; display: inline-block;">
-          <span data-lang="nl">Meer Info</span>
-          <span data-lang="en">More Info</span>
-        </a>
-
       </div>
+
+      <!-- Description NL -->
+      <div data-lang="nl">
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
+          Doreen Rey biedt een warm, laagdrempelig concert aan, waarin haar solovocalen de brug slaan tussen kunst en gemeenschap. Het concert is een dialoog: Doreen zingt de hoofdlijnen, en het publiek wordt uitgenodigd om de herhalende refreinen mee te zingen. De composities zijn bewust eenvoudig, zodat iedereen – ongeacht ervaring – direct kan meezingen.
+        </p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
+          Muziek is hier geen product, maar een proces van verbinding. De stem van Doreen Rey fungeert als een veilig anker, een uitnodiging om kwetsbaar te zijn zonder prestatiedruk.
+        </p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 0.5rem;">
+          <strong>Nadien is er een dansfeest: Dance for Joy!</strong> In samenwerking met <a href="https://www.dezachteomwenteling.be/" target="_blank" style="color: var(--terra); text-decoration: none; font-weight: 600;">De Zachte Omwenteling</a>.
+        </p>
+      </div>
+
+      <!-- Description EN -->
+      <div data-lang="en" class="lang-hide">
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
+          Doreen Rey offers a warm, accessible concert where solo vocals bridge art and community. It's a dialogue: Doreen sings the main lines, inviting the audience to join the repeating refrains. Compositions are intentionally simple, allowing everyone – regardless of experience – to sing along immediately.
+        </p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
+          Music here is not a product, but a process of connection. Doreen's voice serves as a safe anchor, inviting vulnerability without performance pressure.
+        </p>
+        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 0.5rem;">
+          <strong>Afterwards: Dance for Joy!</strong> In collaboration with <a href="https://www.dezachteomwenteling.be/" target="_blank" style="color: var(--terra); text-decoration: none; font-weight: 600;">De Zachte Omwenteling</a>.
+        </p>
+      </div>
+
+      <!-- Location Card -->
+      <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 1rem; margin-top: 1.5rem;">
+        <p style="font-size: 0.88rem; color: var(--text); font-weight: 600; margin-bottom: 0.5rem;">📍 Danscafé 't Centrum</p>
+        <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Strijdersstraat 35, 2650 Edegem</p>
+        <p style="font-size: 0.88rem; color: var(--terra); font-weight: 600; margin-top: 0.5rem;">💶 Vrije Bijdrage</p>
+      </div>
+
+      <!-- CTA Button -->
+      <a class="music-link" href="https://www.dezachteomwenteling.be/" target="_blank" style="margin-top: 1.5rem; display: inline-block;">
+        <span data-lang="nl">Meer Info</span>
+        <span data-lang="en">More Info</span>
+      </a>
+
     </div>
   </div>
 </div>
