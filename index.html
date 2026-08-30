@@ -359,6 +359,15 @@ footer ul a:hover { color: var(--terra); }
 
 /* LANGUAGE SWITCHING */
 .lang-hide { display: none !important; }
+/* MOBILE: Events verticaal */
+@media (max-width: 768px) {
+  #events .fade-in {
+    grid-template-columns: 1fr !important;
+  }
+  #events .fade-in > div:first-child {
+    margin-bottom: 2rem;
+  }
+}
 </style>
 </head>
 <body>
