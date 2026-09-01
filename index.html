@@ -368,53 +368,131 @@ footer ul a:hover { color: var(--terra); }
     margin-bottom: 2rem;
   }
 }
+/* NEWSLETTER NAV BUTTON */
+.newsletter-nav-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.newsletter-nav-button:hover {
+  color: var(--terra);
+}
+
+
+/* NEWSLETTER MODAL */
+.newsletter-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.newsletter-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.newsletter-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 21, 0.72);
+  cursor: pointer;
+}
+
+.newsletter-modal-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  background: var(--cream);
+  border: 1px solid var(--card-border);
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(23, 23, 21, 0.25);
+  transform: translateY(15px);
+  transition: transform 0.25s ease;
+}
+
+.newsletter-modal.is-open .newsletter-modal-content {
+  transform: translateY(0);
+}
+
+.newsletter-modal-inner {
+  text-align: center;
+}
+
+.newsletter-modal-inner .section-tag {
+  margin-bottom: 1rem;
+}
+
+.newsletter-modal-inner .section-title {
+  margin-bottom: 2rem;
+}
+
+.newsletter-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.newsletter-close:hover {
+  color: var(--terra);
+}
+
+body.newsletter-open {
+  overflow: hidden;
+}
+
+
+/* MOBILE NEWSLETTER MODAL */
+@media (max-width: 600px) {
+  .newsletter-modal {
+    padding: 1rem;
+  }
+
+  .newsletter-modal-content {
+    padding: 2.5rem 1.25rem 2rem;
+    max-height: calc(100vh - 2rem);
+  }
+}
 </style>
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2606266');
+</script>
+<!-- End MailerLite Universal -->
+  
 </head>
 <body>
 <!-- NAV -->
 <nav id="nav">
-<!-- NEWSLETTER SECTION (COMPACT) -->
-<section id="newsletter" style="background: var(--even-bg); padding: 2rem 0;">
-<div class="container" style="text-align: center; max-width: 500px; margin: 0 auto;">
-  
-  <!-- Title -->
-  <h3 style="font-family: var(--sans); font-size: 1.4rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem;">
-    <span data-lang="nl">Schrijf je in voor de nieuwsbrief van Doreen Rey</span>
-    <span data-lang="en">Subscribe to Doreen Rey newsletter</span>
-  </h3>
-  
-  <!-- Subtitle -->
-  <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.5; margin-bottom: 1.5rem;">
-    <span data-lang="nl">Vocale Impro & Circlesongs, concerten + meer…</span>
-    <span data-lang="en">Vocal Impro & Circlesongs, concerts + more…</span>
-  </p>
-  
-  <!-- Form -->
-  <form action="https://formspree.io/f/JOUW_FORMSPREE_CODE" method="POST" style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 350px; margin: 0 auto;">
-    
-    <!-- Email Input -->
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      placeholder="jouw@email.com"
-      required 
-      style="padding: 0.75rem; border: 1px solid var(--card-border); border-radius: 4px; font-size: 0.95rem; font-family: var(--sans);"
-    />
-    
-    <!-- Submit Button -->
-    <button 
-      type="submit" 
-      class="music-link" 
-      style="padding: 0.75rem 1.5rem; font-size: 0.95rem; font-weight: 600; cursor: pointer; background: var(--terra); color: white; border: none; border-radius: 4px; transition: background 0.3s;"
-    >
-      <span data-lang="nl">Inschrijven</span>
-      <span data-lang="en">Subscribe</span>
-    </button>
-  </form>
-  
-</div>
-</section>
 <div class="nav-inner">
 <a class="nav-logo" href="#">Doreen Rey</a>
 <button aria-label="Menu" class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -424,6 +502,14 @@ footer ul a:hover { color: var(--terra); }
 <li><a data-lang="nl" href="#about">Over mij</a><a data-lang="en" href="#about">About</a></li>
 <li><a data-lang="nl" href="#events">Agenda</a><a data-lang="en" href="#events">Events</a></li>
 <li><a data-lang="nl" href="#music">Muziek</a><a data-lang="en" href="#music">Music</a></li>
+
+<li>
+  <button class="newsletter-nav-button" onclick="openNewsletter()">
+    <span data-lang="nl">Nieuwsbrief</span>
+    <span data-lang="en">Newsletter</span>
+  </button>
+</li>
+  
 <li><button class="lang-toggle" onclick="toggleLang()">EN</button></li>
 <li><button aria-label="Toggle dark mode" class="theme-toggle" onclick="toggleTheme()" title="Dark mode">
 <svg fill="none" id="theme-icon" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -1102,6 +1188,69 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+<!-- NEWSLETTER MODAL -->
+<div id="newsletter-modal" class="newsletter-modal" aria-hidden="true">
+
+  <div class="newsletter-overlay" onclick="closeNewsletter()"></div>
+
+  <div class="newsletter-modal-content" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+
+    <button
+      class="newsletter-close"
+      type="button"
+      aria-label="Close newsletter"
+      onclick="closeNewsletter()"
+    >
+      ×
+    </button>
+
+    <div class="newsletter-modal-inner">
+
+      <span class="section-tag" data-lang="nl">Nieuwsbrief</span>
+      <span class="section-tag" data-lang="en">Newsletter</span>
+
+      <h2 id="newsletter-title" class="section-title">
+        <span data-lang="nl">Schrijf je in voor de nieuwsbrief</span>
+        <span data-lang="en">Subscribe to the newsletter</span>
+      </h2>
+
+      <div class="ml-embedded" data-form="e3vClg"></div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openNewsletter() {
+  const modal = document.getElementById('newsletter-modal');
+
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+
+  document.body.classList.add('newsletter-open');
+
+  const closeButton = modal.querySelector('.newsletter-close');
+  if (closeButton) {
+    closeButton.focus();
+  }
+}
+
+function closeNewsletter() {
+  const modal = document.getElementById('newsletter-modal');
+
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+
+  document.body.classList.remove('newsletter-open');
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeNewsletter();
+  }
+});
 </script>
 </body>
 </html>
