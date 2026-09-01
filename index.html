@@ -417,11 +417,11 @@ footer ul a:hover { color: var(--terra); }
   z-index: 1;
   width: min(100%, 560px);
   max-height: calc(100vh - 3rem);
-  overflow-y: auto;
-  background: var(--cream);
-  border: 1px solid var(--card-border);
-  padding: 3rem;
-  box-shadow: 0 20px 60px rgba(23, 23, 21, 0.25);
+  overflow: visible;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
   transform: translateY(15px);
   transition: transform 0.25s ease;
 }
@@ -432,6 +432,7 @@ footer ul a:hover { color: var(--terra); }
 
 .newsletter-modal-inner {
   text-align: center;
+  width: 100%;
 }
 
 .newsletter-modal-inner .section-tag {
@@ -444,17 +445,18 @@ footer ul a:hover { color: var(--terra); }
 
 .newsletter-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: -3rem;
+  right: 0;
   width: 36px;
   height: 36px;
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--text);
+  color: var(--cream);
   font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
+  z-index: 2;
 }
 
 .newsletter-close:hover {
@@ -473,8 +475,13 @@ body.newsletter-open {
   }
 
   .newsletter-modal-content {
-    padding: 2.5rem 1.25rem 2rem;
+    padding: 0;
     max-height: calc(100vh - 2rem);
+  }
+
+  .newsletter-close {
+    top: -2.5rem;
+    right: 0;
   }
 }
 </style>
@@ -1207,17 +1214,9 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     <div class="newsletter-modal-inner">
 
-      <span class="section-tag" data-lang="nl">Nieuwsbrief</span>
-      <span class="section-tag" data-lang="en">Newsletter</span>
+  <div class="ml-embedded" data-form="e3vClg"></div>
 
-      <h2 id="newsletter-title" class="section-title">
-        <span data-lang="nl">Schrijf je in voor de nieuwsbrief</span>
-        <span data-lang="en">Subscribe to the newsletter</span>
-      </h2>
-
-      <div class="ml-embedded" data-form="e3vClg"></div>
-
-    </div>
+</div>
 
   </div>
 </div>
