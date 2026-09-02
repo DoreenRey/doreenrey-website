@@ -449,22 +449,35 @@ footer ul a:hover { color: var(--terra); }
 
 .newsletter-close {
   position: absolute;
-  top: -3rem;
-  right: 0;
-  width: 36px;
-  height: 36px;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
   padding: 0;
-  border: none;
-  background: transparent;
-  color: var(--cream);
-  font-size: 1.8rem;
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  background: var(--sand);
+  color: var(--charcoal);
+  font-size: 1.5rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .newsletter-close:hover {
-  color: var(--terra);
+  background: var(--terra);
+  border-color: var(--terra);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.newsletter-close:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 2px;
 }
 
 body.newsletter-open {
@@ -1207,19 +1220,9 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   <div class="newsletter-modal-content" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
 
-    <button
-      class="newsletter-close"
-      type="button"
-      aria-label="Close newsletter"
-      onclick="closeNewsletter()"
-    >
-      ×
-    </button>
-
-    <div class="newsletter-modal-inner">
-
+<div class="newsletter-modal-inner">
+  <button class="newsletter-close" type="button" aria-label="Close newsletter" onclick="closeNewsletter()">×</button>
   <div class="ml-embedded" data-form="e3vClg"></div>
-
 </div>
 
   </div>
