@@ -1,0 +1,142 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/events"
+public_folder: "/images/events"
+
+collections:
+  - name: "events"
+    label: "Evenementen"
+    files:
+      - name: "events"
+        label: "Agenda"
+        file: "events.json"
+        format: "json"
+        fields:
+          - label: "Evenementen"
+            name: "events"
+            widget: "list"
+            summary: "{{fields.title.nl}}"
+            fields:
+
+              - label: "Titel"
+                name: "title"
+                widget: "object"
+                fields:
+                  - label: "Nederlands"
+                    name: "nl"
+                    widget: "string"
+
+                  - label: "English"
+                    name: "en"
+                    widget: "string"
+
+              - label: "Gepubliceerd"
+                name: "published"
+                widget: "boolean"
+                default: true
+
+              - label: "Datums"
+                name: "dates"
+                widget: "list"
+                field:
+                  label: "Datum"
+                  name: "date"
+                  widget: "datetime"
+                  format: "YYYY-MM-DD"
+                  time_format: false
+
+              - label: "Tijd"
+                name: "time"
+                widget: "string"
+                required: false
+
+              - label: "Locatie"
+                name: "location"
+                widget: "object"
+                fields:
+                  - label: "Naam"
+                    name: "name"
+                    widget: "string"
+                    required: false
+
+                  - label: "Adres"
+                    name: "address"
+                    widget: "string"
+                    required: false
+
+              - label: "Prijs"
+                name: "price"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Nederlands"
+                    name: "nl"
+                    widget: "string"
+                    required: false
+
+                  - label: "English"
+                    name: "en"
+                    widget: "string"
+                    required: false
+
+              - label: "Beschrijving"
+                name: "description"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Nederlands"
+                    name: "nl"
+                    widget: "text"
+                    required: false
+
+                  - label: "English"
+                    name: "en"
+                    widget: "text"
+                    required: false
+
+              - label: "Extra informatie"
+                name: "extra"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Nederlands"
+                    name: "nl"
+                    widget: "text"
+                    required: false
+
+                  - label: "English"
+                    name: "en"
+                    widget: "text"
+                    required: false
+
+              - label: "Afbeelding"
+                name: "image"
+                widget: "image"
+                required: false
+
+              - label: "Fotograaf"
+                name: "photographer"
+                widget: "string"
+                required: false
+
+              - label: "Link"
+                name: "link"
+                widget: "string"
+                required: false
+
+              - label: "Linktekst"
+                name: "linkLabel"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Nederlands"
+                    name: "nl"
+                    widget: "string"
+                    required: false
+
+                  - label: "English"
+                    name: "en"
+                    widget: "string"
+                    required: false
