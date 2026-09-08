@@ -1,11 +1,6 @@
 {
   "events": [
     {
-      "title": {
-        "nl": "Sing4Connection @ Edegem",
-        "en": "Sing4Connection @ Edegem"
-      },
-      "published": true,
       "dates": [
         {
           "date": "2026-09-05"
@@ -17,29 +12,34 @@
           "date": "2026-11-14"
         }
       ],
-      "time": "19:30 - 20:45",
-      "location": {
-        "name": "Danscafé 't Centrum",
-        "address": "Strijdersstraat 35, 2650 Edegem"
-      },
+      "photographer": "",
       "price": {
         "nl": "Vrije bijdrage",
         "en": "Free contribution"
       },
-      "description": {
-        "nl": "",
-        "en": ""
-      },
+      "time": "19:30 - 20:45",
+      "published": true,
       "extra": {
         "nl": "",
         "en": ""
       },
-      "image": "2026 08 22 Sing4Connection alle data.png",
-      "photographer": "",
-      "link": "https://www.dezachteomwenteling.be/",
+      "location": {
+        "name": "Danscafé 't Centrum",
+        "address": "Strijdersstraat 35, 2650 Edegem"
+      },
+      "title": {
+        "nl": "Sing4Connection @ Edegem",
+        "en": "Sing4Connection @ Edegem"
+      },
       "linkLabel": {
-        "nl": "Meer Info",
+        "nl": "Meer Informatie",
         "en": "More Info"
+      },
+      "link": "https://www.dezachteomwenteling.be/",
+      "image": "2026 08 22 Sing4Connection alle data.png",
+      "description": {
+        "nl": "",
+        "en": ""
       }
     }
   ]
