@@ -102,6 +102,41 @@
         "nl": "We starten met een speelse warm-up: klank, beweging, ritme, bodypercussie en zelfverzonnen taal. Daarna duiken we samen dieper in de klankwereld. We zingen in een kring, zonder instrumenten, improvisatie zonder vaststaand lied. De reis begint hier – waar we eindigen, ontdekken we samen.\n\nVoor iedereen van 8 tot 108 jaar.",
         "en": "We start with a playful warm-up: sounds, movement, rhythm, body percussion, and made-up words. Then we'll dive deeper into the world of sound together. We sing in a circle, without instruments, improvisation without a fixed song. The journey begins here—where it ends, we'll discover together.\n\nFor everyone aged 8 to 108."
       }
+    },
+    {
+      "dates": [
+        "2026-09-16",
+        "2026-10-07",
+        "2026-10-21",
+        "2026-11-04",
+        "2026-11-25",
+        "2026-12-02",
+        "2026-12-23"
+      ],
+      "price": {
+        "nl": "Gratis",
+        "en": "Free"
+      },
+      "time": "19:30 - 21:00",
+      "published": true,
+      "location": {
+        "name": "Madam Fortuna",
+        "address": "Sergeyselsstraat 20, 2140 Antwerpen"
+      },
+      "title": {
+        "nl": "Singing Resistance",
+        "en": "Singing Resistance"
+      },
+      "linkLabel": {
+        "nl": "Meer info.",
+        "en": "More info."
+      },
+      "link": "https://madamfortuna.be/singing-resistance/",
+      "image": "/images/events/2026-08-18-sr-flyer-png1.png",
+      "description": {
+        "nl": "Samen zingen voor kracht, verbinding en solidariteit. We zingen eenvoudige liederen die iedereen kan meezingen, dus geen ervaring nodig—iedereen is welkom!",
+        "en": "Singing together for strength, connection, and solidarity. We sing simple songs that everyone can join in with, so no experience is needed—everyone is welcome!"
+      }
     }
   ]
 }
