@@ -176,6 +176,36 @@
         "nl": "Circle songs is samen zingen, improviseren en creëren — a capella, zonder bladmuziek of ervaring, enkel je stem. We starten met een speelse warming-up en bouwen daarna in een kring een meerstemmig geheel op, in het moment zelf. Beginners en ervaren zangers: iedereen vindt hier ruimte om te spelen en te verdiepen.",
         "en": "Circle songs is singing, improvising, and creating together — a cappella, with no sheet music or experience needed, just your voice. We start with a playful warm-up, then build a multi-voiced piece in a circle, in the moment itself. Beginners and experienced singers alike: everyone finds room here to play and explore."
       }
+    },
+    {
+      "dates": [
+        "2026-09-24"
+      ],
+      "photographer": "",
+      "price": {
+        "nl": "Vrije bijdrage",
+        "en": "Pay what you can"
+      },
+      "time": "19:00 - 21:00",
+      "published": true,
+      "location": {
+        "name": "Buurthuis Unik",
+        "address": "Fransenplaats 1, 2018 Antwerpen"
+      },
+      "title": {
+        "nl": "Shared Voices - Doreen Rey",
+        "en": "Shared Voices - Doreen Rey"
+      },
+      "linkLabel": {
+        "nl": "Meer info",
+        "en": "More info"
+      },
+      "link": "https://www.buurthuisunik.com",
+      "image": "/images/events/2026-09-10-flyer-shared-voices.jpg",
+      "description": {
+        "nl": "Doreen Rey biedt een warm, laagdrempelig concert waarin haar solovocalen kunst en gemeenschap verbinden. Doreen zingt de hoofdlijnen, het publiek zingt de refreinen mee — de composities zijn bewust eenvoudig, zodat iedereen kan meedoen. Alleen luisteren mag natuurlijk ook! \n\nDe songs zijn geboren uit ervaringen met trauma, groei en de pijn van de Aarde, waarin kwetsbaarheid de rode draad is.",
+        "en": "Doreen Rey offers a warm and accessible concert experience in which her solo vocals bring art and community together. Doreen sings the main melodies, while the audience joins in on the choruses — the compositions are intentionally simple, making it easy for everyone to participate. Of course, simply listening is always welcome too.\n\nThe songs are born from experiences of trauma, growth, and the pain of our Earth, with vulnerability as the common thread throughout."
+      }
     }
   ]
 }
