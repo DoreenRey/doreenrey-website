@@ -3,9 +3,6 @@
     {
       "dates": [
         {
-          "date": "2026-09-05"
-        },
-        {
           "date": "2026-10-24"
         },
         {
@@ -24,12 +21,12 @@
         "en": ""
       },
       "location": {
-        "name": "Danscafé 't Centrum",
-        "address": "Strijdersstraat 35, 2650 Edegem"
+        "name": "Emagine Center",
+        "address": "Paardenmarkt 65, 2000 Antwerpen"
       },
       "title": {
-        "nl": "Sing4Connection @ Edegem",
-        "en": "Sing4Connection @ Edegem"
+        "nl": "Sing4Connection",
+        "en": "Sing4Connection"
       },
       "linkLabel": {
         "nl": "Meer Informatie",
