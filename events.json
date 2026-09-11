@@ -41,6 +41,37 @@
         "nl": "",
         "en": ""
       }
+    },
+    {
+      "dates": [
+        "2026-10-08",
+        "2026-10-22",
+        "2026-11-12",
+        "2026-11-26",
+        "2026-12-10",
+        "2027-01-14",
+        "2027-01-28"
+      ],
+      "price": {
+        "nl": "€5 | €3 kansentarief",
+        "en": "€5 | €3 reduced rate"
+      },
+      "time": "19:30 - 21:00",
+      "published": true,
+      "location": {
+        "name": "Buurthuis Unik",
+        "address": "Fransenplaats 1, 2018 Antwerpen"
+      },
+      "title": {
+        "nl": "Vocale Impro",
+        "en": "Vocal Improv"
+      },
+      "link": "https://www.buurthuisunik.com/kopie-van-poezieatelier",
+      "image": "/images/events/2026-09-10-flyer-vocale-impro.jpg",
+      "description": {
+        "nl": "We zingen vaak in een kring. Wanneer we samen zingen, kunnen we verbinden met klank, vocale improvisatie, ons lichaam, onszelf en elkaar. Geen doel om te behalen—de ervaring telt. Je mag je verwachten aan verschillende muzikale, improvisatorische spelvormen met stem en lichaam zoals o.a. Circle Singing (geïnspireerd door Bobby McFerrin), Musica do Circulo en co-improvisatie.\n\nJe bent welkom als je veel ervaring, geen ervaring hebt met zingen en alles daar tussenin. Zodra je nieuwsgierigheid voelt om samen te zingen, dan is deze open avond iets voor jou! Muziek en samen zingen, zingen in community, creëert verbinding. Tot zingens?!",
+        "en": "We often sing in a circle. When we sing together, we can connect with sound, vocal improvisation, our body, ourselves, and each other. There's no goal to achieve—the experience itself is what counts. You can expect various musical and improvisational play forms with voice and body, including Circle Singing (inspired by Bobby McFerrin), Musica do Circulo, and co-improvisation.\n\nYou are welcome whether you have extensive singing experience, no experience at all, or anything in between. As soon as you feel curiosity about singing together, this open evening is for you! Music and singing together, singing in community, creates connection. See you soon—until we sing?!"
+      }
     }
   ]
 }
