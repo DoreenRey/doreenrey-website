@@ -137,6 +137,45 @@
         "nl": "Samen zingen voor kracht, verbinding en solidariteit. We zingen eenvoudige liederen die iedereen kan meezingen, dus geen ervaring nodig—iedereen is welkom!",
         "en": "Singing together for strength, connection, and solidarity. We sing simple songs that everyone can join in with, so no experience is needed—everyone is welcome!"
       }
+    },
+    {
+      "dates": [
+        "2026-09-22",
+        "2026-09-29",
+        "2026-10-06",
+        "2026-10-13",
+        "2026-10-20",
+        "2026-10-27",
+        "2026-11-10",
+        "2026-11-17",
+        "2026-11-24",
+        "2026-12-01"
+      ],
+      "photographer": "Stefan Lambrechts",
+      "price": {
+        "nl": "€219 | €199 | €159",
+        "en": "€219 | €199 | €159"
+      },
+      "time": "19:00 - 20:30",
+      "published": true,
+      "location": {
+        "name": "Wisper",
+        "address": "Matterhorn vzw - Albrecht Rodenbachstraat 21, 2140 Borgerhout"
+      },
+      "title": {
+        "nl": "Circle Singing & More…",
+        "en": "Circle Singing & More…"
+      },
+      "linkLabel": {
+        "nl": "Meer info en inschrijving.",
+        "en": "More info and registration."
+      },
+      "link": "https://wisper.be/nl/cursussen/samen-zingen-circle-songs-2",
+      "image": "/images/events/dsc01350_zwart.jpeg",
+      "description": {
+        "nl": "Circle songs is samen zingen, improviseren en creëren — a capella, zonder bladmuziek of ervaring, enkel je stem. We starten met een speelse warming-up en bouwen daarna in een kring een meerstemmig geheel op, in het moment zelf. Beginners en ervaren zangers: iedereen vindt hier ruimte om te spelen en te verdiepen.",
+        "en": "Circle songs is singing, improvising, and creating together — a cappella, with no sheet music or experience needed, just your voice. We start with a playful warm-up, then build a multi-voiced piece in a circle, in the moment itself. Beginners and experienced singers alike: everyone finds room here to play and explore."
+      }
     }
   ]
 }
