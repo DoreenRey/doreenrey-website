@@ -72,6 +72,36 @@
         "nl": "We zingen vaak in een kring. Wanneer we samen zingen, kunnen we verbinden met klank, vocale improvisatie, ons lichaam, onszelf en elkaar. Geen doel om te behalen—de ervaring telt. Je mag je verwachten aan verschillende muzikale, improvisatorische spelvormen met stem en lichaam zoals o.a. Circle Singing (geïnspireerd door Bobby McFerrin), Musica do Circulo en co-improvisatie.\n\nJe bent welkom als je veel ervaring, geen ervaring hebt met zingen en alles daar tussenin. Zodra je nieuwsgierigheid voelt om samen te zingen, dan is deze open avond iets voor jou! Muziek en samen zingen, zingen in community, creëert verbinding. Tot zingens?!",
         "en": "We often sing in a circle. When we sing together, we can connect with sound, vocal improvisation, our body, ourselves, and each other. There's no goal to achieve—the experience itself is what counts. You can expect various musical and improvisational play forms with voice and body, including Circle Singing (inspired by Bobby McFerrin), Musica do Circulo, and co-improvisation.\n\nYou are welcome whether you have extensive singing experience, no experience at all, or anything in between. As soon as you feel curiosity about singing together, this open evening is for you! Music and singing together, singing in community, creates connection. See you soon—until we sing?!"
       }
+    },
+    {
+      "dates": [
+        "2026-09-13"
+      ],
+      "photographer": "Fred Bruneau",
+      "price": {
+        "nl": "Gratis",
+        "en": "Free"
+      },
+      "time": "19:30 - 21:00",
+      "published": true,
+      "location": {
+        "name": "Madam Fortuna",
+        "address": "Sergeyselsstraat 20, 2140 Antwerpen"
+      },
+      "title": {
+        "nl": "Zingen Voor Iedereen",
+        "en": "Singing For Everyone"
+      },
+      "linkLabel": {
+        "nl": "Meer Info",
+        "en": "More Info"
+      },
+      "link": "https://madamfortuna.be/zingen-voor-iedereen/",
+      "image": "/images/events/captura-de-pantalla-2026-02-25-a-las-13.24.29.png",
+      "description": {
+        "nl": "We starten met een speelse warm-up: klank, beweging, ritme, bodypercussie en zelfverzonnen taal. Daarna duiken we samen dieper in de klankwereld. We zingen in een kring, zonder instrumenten, improvisatie zonder vaststaand lied. De reis begint hier – waar we eindigen, ontdekken we samen.\n\nVoor iedereen van 8 tot 108 jaar.",
+        "en": "We start with a playful warm-up: sounds, movement, rhythm, body percussion, and made-up words. Then we'll dive deeper into the world of sound together. We sing in a circle, without instruments, improvisation without a fixed song. The journey begins here—where it ends, we'll discover together.\n\nFor everyone aged 8 to 108."
+      }
     }
   ]
 }
