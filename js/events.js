@@ -1,0 +1,123 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("events-list");
+
+  if (!container) {
+    console.error("Events container not found.");
+    return;
+  }
+
+  try {
+    const response = await fetch("/events.json");
+
+    if (!response.ok) {
+      throw new Error(`Could not load events.json: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const events = (data.events || [])
+      .filter(event => event.published !== false)
+      .map(event => {
+        const futureDates = (event.dates || [])
+          .map(item => item.date)
+          .filter(Boolean)
+          .map(date => new Date(`${date}T00:00:00`))
+          .filter(date => date >= today)
+          .sort((a, b) => a - b);
+
+        return {
+          ...event,
+          nextDate: futureDates[0] || null
+        };
+      })
+      .filter(event => event.nextDate !== null)
+      .sort((a, b) => a.nextDate - b.nextDate);
+
+    container.innerHTML = "";
+
+    events.forEach(event => {
+      const article = document.createElement("article");
+
+      const title =
+        event.title?.nl ||
+        event.title?.en ||
+        "";
+
+      const price =
+        event.price?.nl ||
+        event.price?.en ||
+        "";
+
+      const description =
+        event.description?.nl ||
+        event.description?.en ||
+        "";
+
+      const extra =
+        event.extra?.nl ||
+        event.extra?.en ||
+        "";
+
+      const linkLabel =
+        event.linkLabel?.nl ||
+        event.linkLabel?.en ||
+        "Meer info";
+
+      const dateText = event.nextDate.toLocaleDateString("nl-BE", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+      article.innerHTML = `
+        ${event.image ? `
+          <img
+            src="${event.image}"
+            alt="${title}"
+          >
+        ` : ""}
+
+        <h3>${title}</h3>
+
+        <p><strong>${dateText}</strong></p>
+
+        ${event.time ? `<p>${event.time}</p>` : ""}
+
+        ${event.location?.name ? `
+          <p>
+            ${event.location.name}
+            ${event.location.address ? `<br>${event.location.address}` : ""}
+          </p>
+        ` : ""}
+
+        ${price ? `<p>${price}</p>` : ""}
+
+        ${description ? `<p>${description}</p>` : ""}
+
+        ${extra ? `<p>${extra}</p>` : ""}
+
+        ${event.link ? `
+          <p>
+            <a href="${event.link}" target="_blank" rel="noopener">
+              ${linkLabel}
+            </a>
+          </p>
+        ` : ""}
+
+        ${event.photographer ? `
+          <small>© ${event.photographer}</small>
+        ` : ""}
+      `;
+
+      container.appendChild(article);
+    });
+
+  } catch (error) {
+    console.error("Error loading events:", error);
+    container.innerHTML =
+      "<p>De agenda kon momenteel niet geladen worden.</p>";
+  }
+});
