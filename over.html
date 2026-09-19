@@ -276,10 +276,11 @@
        SAMEN ZINGEN
     --------------------------------------- */
 
-    .singing-section {
-      background: var(--paper);
-      padding: 0 0 10rem;
-    }
+.singing-section {
+  position: relative;
+  background: var(--paper);
+  padding: 0 0 10rem;
+}
 
     .singing-image {
       width: 100%;
@@ -287,6 +288,20 @@
       object-fit: cover;
       object-position: center;
     }
+
+.singing-photo-credit {
+  position: absolute;
+  right: 1.5rem;
+  top: min(72vh, 760px);
+  transform: translateY(-100%);
+  padding-bottom: 1rem;
+  z-index: 3;
+  color: rgba(255,255,255,.72);
+  font-family: var(--sans);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
 
     .singing-grid {
       width: min(1180px, calc(100% - 5rem));
@@ -913,6 +928,10 @@
         alt="Collective singing with Doreen Rey"
       >
 
+      <div class="singing-photo-credit">
+  <span data-lang="nl">Foto: Stefan Lambrechts</span>
+  <span data-lang="en">Photo: Stefan Lambrechts</span>
+</div>
 
       <div class="singing-grid">
 
