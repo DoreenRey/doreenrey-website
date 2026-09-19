@@ -1089,6 +1089,7 @@ part of something collective.
 
   <script>
     function setLang(lang) {
+      localStorage.setItem("siteLanguage", lang);
       document.documentElement.lang = lang;
 
       const button = document.querySelector(".lang-toggle");
@@ -1130,7 +1131,7 @@ part of something collective.
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-      setLang("nl");
+      setLang(localStorage.getItem("siteLanguage") || "nl");
     });
   </script>
 
