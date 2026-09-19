@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projecten — Doreen Rey</title>
+  <meta name="description" content="Projecten van Doreen Rey — participatieve concerten, vocale improvisatie en Singing Resistance.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --paper: #f3f0e8;
+      --paper-light: #faf8f3;
+      --stone: #d8d7cc;
+      --olive: #4c5044;
+      --charcoal: #20211d;
+      --soft-text: #5f6059;
+      --line: rgba(32,33,29,.18);
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper-light);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .lang-hide {
+      display: none !important;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 5rem));
+      margin: 0 auto;
+    }
+
+
+    /* NAV */
+
+    .site-nav {
+      background: var(--paper-light);
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(1320px, calc(100% - 5rem));
+      height: 96px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+      list-style: none;
+    }
+
+    .nav-links a,
+    .lang-toggle,
+    .newsletter-nav {
+      color: inherit;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover,
+    .lang-toggle:hover,
+    .newsletter-nav:hover {
+      opacity: .6;
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: .5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      margin: 6px 0;
+      background: var(--charcoal);
+    }
+
+
+    /* OPENING */
+
+    .projects-hero {
+      background: var(--paper-light);
+      padding: 10rem 0 9rem;
+    }
+
+    .projects-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(6rem, 13vw, 12rem);
+      font-weight: 400;
+      line-height: .8;
+      letter-spacing: -.03em;
+    }
+
+    .projects-intro {
+      width: min(600px, 100%);
+      margin: 5rem 0 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+
+    /* PROJECTEN */
+
+    .project {
+      padding: 10rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project.paper {
+      background: var(--paper);
+    }
+
+    .project.light {
+      background: var(--paper-light);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .project-number {
+      margin-bottom: 1.5rem;
+      color: var(--soft-text);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .project h2 {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 6vw, 6.3rem);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.02em;
+    }
+
+    .project-copy {
+      max-width: 650px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .project-copy p + p {
+      margin-top: 2rem;
+    }
+
+    .project-image {
+      margin-top: 7rem;
+      height: min(72vh, 760px);
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    /* SLOT */
+
+    .closing {
+      background: var(--paper-light);
+      padding: 10rem 0;
+      text-align: center;
+    }
+
+    .closing p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .closing a {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--olive);
+      color: #f5f1e8;
+      padding: 5rem 0 3rem;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .footer-small {
+      margin-top: 1.5rem;
+      max-width: 520px;
+      font-size: .78rem;
+      line-height: 1.8;
+      opacity: .8;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2.2rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a:hover {
+      opacity: .7;
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.8rem;
+    }
+
+    .footer-newsletter {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-block;
+      width: auto !important;
+      min-width: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      color: inherit !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .footer-newsletter:hover {
+      opacity: .7;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: inherit;
+      text-decoration: none;
+      opacity: .8;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    .social-links svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-links .youtube-play {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .footer-bottom {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: .68rem;
+      opacity: .7;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .newsletter-modal.is-open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .newsletter-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20,20,17,.75);
+      cursor: pointer;
+    }
+
+    .newsletter-modal-content {
+      position: relative;
+      z-index: 2;
+      width: min(560px, 100%);
+    }
+
+    .newsletter-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    body.newsletter-open {
+      overflow: hidden;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 820px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 2.5rem, 1180px);
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        z-index: 30;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .projects-hero {
+        padding: 7rem 0;
+      }
+
+      .projects-intro {
+        margin-top: 4rem;
+      }
+
+      .project {
+        padding: 7rem 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .project-image {
+        margin-top: 5rem;
+        height: 55vh;
+      }
+
+      .closing {
+        padding: 7rem 0;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-right {
+        align-items: flex-start;
+      }
+
+      .footer-nav,
+      .footer-actions {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+
+  <script>
+    (function(w,d,e,u,f,l,n){
+      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+      l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+
+    ml('account', '2606266');
+  </script>
+</head>
+
+
+<body>
+
+  <!-- NAV -->
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+
+      <a class="nav-logo" href="home-new.html">Doreen Rey</a>
+
+      <button class="hamburger" type="button" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+
+        <li>
+          <a data-lang="nl" href="over.html">Over</a>
+          <a data-lang="en" href="over.html">About</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="muziek.html">Muziek</a>
+          <a data-lang="en" href="muziek.html">Music</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="projecten.html">Projecten</a>
+          <a data-lang="en" href="projecten.html">Projects</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="agenda.html">Agenda</a>
+          <a data-lang="en" href="agenda.html">Events</a>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <button class="newsletter-nav" type="button" onclick="openNewsletter()">
+            <span data-lang="nl">Nieuwsbrief</span>
+            <span data-lang="en">Newsletter</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="lang-toggle" type="button" onclick="toggleLang()">EN</button>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- OPENING -->
+
+  <header class="projects-hero">
+
+    <div class="container">
+
+      <h1 data-lang="nl">Projecten</h1>
+      <h1 data-lang="en">Projects</h1>
+
+      <div class="projects-intro" data-lang="nl">
+        <p>
+          Mijn werk beweegt tussen performance, participatieve muziek
+          en samen zingen. In verschillende vormen onderzoek ik wat er
+          kan ontstaan wanneer stemmen samenkomen en er ruimte is voor
+          wat er op dat moment leeft.
+        </p>
+      </div>
+
+      <div class="projects-intro" data-lang="en">
+        <p>
+          My work moves between performance, participatory music
+          and singing together. In different forms I explore what
+          can emerge when voices come together and there is space
+          for what is present in that moment.
+        </p>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- 01 PARTICIPATIEVE CONCERTEN -->
+
+  <section class="project paper">
+
+    <div class="container">
+
+      <div class="project-grid">
+
+        <div>
+          <div class="project-number">01</div>
+
+          <h2 data-lang="nl">
+            Participatieve<br>concerten
+          </h2>
+
+          <h2 data-lang="en">
+            Participatory<br>concerts
+          </h2>
+        </div>
+
+
+        <div class="project-copy" data-lang="nl">
+
+          <p>
+            Wanneer ik optreed, is participatie geen activiteit naast
+            de performance — ze maakt deel uit van de performance zelf.
+            Ik zing, maar nodig ook de stemmen in de ruimte uit.
+          </p>
+
+          <p>
+            Soms via eenvoudige herhalende lijnen, soms via improvisatie.
+            Zo kan de grens tussen performer en publiek even poreus worden.
+            Je kan zingen, luisteren of gewoon aanwezig zijn. Wat ontstaat,
+            wordt mee gevormd door de mensen die er op dat moment zijn.
+          </p>
+
+          <p>
+            Mijn project <em>Shared Voices</em> creëert zo een laagdrempelige
+            ruimte waarin muziek geen product is om alleen naar te luisteren,
+            maar een proces van verbinding.
+          </p>
+
+        </div>
+
+
+        <div class="project-copy" data-lang="en">
+
+          <p>
+            When I perform, participation is not an activity alongside
+            the performance — it is part of the performance itself.
+            I sing, while also inviting the voices in the room.
+          </p>
+
+          <p>
+            Sometimes through simple repeating lines, sometimes through
+            improvisation. In this way, the boundary between performer
+            and audience can become porous for a while. You can sing,
+            listen or simply be present. What emerges is shaped by the
+            people who are there in that moment.
+          </p>
+
+          <p>
+            My project <em>Shared Voices</em> creates an accessible space
+            in which music is not a product to be listened to, but a
+            process of connection.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 02 VOCALE IMPROVISATIE -->
+
+  <section class="project light">
+
+    <div class="container">
+
+      <div class="project-grid">
+
+        <div>
+          <div class="project-number">02</div>
+
+          <h2 data-lang="nl">
+            Vocale<br>improvisatie
+          </h2>
+
+          <h2 data-lang="en">
+            Vocal<br>improvisation
+          </h2>
+        </div>
+
+
+        <div class="project-copy" data-lang="nl">
+
+          <p>
+            In vocale improvisatie werken we met wat er op dat moment
+            ontstaat. Geen partituur die vooraf vastligt, maar luisteren,
+            reageren, ruimte laten en samen muziek maken.
+          </p>
+
+          <p>
+            Mijn aanbod beweegt onder andere door circlesong,
+            Música do Círculo en co-impro: verschillende vormen waarin
+            individuele stemmen deel worden van iets collectiefs.
+          </p>
+
+        </div>
+
+
+        <div class="project-copy" data-lang="en">
+
+          <p>
+            In vocal improvisation we work with what emerges in the
+            moment. There is no score fixed in advance, but listening,
+            responding, leaving space and making music together.
+          </p>
+
+          <p>
+            My work includes circlesong, Música do Círculo and co-impro:
+            different forms in which individual voices become part of
+            something collective.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-image">
+        <img
+          src="/DSC01350%20copywrite.png"
+          alt="Vocale improvisatie en samen zingen"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 03 SINGING RESISTANCE -->
+
+  <section class="project paper">
+
+    <div class="container">
+
+      <div class="project-grid">
+
+        <div>
+          <div class="project-number">03</div>
+
+          <h2>
+            Singing<br>Resistance
+          </h2>
+        </div>
+
+
+        <div class="project-copy" data-lang="nl">
+
+          <p>
+            Singing Resistance is een plek waar samen zingen,
+            verbinding en de wereld waarin we leven elkaar ontmoeten.
+          </p>
+
+          <p>
+            Dit onderdeel laten we bewust nog open voor jouw eigen tekst:
+            wat Singing Resistance voor jou betekent, waaruit het ontstaan
+            is en wat je met de mensen in de ruimte onderzoekt.
+          </p>
+
+        </div>
+
+
+        <div class="project-copy" data-lang="en">
+
+          <p>
+            Singing Resistance is a space where singing together,
+            connection and the world we live in meet.
+          </p>
+
+          <p>
+            We are deliberately leaving this part open for your own words:
+            what Singing Resistance means to you, where it came from and
+            what you explore with the people in the room.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SLOT -->
+
+  <section class="closing">
+
+    <div class="container">
+
+      <p data-lang="nl">
+        Zingen als een manier om samen te komen.
+      </p>
+
+      <p data-lang="en">
+        Singing as a way of coming together.
+      </p>
+
+      <a href="agenda.html" data-lang="nl">Bekijk de agenda →</a>
+      <a href="agenda.html" data-lang="en">View events →</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <div class="footer-name">Doreen Rey</div>
+
+          <p class="footer-small" data-lang="nl">
+            Muziek, participatieve zang en ruimte voor ontmoeting.<br>
+            Antwerpen, België.
+          </p>
+
+          <p class="footer-small" data-lang="en">
+            Music, participatory singing and space for encounter.<br>
+            Antwerp, Belgium.
+          </p>
+        </div>
+
+
+        <div class="footer-right">
+
+          <div class="footer-nav">
+
+            <a href="over.html" data-lang="nl">Over</a>
+            <a href="over.html" data-lang="en">About</a>
+
+            <a href="muziek.html" data-lang="nl">Muziek</a>
+            <a href="muziek.html" data-lang="en">Music</a>
+
+            <a href="projecten.html" data-lang="nl">Projecten</a>
+            <a href="projecten.html" data-lang="en">Projects</a>
+
+            <a href="agenda.html" data-lang="nl">Agenda</a>
+            <a href="agenda.html" data-lang="en">Events</a>
+
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+
+          <div class="footer-actions">
+
+            <button class="footer-newsletter" type="button" onclick="openNewsletter()">
+              <span data-lang="nl">Nieuwsbrief</span>
+              <span data-lang="en">Newsletter</span>
+            </button>
+
+
+            <div class="social-links">
+
+              <a href="https://www.instagram.com/doreenreymusic/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1"/>
+                </svg>
+              </a>
+
+              <a href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"/>
+                  <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"/>
+                  <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"/>
+                </svg>
+              </a>
+
+              <a href="https://soundcloud.com/doreenrey/sets" target="_blank" rel="noopener" aria-label="SoundCloud">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 15.5v2"/>
+                  <path d="M5.5 14v4"/>
+                  <path d="M8 12.5V18"/>
+                  <path d="M10.5 10.5V18"/>
+                  <path d="M13 9.5V18"/>
+                  <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"/>
+                </svg>
+              </a>
+
+              <a href="https://www.youtube.com/@DoreenRey" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"/>
+                  <path d="M10 9l5 3-5 3z" class="youtube-play"/>
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="footer-bottom">
+        <span>© 2026 Doreen Rey</span>
+        <span data-lang="nl">Antwerpen, België</span>
+        <span data-lang="en">Antwerp, Belgium</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- NEWSLETTER -->
+
+  <div id="newsletter-modal" class="newsletter-modal" aria-hidden="true">
+
+    <div class="newsletter-overlay" onclick="closeNewsletter()"></div>
+
+    <div class="newsletter-modal-content" role="dialog" aria-modal="true" aria-label="Newsletter">
+
+      <button class="newsletter-close" type="button" aria-label="Close newsletter" onclick="closeNewsletter()">×</button>
+
+      <div class="ml-embedded" data-form="e3vClg"></div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+
+      const button = document.querySelector(".lang-toggle");
+      if (button) {
+        button.textContent = lang === "nl" ? "EN" : "NL";
+      }
+
+      document.querySelectorAll("[data-lang]").forEach(element => {
+        element.classList.toggle("lang-hide", element.dataset.lang !== lang);
+      });
+    }
+
+    function toggleLang() {
+      setLang(document.documentElement.lang === "nl" ? "en" : "nl");
+    }
+
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("open");
+    }
+
+    function openNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("newsletter-open");
+    }
+
+    function closeNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("newsletter-open");
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeNewsletter();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLang("nl");
+    });
+  </script>
+
+</body>
+</html>
