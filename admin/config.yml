@@ -2,6 +2,7 @@ backend:
   name: github
   repo: DoreenRey/doreenrey-website
   branch: main
+  site_domain: singular-toffee-8a5595.netlify.app
 
 media_folder: "images/events"
 public_folder: "/images/events"
