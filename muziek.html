@@ -367,14 +367,28 @@
       text-align: center;
     }
 
-    .closing p {
-      max-width: 850px;
-      margin: 0 auto;
+    .closing blockquote {
+  max-width: 980px;
+  margin: 0 auto;
 
-      font-family: var(--serif);
-      font-size: clamp(3rem, 5vw, 5rem);
-      line-height: 1.05;
-    }
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 4.5vw, 4.7rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.closing cite {
+  display: block;
+  margin-top: 2.5rem;
+
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
 
 
     /* FOOTER */
@@ -782,65 +796,6 @@
   </header>
 
 
-  <!-- INTRO -->
-
-  <main>
-
-    <section class="music-intro">
-
-      <div class="container music-intro-grid">
-
-        <h2 data-lang="nl">
-          Liederen,<br>
-          stemmen,<br>
-          ontmoeting.
-        </h2>
-
-        <h2 data-lang="en">
-          Songs,<br>
-          voices,<br>
-          encounter.
-        </h2>
-
-
-        <div class="music-intro-copy" data-lang="nl">
-
-          <p>
-            Mijn muziek ontstaat uit wat me raakt en beweegt:
-            persoonlijke en collectieve groeipijnen, verbinding,
-            verlies, liefde en de pijn van de Aarde.
-          </p>
-
-          <p>
-            Soms wordt dat een geproduceerde song. Soms een demo,
-            een vocale improvisatie of een melodie die pas volledig
-            wordt wanneer andere stemmen erbij komen.
-          </p>
-
-        </div>
-
-
-        <div class="music-intro-copy" data-lang="en">
-
-          <p>
-            My music grows out of what touches and moves me:
-            personal and collective growing pains, connection,
-            loss, love and the pain of the Earth.
-          </p>
-
-          <p>
-            Sometimes this becomes a produced song. Sometimes a demo,
-            a vocal improvisation, or a melody that only becomes whole
-            when other voices join in.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
     <!-- SONGS -->
 
     <section class="music-section stone">
@@ -1075,25 +1030,24 @@
 
 </section>    
 
-    <!-- SLOT -->
+    <!-- QUOTE -->
 
-    <section class="closing">
+<section class="closing">
 
-      <div class="container">
+  <div class="container">
 
-        <p data-lang="nl">
-          Sommige songs worden beluisterd.<br>
-          Andere worden samen gemaakt.
-        </p>
+    <blockquote>
+      “The voice gets to the soul of a person more than any other instrument.
+      Because it's the voice. It sings, it talks, it cries, it laughs, it squeals,
+      it barks, it shouts, it whispers. There is no other instrument that can do that.
+      We're born with it.”
+    </blockquote>
 
-        <p data-lang="en">
-          Some songs are listened to.<br>
-          Others are made together.
-        </p>
+    <cite>— Bobby McFerrin</cite>
 
-      </div>
+  </div>
 
-    </section>
+</section>
 
   </main>
 
