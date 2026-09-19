@@ -97,16 +97,16 @@ article.innerHTML = `
   ${price ? `<span>${price}</span>` : ""}
 </div>
 
-    ${event.location?.name ? `
-      <p>
-        ${event.location.name}
-        ${event.location.address ? `<br>${event.location.address}` : ""}
-      </p>
-    ` : ""}
-
     ${description ? `<p>${description}</p>` : ""}
 
     ${extra ? `<p>${extra}</p>` : ""}
+
+${event.location?.name ? `
+  <div class="event-location">
+    <strong>${event.location.name}</strong>
+    ${event.location.address ? `<br>${event.location.address}` : ""}
+  </div>
+` : ""}
 
     ${event.link ? `
       <p>
