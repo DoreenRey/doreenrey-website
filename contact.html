@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Doreen Rey</title>
+  <meta name="description" content="Contact Doreen Rey voor concerten, participatieve muziek, workshops en samenwerkingen.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --paper: #f3f0e8;
+      --paper-light: #faf8f3;
+      --stone: #d8d7cc;
+      --olive: #4c5044;
+      --charcoal: #20211d;
+      --soft-text: #5f6059;
+      --line: rgba(32,33,29,.18);
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper-light);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .lang-hide {
+      display: none !important;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 5rem));
+      margin: 0 auto;
+    }
+
+
+    /* NAV */
+
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-light);
+    }
+
+    .nav-inner {
+      width: min(1320px, calc(100% - 5rem));
+      height: 96px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+      list-style: none;
+    }
+
+    .nav-links a,
+    .lang-toggle,
+    .newsletter-nav {
+      color: inherit;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover,
+    .lang-toggle:hover,
+    .newsletter-nav:hover {
+      opacity: .6;
+    }
+
+    .hamburger {
+      display: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: .5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      margin: 6px 0;
+      background: var(--charcoal);
+    }
+
+
+    /* CONTACT */
+
+    .contact-page {
+      min-height: 78vh;
+      padding: 10rem 0 11rem;
+      display: flex;
+      align-items: center;
+      background: var(--paper-light);
+    }
+
+    .contact-title {
+      font-family: var(--serif);
+      font-size: clamp(6rem, 14vw, 13rem);
+      font-weight: 400;
+      line-height: .78;
+      letter-spacing: -.035em;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 8rem;
+      margin-top: 9rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 3.5vw, 3.7rem);
+      line-height: 1.12;
+    }
+
+    .contact-details {
+      padding-top: .5rem;
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--soft-text);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.1;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .contact-email:hover {
+      opacity: .6;
+    }
+
+    .contact-socials {
+      margin-top: 5rem;
+    }
+
+    .contact-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+    }
+
+    .contact-social-links a {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-social-links a:hover {
+      border-bottom-color: currentColor;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--olive);
+      color: #f5f1e8;
+      padding: 5rem 0 3rem;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .footer-small {
+      margin-top: 1.5rem;
+      max-width: 520px;
+      font-size: .78rem;
+      line-height: 1.8;
+      opacity: .8;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2.2rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a:hover {
+      opacity: .7;
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.8rem;
+    }
+
+    .footer-newsletter {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-block;
+      width: auto !important;
+      min-width: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      color: inherit !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .footer-newsletter:hover {
+      opacity: .7;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: inherit;
+      text-decoration: none;
+      opacity: .8;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    .social-links svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-links .youtube-play {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .footer-bottom {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: .68rem;
+      opacity: .7;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .newsletter-modal.is-open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .newsletter-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20,20,17,.75);
+      cursor: pointer;
+    }
+
+    .newsletter-modal-content {
+      position: relative;
+      z-index: 2;
+      width: min(560px, 100%);
+    }
+
+    .newsletter-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    body.newsletter-open {
+      overflow: hidden;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 820px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 2.5rem, 1180px);
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        z-index: 30;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .contact-page {
+        min-height: auto;
+        padding: 7rem 0 8rem;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        margin-top: 6rem;
+      }
+
+      .contact-email {
+        font-size: clamp(1.4rem, 6vw, 2.2rem);
+        overflow-wrap: anywhere;
+      }
+
+      .contact-socials {
+        margin-top: 4rem;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-right {
+        align-items: flex-start;
+      }
+
+      .footer-nav,
+      .footer-actions {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <script>
+    (function(w,d,e,u,f,l,n){
+      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+      l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+
+    ml('account', '2606266');
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+
+      <a class="nav-logo" href="home-new.html">Doreen Rey</a>
+
+      <button class="hamburger" type="button" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+
+        <li>
+          <a data-lang="nl" href="over.html">Over</a>
+          <a data-lang="en" href="over.html">About</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="muziek.html">Muziek</a>
+          <a data-lang="en" href="muziek.html">Music</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="projecten.html">Projecten</a>
+          <a data-lang="en" href="projecten.html">Projects</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="agenda.html">Agenda</a>
+          <a data-lang="en" href="agenda.html">Events</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+        <li>
+          <button class="newsletter-nav" type="button" onclick="openNewsletter()">
+            <span data-lang="nl">Nieuwsbrief</span>
+            <span data-lang="en">Newsletter</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="lang-toggle" type="button" onclick="toggleLang()">EN</button>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- CONTACT -->
+
+  <main class="contact-page">
+    <div class="container">
+
+      <h1 class="contact-title">Contact</h1>
+
+      <div class="contact-content">
+
+        <div class="contact-intro" data-lang="nl">
+          Wil je samenwerken, me uitnodigen of gewoon iets vragen?
+          Je mag me altijd schrijven.
+        </div>
+
+        <div class="contact-intro" data-lang="en">
+          Would you like to collaborate, invite me or simply ask something?
+          You're always welcome to write.
+        </div>
+
+
+        <div class="contact-details">
+
+          <span class="contact-label">E-mail</span>
+
+          <a class="contact-email" href="mailto:dorienreyners@proton.me">
+            dorienreyners@proton.me
+          </a>
+
+
+          <div class="contact-socials">
+
+            <span class="contact-label" data-lang="nl">Vind me ook hier</span>
+            <span class="contact-label" data-lang="en">Find me here too</span>
+
+            <div class="contact-social-links">
+
+              <a href="https://www.instagram.com/doreenreymusic/" target="_blank" rel="noopener">
+                Instagram
+              </a>
+
+              <a href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg" target="_blank" rel="noopener">
+                Spotify
+              </a>
+
+              <a href="https://soundcloud.com/doreenrey/sets" target="_blank" rel="noopener">
+                SoundCloud
+              </a>
+
+              <a href="https://www.youtube.com/@DoreenRey" target="_blank" rel="noopener">
+                YouTube
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <div class="footer-name">Doreen Rey</div>
+
+          <p class="footer-small" data-lang="nl">
+            Muziek, participatieve zang en ruimte voor ontmoeting.<br>
+            Antwerpen, België.
+          </p>
+
+          <p class="footer-small" data-lang="en">
+            Music, participatory singing and space for encounter.<br>
+            Antwerp, Belgium.
+          </p>
+        </div>
+
+
+        <div class="footer-right">
+
+          <div class="footer-nav">
+
+            <a href="over.html" data-lang="nl">Over</a>
+            <a href="over.html" data-lang="en">About</a>
+
+            <a href="muziek.html" data-lang="nl">Muziek</a>
+            <a href="muziek.html" data-lang="en">Music</a>
+
+            <a href="projecten.html" data-lang="nl">Projecten</a>
+            <a href="projecten.html" data-lang="en">Projects</a>
+
+            <a href="agenda.html" data-lang="nl">Agenda</a>
+            <a href="agenda.html" data-lang="en">Events</a>
+
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+
+          <div class="footer-actions">
+
+            <button class="footer-newsletter" type="button" onclick="openNewsletter()">
+              <span data-lang="nl">Nieuwsbrief</span>
+              <span data-lang="en">Newsletter</span>
+            </button>
+
+
+            <div class="social-links">
+
+              <a href="https://www.instagram.com/doreenreymusic/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1"/>
+                </svg>
+              </a>
+
+              <a href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"/>
+                  <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"/>
+                  <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"/>
+                </svg>
+              </a>
+
+              <a href="https://soundcloud.com/doreenrey/sets" target="_blank" rel="noopener" aria-label="SoundCloud">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 15.5v2"/>
+                  <path d="M5.5 14v4"/>
+                  <path d="M8 12.5V18"/>
+                  <path d="M10.5 10.5V18"/>
+                  <path d="M13 9.5V18"/>
+                  <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"/>
+                </svg>
+              </a>
+
+              <a href="https://www.youtube.com/@DoreenRey" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"/>
+                  <path d="M10 9l5 3-5 3z" class="youtube-play"/>
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="footer-bottom">
+        <span>© 2026 Doreen Rey</span>
+        <span data-lang="nl">Antwerpen, België</span>
+        <span data-lang="en">Antwerp, Belgium</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- NEWSLETTER -->
+
+  <div id="newsletter-modal" class="newsletter-modal" aria-hidden="true">
+
+    <div class="newsletter-overlay" onclick="closeNewsletter()"></div>
+
+    <div class="newsletter-modal-content" role="dialog" aria-modal="true" aria-label="Newsletter">
+
+      <button class="newsletter-close" type="button" aria-label="Close newsletter" onclick="closeNewsletter()">×</button>
+
+      <div class="ml-embedded" data-form="e3vClg"></div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    let currentLang = "nl";
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-lang]").forEach(element => {
+        element.classList.toggle("lang-hide", element.dataset.lang !== lang);
+      });
+
+      const button = document.querySelector(".lang-toggle");
+
+      if (button) {
+        button.textContent = lang === "nl" ? "EN" : "NL";
+      }
+    }
+
+    function toggleLang() {
+      setLang(currentLang === "nl" ? "en" : "nl");
+    }
+
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("open");
+    }
+
+    function openNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("newsletter-open");
+    }
+
+    function closeNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("newsletter-open");
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeNewsletter();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLang("nl");
+    });
+  </script>
+
+</body>
+</html>
