@@ -138,25 +138,56 @@
 
     /* OPENING */
 
-    .projects-hero {
-      background: var(--paper-light);
-      padding: 10rem 0 9rem;
-    }
+.projects-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
 
-    .projects-hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(6rem, 13vw, 12rem);
-      font-weight: 400;
-      line-height: .8;
-      letter-spacing: -.03em;
-    }
+.projects-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-    .projects-intro {
-      width: min(600px, 100%);
-      margin: 5rem 0 0 auto;
-      font-size: 1.05rem;
-      line-height: 1.9;
-    }
+.projects-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 17, 0.34);
+}
+
+.projects-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5rem;
+}
+
+.projects-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(6rem, 13vw, 12rem);
+  font-weight: 400;
+  line-height: .8;
+  letter-spacing: -.03em;
+  text-shadow: 0 2px 24px rgba(0,0,0,.18);
+}
+
+.projects-introduction {
+  background: var(--paper-light);
+  padding: 8rem 0 9rem;
+}
+
+.projects-intro {
+  width: min(600px, 100%);
+  margin-left: auto;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
 
 
     /* PROJECTEN */
@@ -478,13 +509,17 @@
         display: flex;
       }
 
-      .projects-hero {
-        padding: 7rem 0;
-      }
+.projects-hero {
+  min-height: 68vh;
+}
 
-      .projects-intro {
-        margin-top: 4rem;
-      }
+.projects-hero-content {
+  padding-bottom: 3rem;
+}
+
+.projects-introduction {
+  padding: 5rem 0 6rem;
+}
 
       .project {
         padding: 7rem 0;
@@ -593,34 +628,47 @@
 
   <!-- OPENING -->
 
-  <header class="projects-hero">
+<header class="projects-hero">
 
-    <div class="container">
+  <img
+    src="/Shared%20Voices.jpeg"
+    alt=""
+    class="projects-hero-image"
+  >
 
-      <h1 data-lang="nl">Projecten</h1>
-      <h1 data-lang="en">Projects</h1>
+  <div class="projects-hero-overlay"></div>
 
-      <div class="projects-intro" data-lang="nl">
-        <p>
-          Mijn werk beweegt tussen performance, participatieve muziek
-          en samen zingen. In verschillende vormen onderzoek ik wat er
-          kan ontstaan wanneer stemmen samenkomen en er ruimte is voor
-          wat er op dat moment leeft.
-        </p>
-      </div>
+  <div class="container projects-hero-content">
+    <h1 data-lang="nl">Projecten</h1>
+    <h1 data-lang="en">Projects</h1>
+  </div>
 
-      <div class="projects-intro" data-lang="en">
-        <p>
-          My work moves between performance, participatory music
-          and singing together. In different forms I explore what
-          can emerge when voices come together and there is space
-          for what is present in that moment.
-        </p>
-      </div>
+</header>
 
+
+<section class="projects-introduction">
+  <div class="container">
+
+    <div class="projects-intro" data-lang="nl">
+      <p>
+        Mijn werk beweegt tussen performance, participatieve muziek
+        en samen zingen. In verschillende vormen onderzoek ik wat er
+        kan ontstaan wanneer stemmen samenkomen en er ruimte is voor
+        wat er op dat moment leeft.
+      </p>
     </div>
 
-  </header>
+    <div class="projects-intro" data-lang="en">
+      <p>
+        My work moves between performance, participatory music
+        and singing together. In different forms I explore what
+        can emerge when voices come together and there is space
+        for what is present in that moment.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 
   <!-- 01 PARTICIPATIEVE CONCERTEN -->
