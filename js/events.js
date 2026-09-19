@@ -36,98 +36,126 @@ document.addEventListener("DOMContentLoaded", async () => {
       .filter(event => event.nextDate !== null)
       .sort((a, b) => a.nextDate - b.nextDate);
 
-    container.innerHTML = "";
+    function renderEvents() {
+      const lang = document.documentElement.lang === "en" ? "en" : "nl";
+      const locale = lang === "en" ? "en-GB" : "nl-BE";
 
-    events.forEach(event => {
-      const article = document.createElement("article");
+      container.innerHTML = "";
 
-      const title =
-        event.title?.nl ||
-        event.title?.en ||
-        "";
+      events.forEach(event => {
+        const article = document.createElement("article");
 
-      const price =
-        event.price?.nl ||
-        event.price?.en ||
-        "";
+        const title =
+          event.title?.[lang] ||
+          event.title?.nl ||
+          event.title?.en ||
+          "";
 
-      const description =
-        event.description?.nl ||
-        event.description?.en ||
-        "";
+        const price =
+          event.price?.[lang] ||
+          event.price?.nl ||
+          event.price?.en ||
+          "";
 
-      const extra =
-        event.extra?.nl ||
-        event.extra?.en ||
-        "";
+        const description =
+          event.description?.[lang] ||
+          event.description?.nl ||
+          event.description?.en ||
+          "";
 
-      const linkLabel =
-        event.linkLabel?.nl ||
-        event.linkLabel?.en ||
-        "Meer info";
+        const extra =
+          event.extra?.[lang] ||
+          event.extra?.nl ||
+          event.extra?.en ||
+          "";
 
-const dateText = (event.dates || [])
-  .map(item => item.date)
-  .filter(Boolean)
-  .map(date => new Date(`${date}T00:00:00`))
-  .filter(date => date >= today)
-  .sort((a, b) => a - b)
-  .map(date => date.toLocaleDateString("nl-BE", {
-    day: "numeric",
-    month: "short",
-    year: "numeric"
-  }))
-  .join(" · ");
+        const linkLabel =
+          event.linkLabel?.[lang] ||
+          event.linkLabel?.nl ||
+          event.linkLabel?.en ||
+          (lang === "en" ? "More info" : "Meer informatie");
 
-article.innerHTML = `
-  ${event.image ? `
-    <img
-      src="${event.image}"
-      alt="${title}"
-      class="event-image"
-    >
-  ` : ""}
+        const dateText = (event.dates || [])
+          .map(item => item.date)
+          .filter(Boolean)
+          .map(date => new Date(`${date}T00:00:00`))
+          .filter(date => date >= today)
+          .sort((a, b) => a - b)
+          .map(date => date.toLocaleDateString(locale, {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+          }))
+          .join(" · ");
 
-  <div class="event-content">
-<h3>${title}</h3>
+        article.innerHTML = `
+          ${event.image ? `
+            <img
+              src="${event.image}"
+              alt="${title}"
+              class="event-image"
+            >
+          ` : ""}
 
-<div class="event-meta">
-  <span>📅 ${dateText}</span>
-  ${event.time ? `<span>🕒 ${event.time}</span>` : ""}
-  ${price ? `<span>${price}</span>` : ""}
-</div>
+          <div class="event-content">
+            <h3>${title}</h3>
 
-    ${description ? `<p>${description}</p>` : ""}
+            <div class="event-meta">
+              <span>📅 ${dateText}</span>
+              ${event.time ? `<span>🕒 ${event.time}</span>` : ""}
+              ${price ? `<span>${price}</span>` : ""}
+            </div>
 
-    ${extra ? `<p>${extra}</p>` : ""}
+            ${description ? `<p>${description}</p>` : ""}
 
-${event.location?.name ? `
-  <div class="event-location">
-    <strong>${event.location.name}</strong>
-    ${event.location.address ? `<br>${event.location.address}` : ""}
-  </div>
-` : ""}
+            ${extra ? `<p>${extra}</p>` : ""}
 
-    ${event.link ? `
-      <p>
-        <a href="${event.link}" target="_blank" rel="noopener">
-          ${linkLabel}
-        </a>
-      </p>
-    ` : ""}
+            ${event.location?.name ? `
+              <div class="event-location">
+                <strong>${event.location.name}</strong>
+                ${event.location.address ? `<br>${event.location.address}` : ""}
+              </div>
+            ` : ""}
 
-    ${event.photographer ? `
-      <small>© ${event.photographer}</small>
-    ` : ""}
-  </div>
-`;
+            ${event.link ? `
+              <p>
+                <a href="${event.link}" target="_blank" rel="noopener">
+                  ${linkLabel}
+                </a>
+              </p>
+            ` : ""}
 
-      container.appendChild(article);
+            ${event.photographer ? `
+              <small>© ${event.photographer}</small>
+            ` : ""}
+          </div>
+        `;
+
+        container.appendChild(article);
+      });
+    }
+
+    // Toon de events bij het laden van de pagina.
+    renderEvents();
+
+    // Toon de events opnieuw wanneer de taal van de website verandert.
+    const languageObserver = new MutationObserver(() => {
+      renderEvents();
+    });
+
+    languageObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["lang"]
     });
 
   } catch (error) {
     console.error("Error loading events:", error);
+
+    const lang = document.documentElement.lang === "en" ? "en" : "nl";
+
     container.innerHTML =
-      "<p>De agenda kon momenteel niet geladen worden.</p>";
+      lang === "en"
+        ? "<p>The events could not be loaded at the moment.</p>"
+        : "<p>De agenda kon momenteel niet geladen worden.</p>";
   }
 });
