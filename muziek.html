@@ -1239,6 +1239,7 @@
   <script>
 
     function setLang(lang) {
+      localStorage.setItem("siteLanguage", lang);
 
       document.documentElement.lang = lang;
 
@@ -1308,7 +1309,7 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      setLang("nl");
+      setLang(localStorage.getItem("siteLanguage") || "nl");
     });
 
   </script>
