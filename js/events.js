@@ -72,45 +72,48 @@ document.addEventListener("DOMContentLoaded", async () => {
         year: "numeric"
       });
 
-      article.innerHTML = `
-        ${event.image ? `
-          <img
-            src="${event.image}"
-            alt="${title}"
-          >
-        ` : ""}
+article.innerHTML = `
+  ${event.image ? `
+    <img
+      src="${event.image}"
+      alt="${title}"
+      class="event-image"
+    >
+  ` : ""}
 
-        <h3>${title}</h3>
+  <div class="event-content">
+    <h3>${title}</h3>
 
-        <p><strong>${dateText}</strong></p>
+    <p><strong>${dateText}</strong></p>
 
-        ${event.time ? `<p>${event.time}</p>` : ""}
+    ${event.time ? `<p>${event.time}</p>` : ""}
 
-        ${event.location?.name ? `
-          <p>
-            ${event.location.name}
-            ${event.location.address ? `<br>${event.location.address}` : ""}
-          </p>
-        ` : ""}
+    ${event.location?.name ? `
+      <p>
+        ${event.location.name}
+        ${event.location.address ? `<br>${event.location.address}` : ""}
+      </p>
+    ` : ""}
 
-        ${price ? `<p>${price}</p>` : ""}
+    ${price ? `<p>${price}</p>` : ""}
 
-        ${description ? `<p>${description}</p>` : ""}
+    ${description ? `<p>${description}</p>` : ""}
 
-        ${extra ? `<p>${extra}</p>` : ""}
+    ${extra ? `<p>${extra}</p>` : ""}
 
-        ${event.link ? `
-          <p>
-            <a href="${event.link}" target="_blank" rel="noopener">
-              ${linkLabel}
-            </a>
-          </p>
-        ` : ""}
+    ${event.link ? `
+      <p>
+        <a href="${event.link}" target="_blank" rel="noopener">
+          ${linkLabel}
+        </a>
+      </p>
+    ` : ""}
 
-        ${event.photographer ? `
-          <small>© ${event.photographer}</small>
-        ` : ""}
-      `;
+    ${event.photographer ? `
+      <small>© ${event.photographer}</small>
+    ` : ""}
+  </div>
+`;
 
       container.appendChild(article);
     });
