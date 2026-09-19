@@ -18,15 +18,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    // Werkt zowel met:
+    // "dates": ["2026-11-28"]
+    // als met:
+    // "dates": [{"date": "2026-11-28"}]
+    function getDateValue(item) {
+      if (typeof item === "string") {
+        return item;
+      }
+
+      if (item && typeof item === "object") {
+        return item.date;
+      }
+
+      return null;
+    }
+
+    function getFutureDates(event) {
+      return (event.dates || [])
+        .map(getDateValue)
+        .filter(Boolean)
+        .map(date => new Date(`${date}T00:00:00`))
+        .filter(date => !isNaN(date) && date >= today)
+        .sort((a, b) => a - b);
+    }
+
     const events = (data.events || [])
       .filter(event => event.published !== false)
       .map(event => {
-        const futureDates = (event.dates || [])
-          .map(item => item.date)
-          .filter(Boolean)
-          .map(date => new Date(`${date}T00:00:00`))
-          .filter(date => date >= today)
-          .sort((a, b) => a - b);
+        const futureDates = getFutureDates(event);
 
         return {
           ...event,
@@ -75,17 +95,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           event.linkLabel?.en ||
           (lang === "en" ? "More info" : "Meer informatie");
 
-        const dateText = (event.dates || [])
-          .map(item => item.date)
-          .filter(Boolean)
-          .map(date => new Date(`${date}T00:00:00`))
-          .filter(date => date >= today)
-          .sort((a, b) => a - b)
-          .map(date => date.toLocaleDateString(locale, {
-            day: "numeric",
-            month: "short",
-            year: "numeric"
-          }))
+        const dateText = getFutureDates(event)
+          .map(date =>
+            date.toLocaleDateString(locale, {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            })
+          )
           .join(" · ");
 
         article.innerHTML = `
@@ -135,10 +152,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    // Toon de events bij het laden van de pagina.
     renderEvents();
 
-    // Toon de events opnieuw wanneer de taal van de website verandert.
     const languageObserver = new MutationObserver(() => {
       renderEvents();
     });
