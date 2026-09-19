@@ -1277,7 +1277,7 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      setLang("nl");
+      setLang(localStorage.getItem("siteLanguage") || "nl");
     });
 
   </script>
