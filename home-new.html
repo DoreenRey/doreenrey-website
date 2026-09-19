@@ -419,87 +419,127 @@
        FOOTER
     --------------------------------------- */
 
-    footer {
-      background: var(--olive);
-      color: #f5f1e8;
-      padding: 5rem 0 3rem;
-    }
-
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .footer-name {
-      font-family: var(--serif);
-      font-size: 2rem;
-      line-height: 1;
-    }
-
-    .footer-small {
-      margin-top: 1rem;
-      max-width: 390px;
-
-      font-size: 0.78rem;
-      line-height: 1.7;
-      opacity: 0.8;
-    }
-
-.footer-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem 1.7rem;
+footer {
+  background: var(--olive);
+  color: #f5f1e8;
+  padding: 5rem 0 3rem;
 }
 
-    .footer-links a,
-    .footer-links button {
-      color: inherit;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      text-decoration: none;
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
 
-      font-size: 0.65rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
+.footer-name {
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.footer-small {
+  margin-top: 1.5rem;
+  max-width: 520px;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.2rem;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+.footer-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.8rem;
+}
+
+.footer-newsletter {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: inline-block;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  color: inherit !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.footer-newsletter:hover {
+  opacity: 0.7;
+}
 
 .social-links {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
-.footer-links .social-links a {
+.social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 24px;
-  height: 24px;
-  padding: 0;
+  width: 20px;
+  height: 20px;
 
-  color: #f5f1e8;
+  color: inherit;
+  text-decoration: none;
   opacity: 0.8;
-
-  border: 0;
-  background: transparent;
-
-  transition: opacity 0.2s ease;
 }
 
-.footer-links .social-links a:hover {
+.social-links a:hover {
   opacity: 1;
 }
 
-.footer-links .social-links svg {
+.social-links svg {
   display: block;
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
 
   fill: none;
   stroke: currentColor;
@@ -508,37 +548,23 @@
   stroke-linejoin: round;
 }
 
-.footer-links .social-links .youtube-play {
+.social-links .youtube-play {
   fill: currentColor;
   stroke: none;
 }
 
-/* Nieuwsbrief blijft een eenvoudige tekstlink */
-.footer-links button {
-  width: auto;
-  height: auto;
-  padding: 0;
+.footer-bottom {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.18);
 
-  background: transparent;
-  color: inherit;
-  border: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
 
-  cursor: pointer;
+  font-size: 0.68rem;
+  opacity: 0.7;
 }
-
-    .footer-bottom {
-      margin-top: 5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.18);
-
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-
-      font-size: 0.68rem;
-      opacity: 0.7;
-    }
-
 
     /* ---------------------------------------
        NIEUWSBRIEF
@@ -714,9 +740,14 @@
         gap: 3rem;
       }
 
-      .footer-links {
-        justify-content: flex-start;
-      }
+.footer-right {
+  align-items: flex-start;
+}
+
+.footer-nav,
+.footer-actions {
+  justify-content: flex-start;
+}
 
       .footer-bottom {
         flex-direction: column;
@@ -997,27 +1028,28 @@
 
   <footer>
 
-    <div class="container">
+  <div class="container">
 
-      <div class="footer-main">
+    <div class="footer-main">
 
-        <div>
-          <div class="footer-name">Doreen Rey</div>
+      <div>
+        <div class="footer-name">Doreen Rey</div>
 
-          <p class="footer-small" data-lang="nl">
-            Muziek, participatieve zang en ruimtes voor ontmoeting.
-            Antwerpen, België.
-          </p>
+        <p class="footer-small" data-lang="nl">
+          Muziek, participatieve zang en ruimte voor ontmoeting.<br>
+          Antwerpen, België.
+        </p>
 
-          <p class="footer-small" data-lang="en">
-            Music, participatory singing and spaces for encounter.
-            Antwerp, Belgium.
-          </p>
-        </div>
+        <p class="footer-small" data-lang="en">
+          Music, participatory singing and space for encounter.<br>
+          Antwerp, Belgium.
+        </p>
+      </div>
 
 
-        <div class="footer-links">
+      <div class="footer-right">
 
+        <div class="footer-nav">
           <a href="over.html" data-lang="nl">Over</a>
           <a href="over.html" data-lang="en">About</a>
 
@@ -1028,101 +1060,100 @@
           <a href="agenda.html" data-lang="en">Events</a>
 
           <a href="contact.html">Contact</a>
+        </div>
 
- <!-- Instagram -->
-  <a
-    href="https://www.instagram.com/doreenreymusic/"
-    target="_blank"
-    rel="noopener"
-    aria-label="Instagram"
-    title="Instagram"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17.5" cy="6.5" r="1"></circle>
-    </svg>
-  </a>
 
-  <!-- Spotify -->
-  <a
-    href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg"
-    target="_blank"
-    rel="noopener"
-    aria-label="Spotify"
-    title="Spotify"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="9"></circle>
-      <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"></path>
-      <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"></path>
-      <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"></path>
-    </svg>
-  </a>
+        <div class="footer-actions">
 
-  <!-- SoundCloud -->
-  <a
-    href="https://soundcloud.com/doreenrey/sets"
-    target="_blank"
-    rel="noopener"
-    aria-label="SoundCloud"
-    title="SoundCloud"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 15.5v2"></path>
-      <path d="M5.5 14v4"></path>
-      <path d="M8 12.5V18"></path>
-      <path d="M10.5 10.5V18"></path>
-      <path d="M13 9.5V18"></path>
-      <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"></path>
-    </svg>
-  </a>
-
-  <!-- YouTube -->
-  <a
-    href="https://www.youtube.com/@DoreenRey"
-    target="_blank"
-    rel="noopener"
-    aria-label="YouTube"
-    title="YouTube"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"></path>
-      <path d="M10 9l5 3-5 3z" class="youtube-play"></path>
-    </svg>
-  </a>
-
-</div>
-
-          <button type="button" onclick="openNewsletter()">
+          <button
+            class="footer-newsletter"
+            type="button"
+            onclick="openNewsletter()"
+          >
             <span data-lang="nl">Nieuwsbrief</span>
             <span data-lang="en">Newsletter</span>
           </button>
 
+
+          <div class="social-links">
+
+            <a
+              href="https://www.instagram.com/doreenreymusic/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg"
+              target="_blank"
+              rel="noopener"
+              aria-label="Spotify"
+              title="Spotify"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"/>
+                <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"/>
+                <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://soundcloud.com/doreenrey/sets"
+              target="_blank"
+              rel="noopener"
+              aria-label="SoundCloud"
+              title="SoundCloud"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 15.5v2"/>
+                <path d="M5.5 14v4"/>
+                <path d="M8 12.5V18"/>
+                <path d="M10.5 10.5V18"/>
+                <path d="M13 9.5V18"/>
+                <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"/>
+              </svg>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@DoreenRey"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"/>
+                <path d="M10 9l5 3-5 3z" class="youtube-play"/>
+              </svg>
+            </a>
+
+          </div>
         </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 Doreen Rey
-        </span>
-
-        <span data-lang="nl">
-          Antwerpen, België
-        </span>
-
-        <span data-lang="en">
-          Antwerp, Belgium
-        </span>
 
       </div>
 
     </div>
 
-  </footer>
+
+    <div class="footer-bottom">
+      <span>© 2026 Doreen Rey</span>
+
+      <span data-lang="nl">Antwerpen, België</span>
+      <span data-lang="en">Antwerp, Belgium</span>
+    </div>
+
+  </div>
+
+</footer>
 
 
   <!-- =======================================
