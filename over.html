@@ -1206,7 +1206,7 @@
   <script>
 
     function setLang(lang) {
-
+      localStorage.setItem("siteLanguage", lang);
       document.documentElement.lang = lang;
 
       const button = document.querySelector(".lang-toggle");
