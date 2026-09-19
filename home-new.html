@@ -467,6 +467,41 @@
       text-transform: uppercase;
     }
 
+    .social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  opacity: 0.82;
+  transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+  opacity: 1;
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-links .youtube-play {
+  fill: currentColor;
+  stroke: none;
+}
+
     .footer-bottom {
       margin-top: 5rem;
       padding-top: 1.5rem;
@@ -970,21 +1005,70 @@
 
           <a href="contact.html">Contact</a>
 
-          <a
-            href="https://instagram.com/doreenreymusic"
-            target="_blank"
-            rel="noopener"
-          >
-            Instagram
-          </a>
+ <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/doreenreymusic/"
+    target="_blank"
+    rel="noopener"
+    aria-label="Instagram"
+    title="Instagram"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17.5" cy="6.5" r="1"></circle>
+    </svg>
+  </a>
 
-          <a
-            href="https://open.spotify.com/track/7p3ruwYaNuVz3iv9NhWY9I"
-            target="_blank"
-            rel="noopener"
-          >
-            Spotify
-          </a>
+  <!-- Spotify -->
+  <a
+    href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg"
+    target="_blank"
+    rel="noopener"
+    aria-label="Spotify"
+    title="Spotify"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"></path>
+      <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"></path>
+      <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"></path>
+    </svg>
+  </a>
+
+  <!-- SoundCloud -->
+  <a
+    href="https://soundcloud.com/doreenrey/sets"
+    target="_blank"
+    rel="noopener"
+    aria-label="SoundCloud"
+    title="SoundCloud"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 15.5v2"></path>
+      <path d="M5.5 14v4"></path>
+      <path d="M8 12.5V18"></path>
+      <path d="M10.5 10.5V18"></path>
+      <path d="M13 9.5V18"></path>
+      <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"></path>
+    </svg>
+  </a>
+
+  <!-- YouTube -->
+  <a
+    href="https://www.youtube.com/@DoreenRey"
+    target="_blank"
+    rel="noopener"
+    aria-label="YouTube"
+    title="YouTube"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"></path>
+      <path d="M10 9l5 3-5 3z" class="youtube-play"></path>
+    </svg>
+  </a>
+
+</div>
 
           <button type="button" onclick="openNewsletter()">
             <span data-lang="nl">Nieuwsbrief</span>
