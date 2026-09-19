@@ -237,6 +237,38 @@
         "nl": "Doreen Rey biedt een warm, laagdrempelig concert waarin haar solovocalen kunst en gemeenschap verbinden. Doreen zingt de hoofdlijnen, het publiek zingt de refreinen mee — de composities zijn bewust eenvoudig, zodat iedereen kan meedoen. Alleen luisteren mag natuurlijk ook! \n\nDe songs zijn geboren uit ervaringen met trauma, groei en de pijn van de Aarde, waarin kwetsbaarheid de rode draad is.",
         "en": "Doreen Rey offers a warm and accessible concert experience in which her solo vocals bring art and community together. Doreen sings the main melodies, while the audience joins in on the choruses — the compositions are intentionally simple, making it easy for everyone to participate. Of course, simply listening is always welcome too.\n\nThe songs are born from experiences of trauma, growth, and the pain of our Earth, with vulnerability as the common thread throughout."
       }
+    },
+    {
+      "dates": [
+        "2026-10-02"
+      ],
+      "price": {
+        "nl": " Standaard €10 | Sociaal tarief €2",
+        "en": "Standard  €10 | Social rate  €2"
+      },
+      "time": "19:30 - 20:15",
+      "published": true,
+      "extra": {
+        "nl": "\n",
+        "en": "\n"
+      },
+      "location": {
+        "name": "Filmhuis Klappei",
+        "address": "Klappeistraat 2, 2060 Antwerpen"
+      },
+      "title": {
+        "nl": "Stemmen in Dialoog",
+        "en": "Voices in Dialogue"
+      },
+      "linkLabel": {
+        "nl": "Meer info en inschrijving.",
+        "en": "More info and registration."
+      },
+      "link": "https://klappei.be/event/mustang-2015-stemmen-in-dialoog-met-celine-di-maccio-doreen-rey/#",
+      "description": {
+        "nl": "Tijdens dit concert brengen Céline en Doreen, twee ervaren vrouwelijke muzikanten, een repertoire van originele nummers, waarin compositie en spontane improvisatie samenkomen.\n\nTijdens deze avond nodigen zij het publiek uit om deel te nemen, of dat nu is door vocale of ritmische interactie, of al luisterend te genieten.",
+        "en": "During this concert, Céline and Doreen, two experienced female musicians, will perform a repertoire of original songs in which composition and spontaneous improvisation come together.\n\nThroughout the evening, they invite the audience to take part, whether through vocal or rhythmic interaction, or simply by listening and enjoying the music."
+      }
     }
   ]
 }
