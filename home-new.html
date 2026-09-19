@@ -447,12 +447,13 @@
       opacity: 0.8;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 1rem 1.7rem;
-    }
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.7rem;
+}
 
     .footer-links a,
     .footer-links button {
@@ -467,29 +468,39 @@
       text-transform: uppercase;
     }
 
-    .social-links {
+.social-links {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1.1rem;
 }
 
-.social-links a {
+.footer-links .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  opacity: 0.82;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  color: #f5f1e8;
+  opacity: 0.8;
+
+  border: 0;
+  background: transparent;
+
   transition: opacity 0.2s ease;
 }
 
-.social-links a:hover {
+.footer-links .social-links a:hover {
   opacity: 1;
 }
 
-.social-links svg {
-  width: 18px;
-  height: 18px;
+.footer-links .social-links svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -497,9 +508,22 @@
   stroke-linejoin: round;
 }
 
-.social-links .youtube-play {
+.footer-links .social-links .youtube-play {
   fill: currentColor;
   stroke: none;
+}
+
+/* Nieuwsbrief blijft een eenvoudige tekstlink */
+.footer-links button {
+  width: auto;
+  height: auto;
+  padding: 0;
+
+  background: transparent;
+  color: inherit;
+  border: 0;
+
+  cursor: pointer;
 }
 
     .footer-bottom {
