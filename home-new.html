@@ -1210,8 +1210,9 @@ footer {
 
     /* LANGUAGE */
 
-    function setLang(lang) {
-      document.documentElement.lang = lang;
+function setLang(lang) {
+  localStorage.setItem("siteLanguage", lang);
+  document.documentElement.lang = lang;
 
       const button = document.querySelector(".lang-toggle");
 
@@ -1442,7 +1443,7 @@ footer {
 
     document.addEventListener("DOMContentLoaded", () => {
 
-      setLang("nl");
+      setLang(localStorage.getItem("siteLanguage") || "nl");
       loadHomeEvents();
 
     });
