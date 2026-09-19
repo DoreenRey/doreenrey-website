@@ -241,8 +241,8 @@
     {
       "published": true,
       "title": {
-        "nl": "test event",
-        "en": "test event"
+        "nl": "Test evenement",
+        "en": "Test event"
       },
       "dates": [
         "2026-12-31"
@@ -257,8 +257,8 @@
         "en": "Free"
       },
       "description": {
-        "nl": "Dit is een test",
-        "en": "This is a test"
+        "nl": "Dit is een test.",
+        "en": "This is a test."
       }
     }
   ]
