@@ -66,11 +66,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         event.linkLabel?.en ||
         "Meer info";
 
-      const dateText = event.nextDate.toLocaleDateString("nl-BE", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
+const dateText = (event.dates || [])
+  .map(item => item.date)
+  .filter(Boolean)
+  .map(date => new Date(`${date}T00:00:00`))
+  .filter(date => date >= today)
+  .sort((a, b) => a - b)
+  .map(date => date.toLocaleDateString("nl-BE", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  }))
+  .join(" · ");
 
 article.innerHTML = `
   ${event.image ? `
@@ -82,11 +89,13 @@ article.innerHTML = `
   ` : ""}
 
   <div class="event-content">
-    <h3>${title}</h3>
+<h3>${title}</h3>
 
-    <p><strong>${dateText}</strong></p>
-
-    ${event.time ? `<p>${event.time}</p>` : ""}
+<div class="event-meta">
+  <span>📅 ${dateText}</span>
+  ${event.time ? `<span>🕒 ${event.time}</span>` : ""}
+  ${price ? `<span>${price}</span>` : ""}
+</div>
 
     ${event.location?.name ? `
       <p>
@@ -94,8 +103,6 @@ article.innerHTML = `
         ${event.location.address ? `<br>${event.location.address}` : ""}
       </p>
     ` : ""}
-
-    ${price ? `<p>${price}</p>` : ""}
 
     ${description ? `<p>${description}</p>` : ""}
 
