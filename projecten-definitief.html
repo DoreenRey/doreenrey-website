@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projecten — Doreen Rey</title>
+  <meta name="description" content="Projecten van Doreen Rey — participatieve concerten, samen zingen, lichaamsmuziek en samenwerkingen.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --paper: #f3f0e8;
+      --paper-light: #faf8f3;
+      --stone: #d8d7cc;
+      --olive: #4c5044;
+      --charcoal: #20211d;
+      --soft-text: #5f6059;
+      --line: rgba(32,33,29,.18);
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper-light);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .lang-hide {
+      display: none !important;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 5rem));
+      margin: 0 auto;
+    }
+
+
+    /* NAV */
+
+    .site-nav {
+      background: var(--paper-light);
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(1320px, calc(100% - 5rem));
+      height: 96px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.7rem;
+      list-style: none;
+    }
+
+    .nav-links a,
+    .lang-toggle,
+    .newsletter-nav {
+      color: inherit;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover,
+    .lang-toggle:hover,
+    .newsletter-nav:hover {
+      opacity: .6;
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: .5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      margin: 6px 0;
+      background: var(--charcoal);
+    }
+
+
+    /* OPENING */
+
+.projects-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.projects-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.projects-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 17, 0.34);
+}
+
+.photo-credit {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  z-index: 3;
+  color: rgba(255,255,255,.72);
+  font-family: var(--sans);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+}    
+
+.projects-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5rem;
+}
+
+.projects-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(6rem, 13vw, 12rem);
+  font-weight: 400;
+  line-height: .8;
+  letter-spacing: -.03em;
+  text-shadow: 0 2px 24px rgba(0,0,0,.18);
+}
+
+.projects-introduction {
+  background: var(--paper-light);
+  padding: 8rem 0 9rem;
+}
+
+.projects-intro {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+
+    /* PROJECTEN */
+
+    .project {
+      padding: 10rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project.paper {
+      background: var(--paper);
+    }
+
+    .project.light {
+      background: var(--paper-light);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .project-number {
+      margin-bottom: 1.5rem;
+      color: var(--soft-text);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .project h2 {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 6vw, 6.3rem);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.02em;
+    }
+
+    .project-copy {
+      max-width: 650px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .project-copy p + p {
+      margin-top: 2rem;
+    }
+
+    .project-subtitle {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+
+    .project-image {
+      margin-top: 7rem;
+      height: min(72vh, 760px);
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    /* SLOT */
+
+    .closing {
+      background: var(--paper-light);
+      padding: 10rem 0;
+      text-align: center;
+    }
+
+    .closing p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .closing a {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--olive);
+      color: #f5f1e8;
+      padding: 5rem 0 3rem;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .footer-small {
+      margin-top: 1.5rem;
+      max-width: 520px;
+      font-size: .78rem;
+      line-height: 1.8;
+      opacity: .8;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2.2rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a:hover {
+      opacity: .7;
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.8rem;
+    }
+
+    .footer-newsletter {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-block;
+      width: auto !important;
+      min-width: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      color: inherit !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .footer-newsletter:hover {
+      opacity: .7;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: inherit;
+      text-decoration: none;
+      opacity: .8;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    .social-links svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-links .youtube-play {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .footer-bottom {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: .68rem;
+      opacity: .7;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .newsletter-modal.is-open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .newsletter-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20,20,17,.75);
+      cursor: pointer;
+    }
+
+    .newsletter-modal-content {
+      position: relative;
+      z-index: 2;
+      width: min(560px, 100%);
+    }
+
+    .newsletter-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    body.newsletter-open {
+      overflow: hidden;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 820px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 2.5rem, 1180px);
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        z-index: 30;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+.projects-hero {
+  min-height: 68vh;
+}
+
+.projects-hero-content {
+  padding-bottom: 3rem;
+}
+
+.projects-introduction {
+  padding: 5rem 0 6rem;
+}
+
+      .project {
+        padding: 7rem 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .project-image {
+        margin-top: 5rem;
+        height: 55vh;
+      }
+
+      .closing {
+        padding: 7rem 0;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-right {
+        align-items: flex-start;
+      }
+
+      .footer-nav,
+      .footer-actions {
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    /* NIEUWE SECTIETITELS EN DETAILS */
+    .projects-section-heading { padding: 6rem 0; background: var(--olive); color: #f5f1e8; text-align: center; }
+    .projects-section-heading h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 6vw, 6rem); line-height: 1.1; }
+    .project-copy a { text-underline-offset: .2em; }
+    .project-quote { margin: 2.8rem 0; padding-left: 1.6rem; border-left: 1px solid var(--olive); font-family: var(--serif); font-size: clamp(1.6rem, 2.7vw, 2.5rem); line-height: 1.3; }
+    .project-image figcaption { margin-top: .6rem; color: var(--soft-text); font-size: .7rem; }
+    .project-image:has(figcaption) { overflow: visible; margin-bottom: 2rem; }
+    .closing .closing-description { margin-top: 2rem; font-family: var(--sans); font-size: 1rem; line-height: 1.8; }
+    @media (max-width: 820px) { .projects-section-heading { padding: 4rem 0; } }
+  </style>
+
+
+  <script>
+    (function(w,d,e,u,f,l,n){
+      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+      l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+
+    ml('account', '2606266');
+  </script>
+</head>
+
+
+<body>
+
+  <!-- NAV -->
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+
+      <a class="nav-logo" href="/">Doreen Rey</a>
+
+      <button class="hamburger" type="button" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+
+        <li>
+          <a data-lang="nl" href="over.html">Over</a>
+          <a data-lang="en" href="over.html">About</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="muziek.html">Muziek</a>
+          <a data-lang="en" href="muziek.html">Music</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="projecten.html">Projecten</a>
+          <a data-lang="en" href="projecten.html">Projects</a>
+        </li>
+
+        <li>
+          <a data-lang="nl" href="agenda.html">Agenda</a>
+          <a data-lang="en" href="agenda.html">Events</a>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <button class="newsletter-nav" type="button" onclick="openNewsletter()">
+            <span data-lang="nl">Nieuwsbrief</span>
+            <span data-lang="en">Newsletter</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="lang-toggle" type="button" onclick="toggleLang()">EN</button>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- OPENING -->
+
+<header class="projects-hero">
+
+  <img
+    src="/Shared%20Voices.jpeg"
+    alt=""
+    class="projects-hero-image"
+  >
+
+  <div class="photo-credit">
+  <span data-lang="nl">Foto: Ignace De Ridder</span>
+  <span data-lang="en">Photo: Ignace De Ridder</span>
+</div>
+
+  <div class="projects-hero-overlay"></div>
+
+  <div class="container projects-hero-content">
+    <h1 data-lang="nl">Projecten</h1>
+    <h1 data-lang="en">Projects</h1>
+  </div>
+
+</header>
+
+
+<section class="projects-introduction"><div class="container"><div class="projects-intro" data-lang="nl"><p>Ik bied verschillende manieren om via muziek, samen zingen en gesprek verbinding en veerkracht te versterken. Hier ontdek je wat we samen kunnen doen en de projecten waarin mijn werk vorm krijgt.</p></div><div class="projects-intro" data-lang="en"><p>I offer different ways to strengthen connection and resilience through music, singing together and conversation. Here you can explore what we can do together and the projects in which my work takes shape.</p></div></div></section>
+<section class="projects-section-heading"><div class="container"><h2 data-lang="nl">Samen beleven en creëren</h2><h2 data-lang="en">Experiencing &amp; Creating Together</h2></div></section>
+<section class="project paper"><div class="container"><div class="project-grid"><div><div class="project-number">01</div><h2 data-lang="nl">Participatieve<br>concerten</h2><h2 data-lang="en">Participatory<br>Concerts</h2></div><div class="project-copy" data-lang="nl">
+<p>Tijdens mijn concerten nodig ik het publiek uit om niet alleen te luisteren, maar ook mee te zingen. Ik leer eenvoudige, soms meerstemmige melodieën aan. Mijn eigen liederen vormen het vertrekpunt voor momenten van ontmoeting, waarin de grens tussen artiest en publiek soms vervaagt.</p>
+<p>Elk optreden krijgt mee vorm door de mensen die aanwezig zijn. Ik stem me af op de groep en laat ruimte voor wat er op dat moment ontstaat.</p>
+<p>Er is ruimte om te luisteren, geraakt te worden en je stem te laten horen. Meedoen mag, maar hoeft niet.</p>
+<p>Lees ook over <a href="https://culturecares.eu/artworks/shared-voices-music-as-medicine-for-collective-healing/" target="_blank" rel="noopener"><em>Shared Voices</em></a>.</p>
+</div><div class="project-copy" data-lang="en">
+<p>During my concerts, I invite the audience not only to listen, but also to sing along. I teach simple melodies, sometimes with several vocal parts. My own songs become a starting point for moments of connection, where the boundary between artist and audience sometimes begins to dissolve.</p>
+<p>Each performance is shaped in part by the people who are there. I tune in to the group and leave room for whatever emerges in the moment.</p>
+<p>There is space to listen, to be moved and to let your voice be heard. You are welcome to join in, but there is no obligation.</p>
+<p>Read more about <a href="https://culturecares.eu/artworks/shared-voices-music-as-medicine-for-collective-healing/" target="_blank" rel="noopener"><em>Shared Voices</em></a>.</p>
+</div></div></div></section>
+<section class="project light"><div class="container"><div class="project-grid"><div><div class="project-number">02</div><h2 data-lang="nl">Samen zingen &<br>lichaamsmuziek</h2><h2 data-lang="en">Singing Together &<br>Body Music</h2></div><div class="project-copy" data-lang="nl">
+<p>Samen zingen brengt ons in contact met onze stem, ons lichaam en elkaar. Via eenvoudige liederen, vocale improvisatie, <a href="https://circlesongs.com/" target="_blank" rel="noopener">circlesong</a> en <a href="https://www.musicadocirculo.com/en" target="_blank" rel="noopener">Música do Círculo</a> ontdekken we wat er kan ontstaan wanneer we samen muziek maken.</p>
+<p>Je hoeft geen zangervaring te hebben. We luisteren, experimenteren en spelen met ritme, klank en stilte. Er is ruimte om je eigen stem te ontdekken en tegelijk deel te worden van een groter geheel.</p>
+</div><div class="project-copy" data-lang="en">
+<p>Singing together brings us into contact with our voices, our bodies and one another. Through simple songs, vocal improvisation, <a href="https://circlesongs.com/" target="_blank" rel="noopener">circlesong</a> and <a href="https://www.musicadocirculo.com/en" target="_blank" rel="noopener">Música do Círculo</a>, we discover what can emerge when we make music together.</p>
+<p>You don't need any singing experience. We listen, experiment and play with rhythm, sound and silence. There is space to explore your own voice while becoming part of something larger.</p>
+</div></div><figure class="project-image"><img src="/DSC01350%20copywrite.png" alt="Samen zingen en lichaamsmuziek"><figcaption>Foto: Stefan Lambrechts</figcaption></figure></div></section>
+<section class="project paper"><div class="container"><div class="project-grid"><div><div class="project-number">03</div><h2 data-lang="nl">Ruimte voor<br>gesprek</h2><h2 data-lang="en">Space for<br>Conversation</h2></div><div class="project-copy" data-lang="nl">
+<p>Naast muziek en samen zingen groeit mijn interesse in het begeleiden van gesprekken waarin kwetsbaarheid, spanning en verschil een plek mogen krijgen.</p>
+<p>Binnen mijn eigen community Goudsbloem doe ik ervaring op met het bespreekbaar maken van wat onder de oppervlakte leeft. Vanuit een sociocratische werking richtte ik een aparte cirkel op om aandacht te geven aan spanningen en wrijvingen binnen de groep.</p>
+<p>Ik voel vaak aan wanneer er iets onder de oppervlakte leeft dat nog niet uitgesproken of gevoeld kan worden. Vanuit mijn kennismaking met Processwork (Arnold Mindell), onder meer via een jaar <em>Facilitating Our Future</em>, onderzoek ik hoe individuele gesprekken en groepsinterventies ruimte kunnen maken voor wat nog geen stem heeft gekregen.</p>
+<p>Deze praktijk is nog in ontwikkeling. Ik onderzoek hoe ik deze ervaring ook buiten mijn eigen community kan inzetten.</p>
+</div><div class="project-copy" data-lang="en">
+<p>Alongside music and singing together, I am becoming increasingly interested in facilitating conversations where vulnerability, tension and differences can have a place.</p>
+<p>Within my own community, Goudsbloem, I am gaining experience in bringing into the open what lives beneath the surface. As part of our sociocratic way of working, I created a dedicated circle to give attention to tensions and friction within the group.</p>
+<p>I often sense when something is present beneath the surface that has not yet been spoken or fully felt. Drawing on my introduction to Processwork (Arnold Mindell), including one year of <em>Facilitating Our Future</em>, I am exploring how individual conversations and group interventions can make room for what has not yet found a voice.</p>
+<p>This practice is still developing. I am exploring how I might bring this experience beyond my own community.</p>
+</div></div></div></section>
+<section class="projects-section-heading"><div class="container"><h2 data-lang="nl">Andere projecten &amp; samenwerkingen</h2><h2 data-lang="en">Other Projects &amp; Collaborations</h2></div></section>
+<section class="project light"><div class="container"><div class="project-grid"><div><div class="project-number">04</div><h2 data-lang="nl">Singing<br>Resistance</h2><h2 data-lang="en">Singing<br>Resistance</h2></div><div class="project-copy" data-lang="nl">
+<span class="project-subtitle">Samen zingen voor kracht, verbinding en solidariteit</span>
+<p>Singing Resistance brengt mensen samen om te zingen in tijden van maatschappelijke en ecologische ontwrichting. We willen ruimte creëren om aanwezig te blijven bij wat er gebeurt: bij onzekerheid en verdriet, maar ook bij schoonheid, vreugde en de verbinding die samen zingen mogelijk maakt.</p>
+<p>Met regelmatige bijeenkomsten bouwen we aan collectieve veerkracht en solidariteit. We zingen eenvoudige liederen, maken ruimte voor ontmoeting en verwelkomen iedereen die met een open hart wil deelnemen. Het samenkomen en zingen is op zichzelf waardevol. Van daaruit kunnen ook nieuwe initiatieven en samenwerkingen groeien.</p>
+<p>Samen met twee andere mensen draag ik Singing Resistance Antwerpen. Tijdens de bijeenkomsten faciliteer ik het samen zingen.</p>
+<p>Meer informatie over de bredere beweging: <a href="https://singing-resistance.org/" target="_blank" rel="noopener">singing-resistance.org</a>.</p>
+</div><div class="project-copy" data-lang="en">
+<span class="project-subtitle">Singing Together for Strength, Connection and Solidarity</span>
+<p>Singing Resistance brings people together to sing in times of social and ecological upheaval. We want to create space to stay present with what is happening: with uncertainty and grief, but also with beauty, joy and the connection that singing together can bring.</p>
+<p>Through regular gatherings, we nurture collective resilience and solidarity. We sing simple songs, make space for connection and welcome everyone who wishes to participate with an open heart. Coming together and singing is valuable in itself. From there, new initiatives and collaborations may also grow.</p>
+<p>Together with two other people, I help carry Singing Resistance Antwerp. During our gatherings, I facilitate the singing.</p>
+<p>More information about the wider movement: <a href="https://singing-resistance.org/" target="_blank" rel="noopener">singing-resistance.org</a>.</p>
+</div></div></div></section>
+<section class="project paper"><div class="container"><div class="project-grid"><div><div class="project-number">05</div><h2 data-lang="nl">Drinkable Rivers</h2><h2 data-lang="en">Drinkable Rivers</h2></div><div class="project-copy" data-lang="nl">
+<p>Een maand lang wandelde ik met <a href="https://drinkablerivers.org/" target="_blank" rel="noopener">Drinkable Rivers</a> langs de Schelde. Elke dag zong ik mijn lied <a href="https://soundcloud.com/doreenrey/alongside-the-river-we-walk" target="_blank" rel="noopener"><em>Alongside The River We Walk</em></a> als anthem voor de tocht.</p>
+<p>Tijdens die maand creëerde ik ook <a href="https://soundcloud.com/doreenrey/the-river-cannot-be-tamed-demo" target="_blank" rel="noopener"><em>The River Cannot Be Tamed</em></a>. In het Stadsmuseum Vleeshuis in Dendermonde zag ik een simulatie van de Scheldevallei, duizenden jaren voor Christus. Verdriet overmande me: ik had al drie weken naast een ingedijkte rivier gewandeld, met af en toe een oude Scheldearm. Dat is een overgebleven rivierbocht waar vroeger de Schelde zelf stroomde, voordat de rivier haar loop verlegde of werd rechtgetrokken.</p>
+<p>Deze woorden van <a href="https://www.bayoakomolafe.net/" target="_blank" rel="noopener">Bayo Akomolafe</a> vatten de inhoud van mijn lied mooi samen:</p>
+<blockquote class="project-quote">“We speak as if meandering were a deviation from a truer path. But the river knows no other way. To ‘correct’ its curves is to erase its identity.”</blockquote>
+<p>Tijdens deze tocht kwamen verschillende draden van mijn werk samen: muziek, samen onderweg zijn en betrokkenheid bij de levende wereld.</p>
+</div><div class="project-copy" data-lang="en">
+<p>For a month, I walked along the Scheldt with <a href="https://drinkablerivers.org/" target="_blank" rel="noopener">Drinkable Rivers</a>. Every day, I sang my song <a href="https://soundcloud.com/doreenrey/alongside-the-river-we-walk" target="_blank" rel="noopener"><em>Alongside The River We Walk</em></a> as an anthem for the journey.</p>
+<p>During that month, I also created <a href="https://soundcloud.com/doreenrey/the-river-cannot-be-tamed-demo" target="_blank" rel="noopener"><em>The River Cannot Be Tamed</em></a>. At the Vleeshuis City Museum in Dendermonde, I saw a simulation of the Scheldt Valley as it existed thousands of years before Christ. I was overcome with sadness. I had already spent three weeks walking beside a river confined by dikes, occasionally passing an old river arm — a remnant of a former bend where the Scheldt once flowed, before the river changed course or was straightened.</p>
+<p>A quote by <a href="https://www.bayoakomolafe.net/" target="_blank" rel="noopener">Bayo Akomolafe</a> beautifully captures the essence of my song:</p>
+<blockquote class="project-quote">“We speak as if meandering were a deviation from a truer path. But the river knows no other way. To ‘correct’ its curves is to erase its identity.”</blockquote>
+<p>During this journey, different threads of my work came together: music, travelling together and caring about the living world.</p>
+</div></div><figure class="project-image"><img src="/2025%2005%2010%20Scheldt%20Walk%20Drinkable%20Rivers01.jpeg" alt="Drinkable Rivers"></figure></div></section>
+<section class="project light"><div class="container"><div class="project-grid"><div><div class="project-number">06</div><h2 data-lang="nl">De Zachte<br>Omwenteling</h2><h2 data-lang="en">De Zachte<br>Omwenteling</h2></div><div class="project-copy" data-lang="nl">
+<span class="project-subtitle">Sing4connection</span>
+<p>Bij <a href="https://www.dezachteomwenteling.be/" target="_blank" rel="noopener">De Zachte Omwenteling</a> organiseer ik <em>Sing4connection</em>: intieme concerten waarin verbinding via muziek en klank centraal staat.</p>
+<p>Ik breng meestal mijn eigen liederen en nodig de aanwezigen uit om eenvoudige, diepgaande refreinen mee te zingen. Wie liever luistert en aanwezig is, is even welkom.</p>
+<p>De concerten maken deel uit van bijeenkomsten waarin ook ruimte is voor ontmoeting, gesprek en samen eten.</p>
+<p>Bekijk de <a href="agenda.html">agenda</a> voor de volgende bijeenkomst.</p>
+</div><div class="project-copy" data-lang="en">
+<span class="project-subtitle">Sing4connection</span>
+<p>At <a href="https://www.dezachteomwenteling.be/" target="_blank" rel="noopener">De Zachte Omwenteling</a>, I organise <em>Sing4connection</em>: intimate concerts centred around connection through music and sound.</p>
+<p>I mostly perform my own songs and invite those present to sing along with simple, meaningful refrains. Those who prefer to listen and simply be present are equally welcome.</p>
+<p>The concerts are part of gatherings that also make room for meeting one another, conversation and sharing a meal.</p>
+<p>Check the <a href="agenda.html">calendar</a> for the next gathering.</p>
+</div></div></div></section>
+<section class="closing"><div class="container"><p data-lang="nl">Samen iets organiseren?</p><p data-lang="en">Would You Like to Organise Something Together?</p><div class="closing-description" data-lang="nl">Wil je samen zingen, een participatief concert organiseren of onderzoeken wat we samen kunnen creëren?<br>Ik denk graag met je mee over een vorm die past bij jouw groep, initiatief of gelegenheid.</div><div class="closing-description" data-lang="en">Would you like to sing together, organise a participatory concert or explore what we could create together?<br>I'd be happy to think along with you about a format that suits your group, initiative or occasion.</div><a href="contact.html" data-lang="nl">Neem contact op →</a><a href="contact.html" data-lang="en">Get in touch →</a></div></section>
+
+    <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <div class="footer-name">Doreen Rey</div>
+
+          <p class="footer-small" data-lang="nl">
+            Muziek, participatieve zang en ruimte voor ontmoeting.<br>
+            Antwerpen, België.
+          </p>
+
+          <p class="footer-small" data-lang="en">
+            Music, participatory singing and space for encounter.<br>
+            Antwerp, Belgium.
+          </p>
+        </div>
+
+
+        <div class="footer-right">
+
+          <div class="footer-nav">
+
+            <a href="over.html" data-lang="nl">Over</a>
+            <a href="over.html" data-lang="en">About</a>
+
+            <a href="muziek.html" data-lang="nl">Muziek</a>
+            <a href="muziek.html" data-lang="en">Music</a>
+
+            <a href="projecten.html" data-lang="nl">Projecten</a>
+            <a href="projecten.html" data-lang="en">Projects</a>
+
+            <a href="agenda.html" data-lang="nl">Agenda</a>
+            <a href="agenda.html" data-lang="en">Events</a>
+
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+
+          <div class="footer-actions">
+
+            <button class="footer-newsletter" type="button" onclick="openNewsletter()">
+              <span data-lang="nl">Nieuwsbrief</span>
+              <span data-lang="en">Newsletter</span>
+            </button>
+
+
+            <div class="social-links">
+
+              <a href="https://www.instagram.com/doreenreymusic/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1"/>
+                </svg>
+              </a>
+
+              <a href="https://open.spotify.com/artist/6Hf25UWQ5w3dYCeaBUiD5B?si=R3rq7Dq_TJ2W7p3LWh8Lvg" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M7.5 9.5c3.2-1 7.2-.7 9.8.7"/>
+                  <path d="M8.2 12.5c2.7-.8 6-.5 8.3.7"/>
+                  <path d="M9 15.3c2.1-.5 4.6-.3 6.5.6"/>
+                </svg>
+              </a>
+
+              <a href="https://soundcloud.com/doreenrey/sets" target="_blank" rel="noopener" aria-label="SoundCloud">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 15.5v2"/>
+                  <path d="M5.5 14v4"/>
+                  <path d="M8 12.5V18"/>
+                  <path d="M10.5 10.5V18"/>
+                  <path d="M13 9.5V18"/>
+                  <path d="M15.5 12a4 4 0 0 1 6.5 3.1A2.9 2.9 0 0 1 19.1 18H15.5"/>
+                </svg>
+              </a>
+
+              <a href="https://www.youtube.com/@DoreenRey" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8z"/>
+                  <path d="M10 9l5 3-5 3z" class="youtube-play"/>
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="footer-bottom">
+        <span>© 2026 Doreen Rey</span>
+        <span data-lang="nl">Antwerpen, België</span>
+        <span data-lang="en">Antwerp, Belgium</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- NEWSLETTER -->
+
+  <div id="newsletter-modal" class="newsletter-modal" aria-hidden="true">
+
+    <div class="newsletter-overlay" onclick="closeNewsletter()"></div>
+
+    <div class="newsletter-modal-content" role="dialog" aria-modal="true" aria-label="Newsletter">
+
+      <button class="newsletter-close" type="button" aria-label="Close newsletter" onclick="closeNewsletter()">×</button>
+
+      <div class="ml-embedded" data-form="e3vClg"></div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem("siteLanguage", lang);
+      document.documentElement.lang = lang;
+
+      const button = document.querySelector(".lang-toggle");
+      if (button) {
+        button.textContent = lang === "nl" ? "EN" : "NL";
+      }
+
+      document.querySelectorAll("[data-lang]").forEach(element => {
+        element.classList.toggle("lang-hide", element.dataset.lang !== lang);
+      });
+    }
+
+    function toggleLang() {
+      setLang(document.documentElement.lang === "nl" ? "en" : "nl");
+    }
+
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("open");
+    }
+
+    function openNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("newsletter-open");
+    }
+
+    function closeNewsletter() {
+      const modal = document.getElementById("newsletter-modal");
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("newsletter-open");
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeNewsletter();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLang(localStorage.getItem("siteLanguage") || "nl");
+    });
+  </script>
+
+</body>
+</html>
