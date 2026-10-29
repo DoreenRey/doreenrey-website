@@ -1324,6 +1324,19 @@
 
     }
 
+    // Toon de nieuwsbrief automatisch na 5 seconden,
+// tenzij de bezoeker hem eerder heeft gesloten.
+window.addEventListener("load", function () {
+  const dismissedUntil = Number(
+    localStorage.getItem("newsletterDismissedUntil") || 0
+  );
+
+  if (Date.now() < dismissedUntil) return;
+
+  window.setTimeout(function () {
+    openNewsletter();
+  }, 5000);
+});
 
     function closeNewsletter() {
 
@@ -1333,7 +1346,8 @@
       modal.setAttribute("aria-hidden", "true");
 
       document.body.classList.remove("newsletter-open");
-
+      
+localStorage.setItem("newsletterDismissedUntil", String(Date.now() + 30 * 24 * 60 * 60 * 1000));
     }
 
 
